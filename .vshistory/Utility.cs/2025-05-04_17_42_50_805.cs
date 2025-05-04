@@ -251,15 +251,7 @@ month = GetIntInRange(1,12)
         } //Functions exactly like Console.WriteLine(), but waits 1 millisecond between each character.
         public static void PrintHeader()
         {
-            string seperator = "****************************";
-            AnimateWrite(seperator);
-            Console.WriteLine("");
-            Console.WriteLine("Welcome to Programming 2 - Project - Winter 2025");
-            Console.WriteLine("");
-            Console.WriteLine("Created by Jimmy Rashed, 6291812, on May 15th, 2025");
-            Console.WriteLine("");
-            AnimateWrite(seperator);
-            Console.ReadKey();
+
         }
 
     }

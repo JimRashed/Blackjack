@@ -5,7 +5,6 @@
         static void Main(string[] args)
         {
             GameManager manager = new GameManager();
-            Utility.PrintHeader();
         }
     }
 }

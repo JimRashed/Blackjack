@@ -8,13 +8,6 @@ namespace Rashed_Blackjack
 {
     public class GameManager
     {
-        private GameState game;
 
-        public void StartGame()
-        {
-
-        }
-
-        
     }
 }
