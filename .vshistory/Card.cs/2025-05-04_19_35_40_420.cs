@@ -106,27 +106,22 @@ namespace Rashed_Blackjack
          */
         public override string ToString()
         {
-            if (!Hidden)
+            /*
+            return (Rank.ToString() + " of " + Suit.ToString());
+            */
+            switch ((int)Suit)
             {
-                switch ((int)Suit)
-                {
-                    case 2: //Spades
-                        return (Rank + "\u2660");
-                    case 3: //Hearts
-                        return (Rank + "\u2665");
-                    case 1: //Diamonds
-                        return (Rank + "\u2666");
-                    case 0: //Clubs
-                        return (Rank + "\u2663");
-                    default:
-                        return null;
-                }
+                case 2: //Spades
+                    return (Rank + "\u2660");
+                case 3: //Hearts
+                    return (Rank + "\u2665");
+                case 1: //Diamonds
+                    return (Rank + "\u2666");
+                case 0: //Clubs
+                    return (Rank + "\u2663");
+                default:
+                    return null;
             }
-            else
-            {
-                return "Hidden";
-            }
-            
         }
         /*  Equals() 
         *************************************************

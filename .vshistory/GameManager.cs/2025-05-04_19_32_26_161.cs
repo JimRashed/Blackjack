@@ -120,7 +120,7 @@ namespace Rashed_Blackjack
                 
                 if (currentPlayer.Playing) //Checks if player is playing before prompting for bet
                 {
-                    Utility.AnimateWrite($"{currentPlayer.Name}, please enter your bet for this round");
+                    Utility.AnimateWrite($"{currentPlayer.Name}, please enter your bet");
                     currentPlayer.Bet = Utility.GetDoubleInRange(Constants.MINBET, Constants.MAXBET);
                 }
                 else
