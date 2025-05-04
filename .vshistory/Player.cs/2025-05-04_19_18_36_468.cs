@@ -79,7 +79,6 @@ namespace Rashed_Blackjack
             Balance = initialSum;
             Hand = new Hand();
             stats = new PlayerStats();
-            Playing = true;
 
         }
         //Override operators

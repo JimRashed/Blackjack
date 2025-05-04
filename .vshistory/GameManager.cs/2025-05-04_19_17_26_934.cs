@@ -81,7 +81,7 @@ namespace Rashed_Blackjack
                 tempPlayer = new Player(name, balance);
                 game.players.Add(tempPlayer);
             }
-            GetPlayerBets();
+
             InitialDeal();
 
 
@@ -109,24 +109,17 @@ namespace Rashed_Blackjack
         {
             bool validBet;
             double bet;
-            for (int currentPlayerNumber = 0; currentPlayerNumber < playerCount; currentPlayerNumber++)
+            for (int currentPlayer = 0; currentPlayer < playerCount; currentPlayer++)
             {
-                Player currentPlayer = game.players[currentPlayerNumber];
-                if (currentPlayer.Balance < Constants.MINBET) //Checks if player has a sufficient balance to participate
+                Utility.AnimateWrite($"{game.players[currentPlayer + 1].Name}, enter your bet");
+                do
                 {
-                    currentPlayer.Playing = false; //Excludes them if not
-                }
+                    bet = Utility.GetDoubleInRange(0, 100000);
+
+                } while (!validBet);
                 
-                if (currentPlayer.Playing) //Checks if player is playing before prompting for bet
-                {
-                    Utility.AnimateWrite($"{currentPlayer.Name}, please enter your bet");
-                    currentPlayer.Bet = Utility.GetDoubleInRange(Constants.MINBET, Constants.MAXBET);
-                }
-                else
-                {
-                    Utility.AnimateWrite($"{currentPlayer.Name} no longer has the funds to participate.");
-                }
-              
+
+
             }
         }
         private void GamePlay()
