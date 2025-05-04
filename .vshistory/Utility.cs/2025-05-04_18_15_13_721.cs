@@ -135,65 +135,6 @@ month = GetIntInRange(1,12)
             }
             return validInt; // Matches function data type
         }
-        /* IntParse()
-   *************************************************
-   Purpose: Receives input from user and attempts to convert
-   to double. If successful, returns converted int without prompting user.
-   If unsuccessful, prompts user for input and loops until input is correct.
-   *************************************************
-   @Algorithm:
-   Receives user input under Dynamic data type
-   Attempts a TryParse to double, immediately returns value if succesful
-   If double TryParse is unsuccessful, loops until valid double is given
-   Returns userInput
-   *************************************************
-   @Param
-   Receives 1 parameters:
-   dynamic userInput: Holds parameter of unknown data 
-   type that needs to be converted to integer
-
-   *************************************************
-   @Exceptions
-   None
-   *************************************************
-   @Returns
-   Returns an integer
-   *************************************************
-   @Examples
-
-   int number; 
-   number = DoubleParse(Console.ReadLine());
-
-   int year; 
-   year = DoubleParse(Console.ReadLine());
-   *************************************************
-   @Pseudocode
-    Declare bool isNum;
-    Declare double validDouble;
-    Set isNum to result of double.TryParse operation on userInput with out of validDouble
-    Begin while loop: while (isNum is false)
-        Output error message
-        Assign userInput to Console.ReadLine()
-        Set isNum to result of double.TryParse operation on userInput with out of validDouble
-    End of while loop
-    return validDouble
-   ************************************************* 
-   */
-        public static double DoubleParse(dynamic userInput)
-        {
-            //Takes an input, repeatedly attempts to convert to double
-            bool isNum;
-            double validDouble;
-
-            isNum = double.TryParse(userInput, out validDouble);
-            while (isNum == false)// loops until correct input is given
-            {
-                Console.WriteLine("Invalid input. Please input a valid integer");
-                userInput = Console.ReadLine();
-                isNum = double.TryParse(userInput, out validDouble);
-            }
-            return validDouble; // Matches function data type
-        }
         /*GetUserConsent() 
           *************************************************
           Purpose: Guarantees a valid boolean value from user

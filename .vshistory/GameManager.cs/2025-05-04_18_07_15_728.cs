@@ -11,8 +11,6 @@ namespace Rashed_Blackjack
     {
         const int MINMENUCHOICE = 1;
         const int MAXMENUCHOICE = 4;
-        const int MINPLAYERNUMBER = 2;
-        const int MAXPLAYERNUMBER = 4;
         private GameState game;
         private bool gameActive;
         
@@ -43,7 +41,7 @@ namespace Rashed_Blackjack
                     case 1:
                         game = new GameState();
                         gameActive = true;
-                        GameSetup();
+                        Utility.AnimateWrite("A new game would start");
                         break;
                     case 2:
                         //Implement leaderboard display
@@ -59,33 +57,9 @@ namespace Rashed_Blackjack
             } while (!quit);
            
         }
-
-        private void GameSetup()
-        {
-            Player tempPlayer;
-            int playerNumber;
-            string name;
-            double balance;
-            Utility.AnimateWrite("How many players would you like to include in the game? (2-4)");
-            playerNumber = Utility.GetIntInRange(MINPLAYERNUMBER, MAXPLAYERNUMBER);
-            for (int currentPlayer = 0; currentPlayer< playerNumber; currentPlayer++)
-            {
-                tempPlayer = new Player("John doe", 0);
-                Utility.AnimateWrite($"What will be the name of player {currentPlayer + 1}?");
-                name = Utility.GetNonNullString();
-                Utility.AnimateWrite($"What will be {name}'s starting balance?");
-                balance = 
-
-                
-
-
-            }
-
-
-        }
         private void GamePlay()
         {
-            bool gameOver = false;
+
         }
 
         

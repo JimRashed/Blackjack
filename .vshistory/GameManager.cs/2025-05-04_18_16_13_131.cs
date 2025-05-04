@@ -64,18 +64,12 @@ namespace Rashed_Blackjack
         {
             Player tempPlayer;
             int playerNumber;
-            string name;
-            double balance;
             Utility.AnimateWrite("How many players would you like to include in the game? (2-4)");
             playerNumber = Utility.GetIntInRange(MINPLAYERNUMBER, MAXPLAYERNUMBER);
             for (int currentPlayer = 0; currentPlayer< playerNumber; currentPlayer++)
             {
                 tempPlayer = new Player("John doe", 0);
                 Utility.AnimateWrite($"What will be the name of player {currentPlayer + 1}?");
-                name = Utility.GetNonNullString();
-                Utility.AnimateWrite($"What will be {name}'s starting balance?");
-                balance = 
-
                 
 
 
