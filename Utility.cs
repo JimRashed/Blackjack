@@ -76,7 +76,7 @@ month = GetIntInRange(1,12)
             } while (!isInRange);
             return userInput;
         }
-        public static double GetDoubleInRange(int minValue, int maxValue)
+        public static double GetDoubleInRange(double minValue, double maxValue)
         {
             bool isInRange = false;
             double userInput;
