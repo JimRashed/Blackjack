@@ -19,7 +19,7 @@ namespace Rashed_Blackjack
             wins = 0;
             losses = 0;
             ties = 0;
-            winRatio = (wins + losses + ties == 0) ? 0 : (wins / wins + losses + ties); //If no games have been played, winratio is 0. Else, winratio is the result of the actual calculation of a win ratio
+            winRatio = (wins + losses + ties == 0) ? 0 : (wins / wins + losses + ties);
         }
     }
     
