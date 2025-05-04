@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Rashed_Blackjack
 {
-    public class GameState
+    public class GameState()
     {
         //Fields
         public List<Player> players;
@@ -15,8 +15,15 @@ namespace Rashed_Blackjack
         public int turn;
 
         //Constructor
-        public GameState()
-        {}
+        public GameState(int playerNumber)
+        {
+            dealer = new Player("Dealer", 999);
+            cardDeck = new Deck();
+            for (int currentPlayer; currentPlayer<playerNumber; currentPlayer++)
+            {
+                
+            }
+        }
         //Another constructor will have to be made for file loading.
         
 

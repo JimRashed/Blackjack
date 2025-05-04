@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Rashed_Blackjack
 {
-    public class GameRules
+    public class GameManager()
     {
 
     }
