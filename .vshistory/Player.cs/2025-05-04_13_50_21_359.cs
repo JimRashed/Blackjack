@@ -68,6 +68,7 @@ namespace Rashed_Blackjack
             Hand = new Hand();
             stats = new PlayerStats();
         }
+      
         //Override operators
         
     }
