@@ -107,17 +107,10 @@ namespace Rashed_Blackjack
         }
         private void GetPlayerBets()
         {
-            bool validBet;
-            double bet;
             for (int currentPlayer = 0; currentPlayer < playerCount; currentPlayer++)
             {
                 Utility.AnimateWrite($"{game.players[currentPlayer + 1].Name}, enter your bet");
-                do
-                {
-                    bet = Utility.GetDoubleInRange(0, 100000);
-
-                } while (!validBet);
-                
+                game.players[currentPlayer].Bet = Utility.GetDoubleInRange(0, )
 
 
             }

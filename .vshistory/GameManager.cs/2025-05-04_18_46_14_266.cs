@@ -4,7 +4,6 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 
 namespace Rashed_Blackjack
 {
@@ -16,8 +15,7 @@ namespace Rashed_Blackjack
         const int MAXPLAYERCOUNT = 4;
         private GameState game;
         private bool gameActive;
-        int playerCount;
-
+        
 
         public void Start()
         {
@@ -66,7 +64,7 @@ namespace Rashed_Blackjack
         private void Setup()
         {
             Player tempPlayer;
-            
+            int playerCount;
             string name;
             double balance;
             Utility.AnimateWrite("How many players would you like to include in the game? (2-4)"); 
@@ -82,46 +80,8 @@ namespace Rashed_Blackjack
                 game.players.Add(tempPlayer);
             }
 
-            InitialDeal();
 
-
-        }//Populates the list of players in GameState, deals 2 cards to everyone
-
-        private void InitialDeal()
-        {
-            //2 cards dealt to the dealer
-            for (int currentCard = 0; currentCard < Constants.INITIALCARDAMOUNT; currentCard++)
-            {
-                game.dealer.Hand.AddCard(game.cardDeck.Draw());
-            }
-
-            //2 cards dealt to each player
-            for (int currentPlayer = 0; currentPlayer<game.players.Count; currentPlayer++)//Scrolls through all players
-            {
-                for (int currentCard = 0; currentCard<Constants.INITIALCARDAMOUNT; currentCard++) //Scrolls 2 times
-                {
-                    game.players[currentPlayer].Hand.AddCard(game.cardDeck.Draw());
-                }
-            }
-            
-        }
-        private void GetPlayerBets()
-        {
-            bool validBet;
-            double bet;
-            for (int currentPlayer = 0; currentPlayer < playerCount; currentPlayer++)
-            {
-                Utility.AnimateWrite($"{game.players[currentPlayer + 1].Name}, enter your bet");
-                do
-                {
-                    bet = Utility.GetDoubleInRange(0, 100000);
-
-                } while (!validBet);
-                
-
-
-            }
-        }
+        }//Populates the list of players in GameState
         private void GamePlay()
         {
             bool gameOver = false;

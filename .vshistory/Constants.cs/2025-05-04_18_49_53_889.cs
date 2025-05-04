@@ -12,7 +12,5 @@ namespace Rashed_Blackjack
         public const int MAXPLAYERCOUNT = 4;
         public const int BLACKJACK = 21;
         public const int INITIALCARDAMOUNT = 3;
-        public const double MAXBET = 100000;
-        public const double MINBET = 50;
     }
 }
