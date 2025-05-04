@@ -66,6 +66,7 @@ namespace Rashed_Blackjack
         private void Setup()
         {
             Player tempPlayer;
+            
             string name;
             double balance;
             Utility.AnimateWrite("How many players would you like to include in the game? (2-4)"); 
@@ -93,9 +94,8 @@ namespace Rashed_Blackjack
             //2 cards dealt to the dealer
             for (int currentCard = 0; currentCard < Constants.INITIALCARDAMOUNT; currentCard++)
             {
-                game.dealer.Hand.AddCard(game.cardDeck.Draw());//Adds card to dealer's hand
+                game.dealer.Hand.AddCard(game.cardDeck.Draw());
             }
-            game.dealer.Hand.Sort(); //Sorts the dealer's hand
 
             //Ensure the dealer's second card is hidden
             game.dealer.Hand.hand[game.dealer.Hand.Size - 1].Hidden = true;
@@ -109,9 +109,7 @@ namespace Rashed_Blackjack
                     for (int currentCard = 0; currentCard < Constants.INITIALCARDAMOUNT; currentCard++) //Scrolls 2 times
                     {
                         game.players[currentPlayer].Hand.AddCard(game.cardDeck.Draw());
-                        
                     }
-                    game.players[currentPlayer].Hand.Sort();
                 }
                 
             }

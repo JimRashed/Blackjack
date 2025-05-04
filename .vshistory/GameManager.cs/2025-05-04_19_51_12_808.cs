@@ -66,6 +66,7 @@ namespace Rashed_Blackjack
         private void Setup()
         {
             Player tempPlayer;
+            
             string name;
             double balance;
             Utility.AnimateWrite("How many players would you like to include in the game? (2-4)"); 

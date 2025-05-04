@@ -83,12 +83,6 @@ namespace Rashed_Blackjack
 
         }
         //Override operators
-        public override string ToString()
-        {
-            string player;
-            player = $"{Name} Balance:{Balance} \n{Hand.ToString()}\n";
-            return player;
-        }
-
+        
     }
 }
