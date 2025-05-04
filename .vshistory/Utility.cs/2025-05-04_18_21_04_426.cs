@@ -76,22 +76,6 @@ month = GetIntInRange(1,12)
             } while (!isInRange);
             return userInput;
         }
-        public static double GetDoubleInRange(int minValue, int maxValue)
-        {
-            bool isInRange = false;
-            double userInput;
-            do
-            {
-                userInput = DoubleParse(Console.ReadLine());
-                isInRange = (userInput >= minValue && userInput <= maxValue);
-                if (!isInRange)
-                {
-                    Console.WriteLine("Your input was not within a reasonable range.");
-                }
-            } while (!isInRange);
-            return userInput;
-        } //functions identically to GetIntInRange, but with doubles
-
         /* IntParse()
            *************************************************
            Purpose: Receives input from user and attempts to convert
@@ -151,7 +135,7 @@ month = GetIntInRange(1,12)
             }
             return validInt; // Matches function data type
         }
-        /* DoubleParse()
+        /* IntParse()
    *************************************************
    Purpose: Receives input from user and attempts to convert
    to double. If successful, returns converted int without prompting user.

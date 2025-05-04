@@ -90,7 +90,7 @@ month = GetIntInRange(1,12)
                 }
             } while (!isInRange);
             return userInput;
-        } //functions identically to GetIntInRange, but with doubles
+        }
 
         /* IntParse()
            *************************************************
