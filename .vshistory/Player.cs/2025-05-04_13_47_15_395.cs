@@ -59,13 +59,11 @@ namespace Rashed_Blackjack
             {
                 _bet = value;
             }
-        }       
-        //Constructor
-        public Player(string name, double initialSum)
-        {
-            Name = name;
-            Balance = initialSum;
         }
+        
+
+       
+        //Constructor
       
         //Override operators
         

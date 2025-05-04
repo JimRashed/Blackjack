@@ -11,9 +11,9 @@ namespace Rashed_Blackjack
     {
         //Fields
         private List<Card> _hand;
-        public PlayerStats stats;
-        private double _balance;
-        private double _bet;
+        public Stats stats;
+        public double balance;
+        public double bet;
         private string _name;
         //Properties
         public List<Card> Hand
@@ -38,34 +38,8 @@ namespace Rashed_Blackjack
                 _name = value;
             }
         }
-        public double Balance
-        {
-            get
-            {
-                return _balance;
-            }
-            set
-            {
-                _balance = value;
-            }
-        }
-        public double Bet
-        {
-            get
-            {
-                return _bet;
-            }
-            set
-            {
-                _bet = value;
-            }
-        }       
+       
         //Constructor
-        public Player(string name, double initialSum)
-        {
-            Name = name;
-            Balance = initialSum;
-        }
       
         //Override operators
         
