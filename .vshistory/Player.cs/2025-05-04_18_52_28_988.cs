@@ -15,7 +15,6 @@ namespace Rashed_Blackjack
         private double _balance;
         private double _bet;
         private string _name;
-        private bool _playing;
         //Properties
         public Hand Hand
         {
@@ -61,17 +60,6 @@ namespace Rashed_Blackjack
                 _bet = value;
             }
         }       
-        public bool Playing
-        {
-            get
-            {
-                return _playing;
-            }
-            set
-            {
-                _playing = value;
-            }
-        }
         //Constructor
         public Player(string name, double initialSum)
         {
@@ -79,7 +67,6 @@ namespace Rashed_Blackjack
             Balance = initialSum;
             Hand = new Hand();
             stats = new PlayerStats();
-
         }
         //Override operators
         
