@@ -10,13 +10,13 @@ namespace Rashed_Blackjack
     public class Player
     {
         //Fields
-        private Hand _hand;
+        private List<Card> _hand;
         public PlayerStats stats;
         private double _balance;
         private double _bet;
         private string _name;
         //Properties
-        public Hand Hand
+        public List<Card> Hand
         {
             get
             {
@@ -65,8 +65,6 @@ namespace Rashed_Blackjack
         {
             Name = name;
             Balance = initialSum;
-            Hand = new Hand();
-            stats = new PlayerStats();
         }
       
         //Override operators
