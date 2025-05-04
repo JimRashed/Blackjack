@@ -82,7 +82,6 @@ namespace Rashed_Blackjack
                 game.players.Add(tempPlayer);
                 Console.Clear();
             }
-
             GetPlayerBets();
             InitialDeal();
 
@@ -97,21 +96,13 @@ namespace Rashed_Blackjack
                 game.dealer.Hand.AddCard(game.cardDeck.Draw());
             }
 
-            //Ensure the dealer's second card is hidden
-            game.dealer.Hand.hand[game.dealer.Hand.Size - 1].Hidden = true;
-
-
-            //2 cards dealt to each active player
+            //2 cards dealt to each player
             for (int currentPlayer = 0; currentPlayer<game.players.Count; currentPlayer++)//Scrolls through all players
             {
-                if (game.players[currentPlayer].Playing)
+                for (int currentCard = 0; currentCard<Constants.INITIALCARDAMOUNT; currentCard++) //Scrolls 2 times
                 {
-                    for (int currentCard = 0; currentCard < Constants.INITIALCARDAMOUNT; currentCard++) //Scrolls 2 times
-                    {
-                        game.players[currentPlayer].Hand.AddCard(game.cardDeck.Draw());
-                    }
+                    game.players[currentPlayer].Hand.AddCard(game.cardDeck.Draw());
                 }
-                
             }
             
         }

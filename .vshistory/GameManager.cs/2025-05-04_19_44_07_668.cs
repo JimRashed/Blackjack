@@ -97,9 +97,6 @@ namespace Rashed_Blackjack
                 game.dealer.Hand.AddCard(game.cardDeck.Draw());
             }
 
-            //Ensure the dealer's second card is hidden
-            game.dealer.Hand.hand[game.dealer.Hand.Size - 1].Hidden = true;
-
 
             //2 cards dealt to each active player
             for (int currentPlayer = 0; currentPlayer<game.players.Count; currentPlayer++)//Scrolls through all players

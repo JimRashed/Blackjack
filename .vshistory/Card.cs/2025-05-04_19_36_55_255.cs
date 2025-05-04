@@ -60,7 +60,7 @@ namespace Rashed_Blackjack
             }
         }
         //Constructor
-        public Card(Rank rank, Suit suit, bool hidden = false)
+        public Card(Rank rank, Suit suit)
         {
             Rank = rank;
             Suit = suit;
@@ -73,7 +73,6 @@ namespace Rashed_Blackjack
             {
                 Color = ConsoleColor.Red;
             }
-            Hidden = hidden;
         }
        //public Card (int cardNumber)
 
