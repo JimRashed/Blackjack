@@ -260,7 +260,6 @@ month = GetIntInRange(1,12)
             Console.WriteLine("");
             AnimateWrite(seperator);
             Console.ReadKey();
-            Console.Clear();
         }
 
     }

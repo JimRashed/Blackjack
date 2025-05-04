@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,8 +17,6 @@ namespace Rashed_Blackjack
         public void Start()
         {
             MainMenu();
-            Utility.AnimateWrite("Thank you very much for playing!");
-            Console.ReadKey();
         }
 
         private void MainMenu()
@@ -56,10 +53,6 @@ namespace Rashed_Blackjack
                 }
             } while (!quit);
            
-        }
-        private void GamePlay()
-        {
-
         }
 
         
