@@ -6,7 +6,6 @@
         {
             GameManager manager = new GameManager();
             Utility.PrintHeader();
-            manager.StartGame();
         }
     }
 }

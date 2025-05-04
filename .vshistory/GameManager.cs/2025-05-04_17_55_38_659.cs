@@ -9,11 +9,10 @@ namespace Rashed_Blackjack
     public class GameManager
     {
         private GameState game;
-        private bool gameActive;
 
-        public void Start()
+        public void StartGame()
         {
-            PrintMenu();
+
         }
 
         private void PrintMenu()
@@ -22,8 +21,7 @@ namespace Rashed_Blackjack
             Console.WriteLine("");
             Console.WriteLine("1 - Begin a new round");
             Console.WriteLine("2 - Check the leaderboard");
-            Console.WriteLine("3 - Load a game");
-            Console.WriteLine("4 - Exit Blackjack");
+            Console.WriteLine("3 - Save ")
         }
 
         
