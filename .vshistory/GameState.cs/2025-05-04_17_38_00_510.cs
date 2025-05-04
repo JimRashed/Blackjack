@@ -16,13 +16,8 @@ namespace Rashed_Blackjack
 
         //Constructor
         public GameState()
-        {
-            players = new List<Player>();
-            dealer = new Player("Dealer", 999);
-            cardDeck = new Deck();
-        }
-        
-        //Methods for file loading and saving will happen in this class
+        {}
+        //Another constructor will have to be made for file loading.
         
 
 
