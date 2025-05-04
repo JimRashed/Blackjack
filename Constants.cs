@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Rashed_Blackjack
+{
+    public static class Constants
+    {
+        public const int MINPLAYERCOUNT = 2;
+        public const int MAXPLAYERCOUNT = 4;
+        public const int BLACKJACK = 21;
+    }
+}

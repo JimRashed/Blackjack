@@ -32,7 +32,6 @@ namespace Rashed_Blackjack
                 {
                     for (int i = 0; i < Size; i++)
                     {
-                        
                         if ((int)hand[i].Rank == 11)
                         {
                             valueSum -= 10;
@@ -40,7 +39,7 @@ namespace Rashed_Blackjack
                     }
                 }
                 return valueSum;
-            } //This logic is faulty. come back to it.
+            }
         }
         //Constructors
         public Hand()

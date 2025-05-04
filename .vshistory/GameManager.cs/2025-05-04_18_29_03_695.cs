@@ -43,7 +43,7 @@ namespace Rashed_Blackjack
                     case 1:
                         game = new GameState();
                         gameActive = true;
-                        Setup();
+                        GameSetup();
                         break;
                     case 2:
                         //Implement leaderboard display
@@ -60,7 +60,7 @@ namespace Rashed_Blackjack
            
         }
 
-        private void Setup()
+        private void GameSetup()
         {
             Player tempPlayer;
             int playerCount;

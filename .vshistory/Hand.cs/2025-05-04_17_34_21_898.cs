@@ -8,7 +8,6 @@ namespace Rashed_Blackjack
 {
     public class Hand
     {
-        
         //Fields
         public List<Card> hand;
         //Properties
@@ -26,22 +25,11 @@ namespace Rashed_Blackjack
                 int valueSum = 0;
                 for (int i = 0; i < Size; i++)
                 {
-                    valueSum += (int)hand[i].Rank; //Sums up the value of each card in the hand
-                }
-                if (valueSum > Constants.BLACKJACK) //If the value of the hand is over 21 (blackjack), count aces as 1 (by substracting 10 for every ace in the hand)
-                {
-                    for (int i = 0; i < Size; i++)
-                    {
-                        
-                        if ((int)hand[i].Rank == 11)
-                        {
-                            valueSum -= 10;
-                        }
-                    }
+                    valueSum += (int)hand[i].Rank;
                 }
                 return valueSum;
-            } //This logic is faulty. come back to it.
-        }
+            }
+        } //this property is currently flawed; ace is always 11.
         //Constructors
         public Hand()
         {
