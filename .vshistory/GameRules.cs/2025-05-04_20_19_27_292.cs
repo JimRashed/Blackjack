@@ -14,7 +14,7 @@ namespace Rashed_Blackjack
         }
         public static bool Blackjack(Hand hand)
         {
-            return (hand.Size == 2 && hand.Value == Constants.BLACKJACK);
+
         }
     }
 }

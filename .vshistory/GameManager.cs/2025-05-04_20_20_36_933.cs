@@ -21,12 +21,11 @@ namespace Rashed_Blackjack
 
         public void Start()
         {
-            Utility.AnimateWrite("Welcome to blackjack!");
-            Thread.Sleep(500);
             MainMenu();
             Utility.AnimateWrite("Thank you very much for playing!");
             Console.ReadKey();
         }
+
         private void MainMenu()
         {
             bool quit = false;
@@ -47,6 +46,7 @@ namespace Rashed_Blackjack
                         game = new GameState();
                         gameActive = true;
                         Setup();
+                        GamePlay();
                         break;
                     case 2:
                         //Implement leaderboard display
@@ -62,6 +62,7 @@ namespace Rashed_Blackjack
             } while (!quit);
            
         }
+
         private void Setup()
         {
             Player tempPlayer;
@@ -84,10 +85,10 @@ namespace Rashed_Blackjack
             GetPlayerBets();
             InitialDeal();
             DisplayDealerAndPlayers();
-            PlayPlayerTurns();
 
 
         }//Populates the list of players in GameState, deals 2 cards to everyone
+
         private void InitialDeal()
         {
             //2 cards dealt to the dealer
@@ -158,34 +159,20 @@ namespace Rashed_Blackjack
                 Console.Clear();
                 DisplayDealerAndPlayers();
                 Player currentPlayer = game.players[currentPlayerNumber];
-                do
-                {
-                    Utility.AnimateWrite($"{currentPlayer.Name}, please choose a move.");
-                    Console.WriteLine("");
-                    Console.WriteLine("1 - Hit");
-                    Console.WriteLine("2 - Stand");
-                    Console.WriteLine("3 - Forfeit");
-                    userChoice = Utility.GetIntInRange(1, 3);
 
-                    switch (userChoice)
-                    {
-                        case 1:
-                            Hit(currentPlayer.Hand);
-                            break;
-                        case 2:
-                            break;
-                        case 3:
-                            //I haven't designed this yet...
-                            break;
-                    }
-                } while (userChoice != 2 && !GameRules.Bust(currentPlayer.Hand)); //Menu keeps printing while player does not stand or does not bust
-                
+                Utility.AnimateWrite($"{currentPlayer.Name}, please choose a move.");
+                Console.WriteLine("");
+                Console.WriteLine("1 - Hit");
+                Console.WriteLine("2 - Stand");
+                Console.WriteLine("3 - Forfeit");
+                userChoice = Utility.GetIntInRange(1, 3);
             }
         }
-        private void Hit(Hand playerHand)
+        private void GamePlay()
         {
-            playerHand.hand.Add(game.cardDeck.Draw());
-
+            bool gameOver = false;
+            
+            
         }
 
         

@@ -21,12 +21,11 @@ namespace Rashed_Blackjack
 
         public void Start()
         {
-            Utility.AnimateWrite("Welcome to blackjack!");
-            Thread.Sleep(500);
             MainMenu();
             Utility.AnimateWrite("Thank you very much for playing!");
             Console.ReadKey();
         }
+
         private void MainMenu()
         {
             bool quit = false;
@@ -47,6 +46,7 @@ namespace Rashed_Blackjack
                         game = new GameState();
                         gameActive = true;
                         Setup();
+                        GamePlay();
                         break;
                     case 2:
                         //Implement leaderboard display
@@ -62,6 +62,7 @@ namespace Rashed_Blackjack
             } while (!quit);
            
         }
+
         private void Setup()
         {
             Player tempPlayer;
@@ -88,6 +89,7 @@ namespace Rashed_Blackjack
 
 
         }//Populates the list of players in GameState, deals 2 cards to everyone
+
         private void InitialDeal()
         {
             //2 cards dealt to the dealer
@@ -178,7 +180,7 @@ namespace Rashed_Blackjack
                             //I haven't designed this yet...
                             break;
                     }
-                } while (userChoice != 2 && !GameRules.Bust(currentPlayer.Hand)); //Menu keeps printing while player does not stand or does not bust
+                } while (userChoice != 2 || GameRules.Bust(currentPlayer.Hand)); //Menu keeps printing while player does not stand or does not bust
                 
             }
         }

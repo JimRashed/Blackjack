@@ -21,8 +21,6 @@ namespace Rashed_Blackjack
 
         public void Start()
         {
-            Utility.AnimateWrite("Welcome to blackjack!");
-            Thread.Sleep(500);
             MainMenu();
             Utility.AnimateWrite("Thank you very much for playing!");
             Console.ReadKey();
@@ -178,7 +176,7 @@ namespace Rashed_Blackjack
                             //I haven't designed this yet...
                             break;
                     }
-                } while (userChoice != 2 && !GameRules.Bust(currentPlayer.Hand)); //Menu keeps printing while player does not stand or does not bust
+                } while (userChoice != 2 || GameRules.Bust(currentPlayer.Hand)); //Menu keeps printing while player does not stand or does not bust
                 
             }
         }
