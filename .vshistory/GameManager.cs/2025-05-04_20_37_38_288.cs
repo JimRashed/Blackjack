@@ -155,11 +155,11 @@ namespace Rashed_Blackjack
             int userChoice;
             for (int currentPlayerNumber = 0; currentPlayerNumber<playerCount; currentPlayerNumber++)
             {
+                Console.Clear();
+                DisplayDealerAndPlayers();
                 Player currentPlayer = game.players[currentPlayerNumber];
                 do
                 {
-                    Console.Clear();
-                    DisplayDealerAndPlayers();
                     Utility.AnimateWrite($"{currentPlayer.Name}, please choose a move.");
                     Console.WriteLine("");
                     Console.WriteLine("1 - Hit");
@@ -179,8 +179,7 @@ namespace Rashed_Blackjack
                             break;
                     }
                 } while (userChoice != 2 && !GameRules.Bust(currentPlayer.Hand)); //Menu keeps printing while player does not stand or does not bust
-                Console.Clear();
-                DisplayDealerAndPlayers();
+                
             }
         }
         private void Hit(Hand playerHand)

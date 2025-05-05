@@ -179,8 +179,7 @@ namespace Rashed_Blackjack
                             break;
                     }
                 } while (userChoice != 2 && !GameRules.Bust(currentPlayer.Hand)); //Menu keeps printing while player does not stand or does not bust
-                Console.Clear();
-                DisplayDealerAndPlayers();
+                
             }
         }
         private void Hit(Hand playerHand)
