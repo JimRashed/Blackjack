@@ -144,23 +144,10 @@ namespace Rashed_Blackjack
         }
         private void DisplayDealerAndPlayers()
         {
-            Console.Clear();
-            Console.WriteLine($"{game.dealer.ToString()}");
+            Console.WriteLine(game.dealer.ToString);
             foreach (Player player in game.players)
             {
-                Console.WriteLine(player.ToString());
-            }
-        }
-        private void PlayPlayerTurns()
-        {
-            for (int currentPlayerNumber = 0; currentPlayerNumber<playerCount; currentPlayerNumber++)
-            {
-                Console.Clear();
-                DisplayDealerAndPlayers();
-                Player currentPlayer = game.players[currentPlayerNumber];
-
-                Utility.AnimateWrite
-
+                player.ToString();
             }
         }
         private void GamePlay()

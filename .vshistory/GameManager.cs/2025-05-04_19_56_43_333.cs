@@ -84,7 +84,6 @@ namespace Rashed_Blackjack
 
             GetPlayerBets();
             InitialDeal();
-            DisplayDealerAndPlayers();
 
 
         }//Populates the list of players in GameState, deals 2 cards to everyone
@@ -140,27 +139,6 @@ namespace Rashed_Blackjack
                     Utility.AnimateWrite($"{currentPlayer.Name} does not have the funds to participate.");
                 }
               
-            }
-        }
-        private void DisplayDealerAndPlayers()
-        {
-            Console.Clear();
-            Console.WriteLine($"{game.dealer.ToString()}");
-            foreach (Player player in game.players)
-            {
-                Console.WriteLine(player.ToString());
-            }
-        }
-        private void PlayPlayerTurns()
-        {
-            for (int currentPlayerNumber = 0; currentPlayerNumber<playerCount; currentPlayerNumber++)
-            {
-                Console.Clear();
-                DisplayDealerAndPlayers();
-                Player currentPlayer = game.players[currentPlayerNumber];
-
-                Utility.AnimateWrite
-
             }
         }
         private void GamePlay()

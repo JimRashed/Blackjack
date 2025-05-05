@@ -155,12 +155,7 @@ namespace Rashed_Blackjack
         {
             for (int currentPlayerNumber = 0; currentPlayerNumber<playerCount; currentPlayerNumber++)
             {
-                Console.Clear();
-                DisplayDealerAndPlayers();
                 Player currentPlayer = game.players[currentPlayerNumber];
-
-                Utility.AnimateWrite
-
             }
         }
         private void GamePlay()

@@ -151,18 +151,6 @@ namespace Rashed_Blackjack
                 Console.WriteLine(player.ToString());
             }
         }
-        private void PlayPlayerTurns()
-        {
-            for (int currentPlayerNumber = 0; currentPlayerNumber<playerCount; currentPlayerNumber++)
-            {
-                Console.Clear();
-                DisplayDealerAndPlayers();
-                Player currentPlayer = game.players[currentPlayerNumber];
-
-                Utility.AnimateWrite
-
-            }
-        }
         private void GamePlay()
         {
             bool gameOver = false;
