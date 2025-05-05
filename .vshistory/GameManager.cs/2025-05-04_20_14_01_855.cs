@@ -153,19 +153,14 @@ namespace Rashed_Blackjack
         }
         private void PlayPlayerTurns()
         {
-            int userChoice;
             for (int currentPlayerNumber = 0; currentPlayerNumber<playerCount; currentPlayerNumber++)
             {
                 Console.Clear();
                 DisplayDealerAndPlayers();
                 Player currentPlayer = game.players[currentPlayerNumber];
 
-                Utility.AnimateWrite($"{currentPlayer.Name}, please choose a move.");
-                Console.WriteLine("");
-                Console.WriteLine("1 - Hit");
-                Console.WriteLine("2 - Stand");
-                Console.WriteLine("3 - Forfeit");
-                userChoice = Utility.GetIntInRange(1, 3);
+                Utility.AnimateWrite($"{currentPlayer.Name}")
+
             }
         }
         private void GamePlay()

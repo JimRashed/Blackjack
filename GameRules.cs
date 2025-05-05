@@ -6,8 +6,15 @@ using System.Threading.Tasks;
 
 namespace Rashed_Blackjack
 {
-    public class GameRules
+    public static class GameRules
     {
+        public static bool Bust(Hand hand)
+        {
+            return (hand.Value > Constants.BLACKJACK);
+        }
+        public static bool Blackjack(Hand hand)
+        {
 
+        }
     }
 }
