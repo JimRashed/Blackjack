@@ -70,8 +70,8 @@ namespace Rashed_Blackjack
                 
                 Utility.AnimateWrite($"What will be the name of player {currentPlayer + 1}?");
                 name = Utility.GetNonNullString();
-                Utility.AnimateWrite($"What will be {name}'s starting balance? (must be greater than minimum bet (50)"); //Fix bet logic. Whole lot is wrong...
-                balance = Utility.GetDoubleInRange(Constants.MINBET, 100000);
+                Utility.AnimateWrite($"What will be {name}'s starting balance? (cannot exceed 100000)");
+                balance = Utility.GetDoubleInRange(0, 100000);
                 tempPlayer = new Player(name, balance);
                 game.players.Add(tempPlayer);
                 Console.Clear();
@@ -131,7 +131,7 @@ namespace Rashed_Blackjack
                     do
                     {
                         bet = Utility.GetDoubleInRange(Constants.MINBET, Constants.MAXBET>currentPlayer.Balance?currentPlayer.Balance:Constants.MAXBET); //Gets a bet greater than min bet and lesser than Max bet or player balance, whichever is smaller
-                        validBet = bet <= currentPlayer.Balance;
+                        validBet = bet >= currentPlayer.Balance;
                         if (!validBet)
                         {
                             Utility.AnimateWrite("The bet you attempted to place exceeded your balance");

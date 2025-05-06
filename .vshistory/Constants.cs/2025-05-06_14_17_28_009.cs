@@ -8,7 +8,7 @@ namespace Rashed_Blackjack
 {
     public static class Constants
     {
-        public const int MINPLAYERCOUNT = 1;
+        public const int MINPLAYERCOUNT = 2;
         public const int MAXPLAYERCOUNT = 4;
         public const int BLACKJACK = 21;
         public const int INITIALCARDAMOUNT = 2;
