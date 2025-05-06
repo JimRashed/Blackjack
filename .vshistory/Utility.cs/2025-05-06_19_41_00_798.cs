@@ -76,7 +76,7 @@ month = GetIntInRange(1,12)
             } while (!isInRange);
             return userInput;
         }
-        public static double GetDoubleInRange(double minValue, double maxValue, string inputTooLowMessage = "Your input was not within a reasonable range: too low", string inputTooHighMessage = "Your input was not within a reasonable range: too high")
+        public static double GetDoubleInRange(double minValue, double maxValue, string message)
         {
             bool isInRange = false;
             double userInput;
@@ -84,15 +84,10 @@ month = GetIntInRange(1,12)
             {
                 userInput = DoubleParse(Console.ReadLine());
                 isInRange = (userInput >= minValue && userInput <= maxValue);
-                if (userInput < minValue)
+                if (!isInRange)
                 {
-                    Console.WriteLine(inputTooLowMessage);
+                    Console.WriteLine("Your input was not within a reasonable range.");
                 }
-                else if (userInput > maxValue)
-                {
-                    Console.WriteLine(inputTooHighMessage)     ;
-                }
-                
             } while (!isInRange);
             return userInput;
         } //functions identically to GetIntInRange, but with doubles

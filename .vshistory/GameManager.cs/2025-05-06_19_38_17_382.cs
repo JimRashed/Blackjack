@@ -130,7 +130,7 @@ namespace Rashed_Blackjack
                     Utility.AnimateWrite($"{currentPlayer.Name}, please enter your bet for this round");
                     do
                     {
-                        bet = Utility.GetDoubleInRange(Constants.MINBET, Constants.MAXBET>currentPlayer.Balance?currentPlayer.Balance:Constants.MAXBET); //Gets a bet greater than min bet and lesser than Max bet or player balance, whichever is smaller. ADJUST ERROR MESSAGE
+                        bet = Utility.GetDoubleInRange(Constants.MINBET, Constants.MAXBET>currentPlayer.Balance?currentPlayer.Balance:Constants.MAXBET); //Gets a bet greater than min bet and lesser than Max bet or player balance, whichever is smaller
                         validBet = bet <= currentPlayer.Balance;
                         if (!validBet)
                         {
