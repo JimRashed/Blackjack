@@ -85,9 +85,8 @@ namespace Rashed_Blackjack
         //Override operators
         public override string ToString()
         {
-            
             string player;
-            player = $"{Name} Balance:{Balance} \n{Hand.ToString()}\nCurrent hand value: {Hand.Value}\n";
+            player = $"{Name} Balance:{Balance} \n{Hand.ToString()}\nCurrent hand value: {Hand.Value}";
 
             return player;
         }

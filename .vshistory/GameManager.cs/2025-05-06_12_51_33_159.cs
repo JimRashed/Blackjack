@@ -17,6 +17,8 @@ namespace Rashed_Blackjack
         private GameState game;
         private bool gameActive;
         int playerCount;
+
+
         public void Start()
         {
             Utility.AnimateWrite("Welcome to blackjack!");
@@ -117,7 +119,7 @@ namespace Rashed_Blackjack
         }
         private void GetPlayerBets()
         {
-            bool validBet = false;
+            bool validBet;
             double bet;
             for (int currentPlayerNumber = 0; currentPlayerNumber < playerCount; currentPlayerNumber++)
             {
@@ -130,17 +132,7 @@ namespace Rashed_Blackjack
                 if (currentPlayer.Playing) //Checks if player is playing before prompting for bet
                 {
                     Utility.AnimateWrite($"{currentPlayer.Name}, please enter your bet for this round");
-                    do
-                    {
-                        bet = Utility.GetDoubleInRange(Constants.MINBET, Constants.MAXBET);
-                        validBet = bet >= currentPlayer.Balance;
-                        if (!validBet)
-                        {
-                            Utility.AnimateWrite("The bet you attempted to place exceeded your balance");
-                        }
-                    } while (!validBet);
-                    currentPlayer.Balance -= bet; //Removes the bet from the player's balance
-                    currentPlayer.Bet = bet; //adds the bet to the player's bet amount
+                    currentPlayer.Bet = Utility.GetDoubleInRange(Constants.MINBET, Constants.MAXBET);
                 }
                 else
                 {

@@ -125,7 +125,7 @@ namespace Rashed_Blackjack
             }
             else
             {
-                return "[Hidden]";
+                return "Hidden";
             }
             
         }

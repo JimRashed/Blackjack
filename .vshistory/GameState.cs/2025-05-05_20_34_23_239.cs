@@ -13,6 +13,9 @@ namespace Rashed_Blackjack
         public Player dealer;
         public Deck cardDeck;
         public int turn;
+        public double bets;
+
+
         //Constructor
         public GameState()
         {

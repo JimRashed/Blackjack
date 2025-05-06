@@ -133,14 +133,9 @@ namespace Rashed_Blackjack
                     do
                     {
                         bet = Utility.GetDoubleInRange(Constants.MINBET, Constants.MAXBET);
-                        validBet = bet >= currentPlayer.Balance;
-                        if (!validBet)
-                        {
-                            Utility.AnimateWrite("The bet you attempted to place exceeded your balance");
-                        }
+                        validBet = bet
                     } while (!validBet);
-                    currentPlayer.Balance -= bet; //Removes the bet from the player's balance
-                    currentPlayer.Bet = bet; //adds the bet to the player's bet amount
+                    
                 }
                 else
                 {
