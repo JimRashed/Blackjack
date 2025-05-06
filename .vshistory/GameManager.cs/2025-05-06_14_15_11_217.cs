@@ -12,6 +12,8 @@ namespace Rashed_Blackjack
     {
         const int MINMENUCHOICE = 1;
         const int MAXMENUCHOICE = 4;
+        const int MINPLAYERCOUNT = 2;
+        const int MAXPLAYERCOUNT = 4;
         private GameState game;
         private bool gameActive;
         int playerCount;
@@ -64,7 +66,7 @@ namespace Rashed_Blackjack
             string name;
             double balance;
             Utility.AnimateWrite("How many players would you like to include in the game? (2-4)"); 
-            playerCount = Utility.GetIntInRange(Constants.MINPLAYERCOUNT, Constants.MAXPLAYERCOUNT);
+            playerCount = Utility.GetIntInRange(MINPLAYERCOUNT, MAXPLAYERCOUNT);
             for (int currentPlayer = 0; currentPlayer< playerCount; currentPlayer++)
             {
                 
@@ -130,7 +132,7 @@ namespace Rashed_Blackjack
                     Utility.AnimateWrite($"{currentPlayer.Name}, please enter your bet for this round");
                     do
                     {
-                        bet = Utility.GetDoubleInRange(Constants.MINBET, Constants.MAXBET>currentPlayer.Balance?currentPlayer.Balance:Constants.MAXBET); //Gets a bet greater than min bet and lesser than Max bet or player balance, whichever is smaller
+                        bet = Utility.GetDoubleInRange(Constants.MINBET, Constants.MAXBET>currentPlayer.Balance?currentPlayer.Balance:Constants.MAXBET);
                         validBet = bet >= currentPlayer.Balance;
                         if (!validBet)
                         {
