@@ -214,13 +214,7 @@ namespace Rashed_Blackjack
                             }
                                 break;
                     }
-                    if (GameRules.Bust(currentPlayer.Hand))
-                    {
-                        Utility.AnimateWrite($"{currentPlayer.Name} busts.");
-                        Console.ReadKey();
-                    }
                 } while (userChoice != Constants.STAND && !GameRules.Bust(currentPlayer.Hand)); //Menu keeps printing while player does not stand or does not bust
-            
                 Console.Clear();
                 DisplayDealerAndPlayers();
             }

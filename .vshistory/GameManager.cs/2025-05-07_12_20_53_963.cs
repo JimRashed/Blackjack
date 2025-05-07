@@ -77,7 +77,6 @@ namespace Rashed_Blackjack
                 game.players.Add(tempPlayer);
                 Console.Clear();
             }
-            NewRound();
 
 
         }//Populates the list of players in GameState, deals 2 cards to everyone
@@ -214,13 +213,7 @@ namespace Rashed_Blackjack
                             }
                                 break;
                     }
-                    if (GameRules.Bust(currentPlayer.Hand))
-                    {
-                        Utility.AnimateWrite($"{currentPlayer.Name} busts.");
-                        Console.ReadKey();
-                    }
                 } while (userChoice != Constants.STAND && !GameRules.Bust(currentPlayer.Hand)); //Menu keeps printing while player does not stand or does not bust
-            
                 Console.Clear();
                 DisplayDealerAndPlayers();
             }
@@ -233,23 +226,13 @@ namespace Rashed_Blackjack
             DisplayDealerAndPlayers();
             Utility.AnimateWrite("The dealer reveals his second card.");
             Console.ReadKey();
-            if (!GameRules.Blackjack(dealer.Hand))
+            while (dealer.Hand.Value < Constants.DEALERMUSTHITLIMIT)
             {
-                while (dealer.Hand.Value < Constants.DEALERMUSTHITLIMIT)
-                {
-                    Hit(dealer.Hand);
-                    Console.Clear();
-                    DisplayDealerAndPlayers();
-                    Utility.AnimateWrite("The dealer hits.");
-                    Console.ReadKey();
-                    if (GameRules.Bust(dealer.Hand))
-                    {
-                        Console.Clear();
-                        DisplayDealerAndPlayers();
-                        Utility.AnimateWrite("The dealer busts.");
-                        Console.ReadKey();
-                    }
-                }
+                Hit(dealer.Hand);
+                Console.Clear();
+                DisplayDealerAndPlayers();
+                Utility.AnimateWrite("The dealer hits.");
+                Console.ReadKey();
             }
             Console.Clear();
             DisplayDealerAndPlayers();
