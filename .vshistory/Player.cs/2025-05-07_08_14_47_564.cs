@@ -87,19 +87,18 @@ namespace Rashed_Blackjack
 
         }
         //Override operators
-        public override string ToString() //Adjust output to be more descriptive. Say BUST if they get a bust.
+        public override string ToString()
         {
             if (!dealer)
             {
                 string player;
-                player = $"{Name} Balance:{Balance} \nCurrent bet: {Bet.ToString("C")}\n Hand: {Hand.ToString()}\n Current hand value: {Hand.Value}\n";
+                player = $"{Name} Balance:{Balance} \nCurrent bet: {Bet.ToString("C")}\n Hand: {Hand.ToString()}\nCurrent hand value: {Hand.Value}\n";
 
                 return player;
             }
             else
             {
                 string dealer;
-                
                 dealer = $"Dealer \n Hand:{Hand.ToString()}\n Current hand value: {Hand.Value} \n";
                 return dealer;
             }

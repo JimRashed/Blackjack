@@ -191,7 +191,7 @@ namespace Rashed_Blackjack
                                 currentPlayer.Balance -= currentPlayer.Bet; //Removes the Bet from the player's balance
                                 currentPlayer.Bet *= 2; //Doubles the current bet
                                 Hit(currentPlayer.Hand); //Hits once
-                                userChoice = Constants.STAND; //Forces turn to end
+                                userChoice = 2; //Forces turn to end
 
                             }
                             else
@@ -201,7 +201,7 @@ namespace Rashed_Blackjack
                             }
                                 break;
                     }
-                } while (userChoice != Constants.STAND && !GameRules.Bust(currentPlayer.Hand)); //Menu keeps printing while player does not stand or does not bust
+                } while (userChoice != 2 && !GameRules.Bust(currentPlayer.Hand)); //Menu keeps printing while player does not stand or does not bust
                 Console.Clear();
                 DisplayDealerAndPlayers();
             }

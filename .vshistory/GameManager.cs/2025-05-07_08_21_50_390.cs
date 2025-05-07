@@ -182,26 +182,12 @@ namespace Rashed_Blackjack
                             Hit(currentPlayer.Hand);
                             break;
                         case 2:
-                            //Stands
                             break;
                         case 3:
-                            if (currentPlayer.Balance >= currentPlayer.Bet) //Checks if player has enough in their balance to double their bet
-                            {
-                                //Double down
-                                currentPlayer.Balance -= currentPlayer.Bet; //Removes the Bet from the player's balance
-                                currentPlayer.Bet *= 2; //Doubles the current bet
-                                Hit(currentPlayer.Hand); //Hits once
-                                userChoice = Constants.STAND; //Forces turn to end
-
-                            }
-                            else
-                            {
-                                Utility.AnimateWrite("You do not have the funds to double down");
-                                Thread.Sleep(1000);
-                            }
-                                break;
+                            //I haven't designed this yet...
+                            break;
                     }
-                } while (userChoice != Constants.STAND && !GameRules.Bust(currentPlayer.Hand)); //Menu keeps printing while player does not stand or does not bust
+                } while (userChoice != 2 && !GameRules.Bust(currentPlayer.Hand)); //Menu keeps printing while player does not stand or does not bust
                 Console.Clear();
                 DisplayDealerAndPlayers();
             }
@@ -211,7 +197,6 @@ namespace Rashed_Blackjack
             playerHand.hand.Add(game.cardDeck.Draw());
 
         }
-        
 
         
     }

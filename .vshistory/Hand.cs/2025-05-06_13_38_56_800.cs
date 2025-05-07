@@ -23,8 +23,6 @@ namespace Rashed_Blackjack
         {
             get
             {
-                //Add logic to hide value if a card is hidden
-                
                 int valueSum = 0;
                 for (int i = 0; i < Size; i++)
                 {
