@@ -275,43 +275,34 @@ namespace Rashed_Blackjack
         }
         private void PlayDealerTurn(Player dealer)
         {
-            if (!GameRules.NoOnePlaying(game.players))
+            dealer.Hand.hand[Constants.SECONDCARD].Hidden = false; //Dealer reveals his second card
+            bool stand = false;
+            Console.Clear();
+            DisplayDealerAndPlayers();
+            Utility.AnimateWrite("Dealer's turn!");
+            Utility.AnimateWrite("The dealer reveals his second card.");
+            Console.ReadKey();
+            if (!GameRules.Blackjack(dealer.Hand))
             {
-                dealer.Hand.hand[Constants.SECONDCARD].Hidden = false; //Dealer reveals his second card
-                bool stand = false;
-                Console.Clear();
-                DisplayDealerAndPlayers();
-                Utility.AnimateWrite("Dealer's turn!");
-                Utility.AnimateWrite("The dealer reveals his second card.");
-                Console.ReadKey();
-                if (!GameRules.Blackjack(dealer.Hand))
+                while (dealer.Hand.Value < Constants.DEALERMUSTHITLIMIT)
                 {
-                    while (dealer.Hand.Value < Constants.DEALERMUSTHITLIMIT)
+                    Hit(dealer.Hand);
+                    Console.Clear();
+                    DisplayDealerAndPlayers();
+                    Utility.AnimateWrite("The dealer hits.");
+                    Console.ReadKey();
+                    if (GameRules.Bust(dealer.Hand))
                     {
-                        Hit(dealer.Hand);
                         Console.Clear();
                         DisplayDealerAndPlayers();
-                        Utility.AnimateWrite("The dealer hits.");
+                        Utility.AnimateWrite("The dealer busts.");
                         Console.ReadKey();
-                        if (GameRules.Bust(dealer.Hand))
-                        {
-                            Console.Clear();
-                            DisplayDealerAndPlayers();
-                            Utility.AnimateWrite("The dealer busts.");
-                            Console.ReadKey();
-                        }
                     }
                 }
-                ClearAndDisplay();
-                Utility.AnimateWrite("The dealer stands.");
-                Console.ReadKey();
             }
-            else
-            {
-                ClearAndDisplay();
-                Utility.AnimateWrite("No players are actively playing. Dealer turn is skipped");
-                Console.ReadKey();
-            }
+            ClearAndDisplay();
+            Utility.AnimateWrite("The dealer stands.");
+            Console.ReadKey();
             
 
 
