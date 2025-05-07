@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
 using System.Linq;
-using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +12,7 @@ namespace Rashed_Blackjack
     public class GameManager
     {
         const int MINMENUCHOICE = 1;
-        const int MAXMENUCHOICE = 5;
+        const int MAXMENUCHOICE = 4;
         private GameState game;
         private bool gameActive;
         int playerCount;
@@ -76,7 +75,7 @@ namespace Rashed_Blackjack
                 
                 Utility.AnimateWrite($"What will be the name of player {currentPlayer + 1}?");
                 name = Utility.GetNonNullString();
-                Utility.AnimateWrite($"What will be {name}'s starting balance? (must be greater than minimum bet (50)"); //Make this more descriptive
+                Utility.AnimateWrite($"What will be {name}'s starting balance? (must be greater than minimum bet (50)"); //Fix bet logic. Whole lot is wrong...
                 balance = Utility.GetDoubleInRange(Constants.MINBET, 100000);
                 tempPlayer = new Player(name, balance);
                 game.players.Add(tempPlayer);
@@ -94,9 +93,6 @@ namespace Rashed_Blackjack
             PlayPlayerTurns();
             PlayDealerTurn(game.dealer);
             Outcome();
-            EndRound();
-
-
         } //After each round, add cards back to deck, then shuffle 3 times.
         private void InitialDeal()
         {
@@ -314,7 +310,6 @@ namespace Rashed_Blackjack
                         default:
                             break;
                     }
-                    Console.ReadKey();
                 }
                
             }
@@ -326,27 +321,7 @@ namespace Rashed_Blackjack
         }
         private void EndRound()
         {
-            Card cardToAdd;
-            foreach (Player player in game.players) //Empties all player's hands back into the deck
-            {
-                for (int currentCard = 0; currentCard < player.Hand.hand.Count; currentCard++)
-                {
-                    cardToAdd = player.Hand.RemoveCard();
-                    if (cardToAdd != null)
-                    {
-                        game.cardDeck.PlaceOnTop(cardToAdd);
-                    }
-                }
-            }
-            for (int currentCard = 0; currentCard < game.dealer.Hand.hand.Count; currentCard++) //Empties all the dealer's card into the deck
-            {
-                cardToAdd = game.dealer.Hand.RemoveCard();
-                if (cardToAdd != null)
-                {
-                    game.cardDeck.PlaceOnTop(cardToAdd);
-                }
-            }
-            game.cardDeck.Shuffle(3);
+            
         }
         
 

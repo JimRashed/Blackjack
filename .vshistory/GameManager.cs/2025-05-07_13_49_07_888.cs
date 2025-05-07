@@ -13,7 +13,7 @@ namespace Rashed_Blackjack
     public class GameManager
     {
         const int MINMENUCHOICE = 1;
-        const int MAXMENUCHOICE = 5;
+        const int MAXMENUCHOICE = 4;
         private GameState game;
         private bool gameActive;
         int playerCount;
@@ -94,8 +94,6 @@ namespace Rashed_Blackjack
             PlayPlayerTurns();
             PlayDealerTurn(game.dealer);
             Outcome();
-            EndRound();
-
 
         } //After each round, add cards back to deck, then shuffle 3 times.
         private void InitialDeal()
@@ -314,7 +312,6 @@ namespace Rashed_Blackjack
                         default:
                             break;
                     }
-                    Console.ReadKey();
                 }
                
             }

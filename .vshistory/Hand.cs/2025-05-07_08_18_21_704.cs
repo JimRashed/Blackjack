@@ -122,20 +122,12 @@ namespace Rashed_Blackjack
           return tempCard
           ************************************************* 
           */
-        public Card RemoveCard() //Removes the last card in the hand
+        public Card RemoveCard() //Card to remove is unspecified in instructions, so I chose to remove the last one.
         {
-            if (hand.Count != 0)
-            {
-                Card tempCard = hand[hand.Count - 1];
-                hand.RemoveAt(hand.Count - 1);
-                this.Sort();
-                return tempCard;
-            }
-            else
-            {
-                Console.WriteLine("Attempted to remove a card from an empty hand!");
-                return null;
-            }
+            Card tempCard = hand[hand.Count - 1];
+            hand.RemoveAt(hand.Count - 1);
+            this.Sort();
+            return tempCard;
         }
         /*  RemoveCard() 
           *************************************************

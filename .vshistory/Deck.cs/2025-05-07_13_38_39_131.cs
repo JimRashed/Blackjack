@@ -188,26 +188,22 @@ namespace Rashed_Blackjack
                 set cardList[currentCard] to tempCard
           ************************************************* 
           */
-        public void Shuffle(int shuffleTimes = 1)
+        public void Shuffle()
         {
             Card tempCard;
             int targetedIndex;
-            for (int i = 0; i < shuffleTimes; i++)
+            for (int currentCard = 0; currentCard < cardList.Count; currentCard++)
             {
-                for (int currentCard = 0; currentCard < cardList.Count; currentCard++)
-                {
-                    //Switches current card with a card at a random index greater than itself (no need to shuffle twice)
-                    targetedIndex = random.Next(currentCard, cardList.Count);
+                //Switches current card with a card at a random index greater than itself (no need to shuffle twice)
+                targetedIndex = random.Next(currentCard, cardList.Count);
 
-                    tempCard = cardList[targetedIndex]; //Store card
+                tempCard = cardList[targetedIndex]; //Store card
 
-                    cardList[targetedIndex] = cardList[currentCard]; //Replace card
+                cardList[targetedIndex] = cardList[currentCard]; //Replace card
 
-                    cardList[currentCard] = tempCard; //Switch card with stored card
+                cardList[currentCard] = tempCard; //Switch card with stored card
 
-                }
             }
-            
         }
     }
 }
