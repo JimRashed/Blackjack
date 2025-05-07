@@ -17,6 +17,7 @@ namespace Rashed_Blackjack
         {
             return (hand.Size == Constants.BLACKJACKCARDAMOUNT && hand.Value == Constants.BLACKJACK);
         }
+        
         public static string Outcome(Player player, Player dealer)
         {
             if (Bust(player.Hand)){
@@ -45,18 +46,6 @@ namespace Rashed_Blackjack
             {
                 return "Tie";
             }
-        }
-        public static bool NoOnePlaying(List<Player> players)
-        {
-            bool noOnePlaying = true;
-            for (int currentPlayer = 0; currentPlayer< players.Count; currentPlayer++)
-            {
-                if (players[currentPlayer].Playing)
-                {
-                    noOnePlaying = false;
-                }
-            }
-            return noOnePlaying;
         }
         
          

@@ -46,17 +46,9 @@ namespace Rashed_Blackjack
                 return "Tie";
             }
         }
-        public static bool NoOnePlaying(List<Player> players)
+        public static bool AllPlayersForfeited(List<Player> players)
         {
-            bool noOnePlaying = true;
-            for (int currentPlayer = 0; currentPlayer< players.Count; currentPlayer++)
-            {
-                if (players[currentPlayer].Playing)
-                {
-                    noOnePlaying = false;
-                }
-            }
-            return noOnePlaying;
+
         }
         
          

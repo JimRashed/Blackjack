@@ -253,7 +253,7 @@ namespace Rashed_Blackjack
                                 }
                                 break;
                             case 4:
-                                ClearAndDisplay(); //Forfeits
+                                ClearAndDisplay();
                                 Utility.AnimateWrite($"{currentPlayer.Name} forfeits. Half their bet is lost.");
                                 currentPlayer.Balance += currentPlayer.Bet / 2;
                                 currentPlayer.Bet = 0;
@@ -268,7 +268,7 @@ namespace Rashed_Blackjack
                             Utility.AnimateWrite($"{currentPlayer.Name} busts.");
                             Console.ReadKey();
                         }
-                    } while (currentPlayer.Playing == true && userChoice != Constants.STAND && !GameRules.Bust(currentPlayer.Hand)); //Menu keeps printing while player does not stand or does not bust
+                    } while (currentPlayer.Playing == false && userChoice != Constants.STAND && !GameRules.Bust(currentPlayer.Hand)); //Menu keeps printing while player does not stand or does not bust
                 }
                 ClearAndDisplay();
             }
