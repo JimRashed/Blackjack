@@ -180,18 +180,14 @@ namespace Rashed_Blackjack
                     switch (userChoice)
                     {
                         case 1:
-                            Hit(currentPlayer.Hand);
+                            Hit(currentPlayer.Hand)
                             Console.Clear();
                             DisplayDealerAndPlayers();
                             Utility.AnimateWrite($"{currentPlayer.Name} hits.");
-                            Console.ReadKey();
+                            Thread.Sleep(1000);
                             break;
                         case 2:
                             //Stands
-                            Console.Clear();
-                            DisplayDealerAndPlayers();
-                            Utility.AnimateWrite($"{currentPlayer.Name} stands.");
-                            Console.ReadKey();
                             break;
                         case 3:
                             if (currentPlayer.Balance >= currentPlayer.Bet) //Checks if player has enough in their balance to double their bet
@@ -206,7 +202,7 @@ namespace Rashed_Blackjack
                             else
                             {
                                 Utility.AnimateWrite("You do not have the funds to double down");
-                                Console.ReadKey();
+                                Thread.Sleep(1000);
                             }
                                 break;
                     }
@@ -221,20 +217,19 @@ namespace Rashed_Blackjack
             bool stand = false;
             Console.Clear();
             DisplayDealerAndPlayers();
-            Utility.AnimateWrite("The dealer reveals his second card.");
-            Console.ReadKey();
+            Thread.Sleep(1000);
             while (dealer.Hand.Value < Constants.DEALERMUSTHITLIMIT)
             {
                 Hit(dealer.Hand);
                 Console.Clear();
                 DisplayDealerAndPlayers();
                 Utility.AnimateWrite("The dealer hits.");
-                Console.ReadKey();
+                Thread.Sleep(1000);
             }
             Console.Clear();
             DisplayDealerAndPlayers();
             Utility.AnimateWrite("The dealer stands.");
-            Console.ReadKey();
+            Thread.Sleep(1000);
             
 
 

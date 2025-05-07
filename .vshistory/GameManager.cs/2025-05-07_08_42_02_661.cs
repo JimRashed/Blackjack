@@ -229,12 +229,12 @@ namespace Rashed_Blackjack
                 Console.Clear();
                 DisplayDealerAndPlayers();
                 Utility.AnimateWrite("The dealer hits.");
-                Console.ReadKey();
+                Thread.Sleep(1000);
             }
             Console.Clear();
             DisplayDealerAndPlayers();
             Utility.AnimateWrite("The dealer stands.");
-            Console.ReadKey();
+            Thread.Sleep(1000);
             
 
 
