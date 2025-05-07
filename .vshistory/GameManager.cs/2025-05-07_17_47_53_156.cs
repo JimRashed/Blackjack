@@ -108,7 +108,6 @@ namespace Rashed_Blackjack
             PlayDealerTurn(game.dealer);
             Outcome();
             EndRound();
-            Summary();
 
 
 
@@ -405,11 +404,8 @@ namespace Rashed_Blackjack
         }
         private void Summary()
         {
-            if(Utility.GetUserConsent("Would you like to see the actions taken this round? (Y/N)", true))
-            {
-                Utility.AnimateWrite(stats.ToString());
-                Console.ReadKey();
-            }
+            Utility.AnimateWrite("Would you like to see a summary of actions taken this round? (Y/N)");
+            bool userChoice = Utility.GetUserConsent()
         }
         
 

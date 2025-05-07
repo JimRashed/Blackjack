@@ -266,14 +266,7 @@ month = GetIntInRange(1,12)
                 isBoolean = (userInput.ToUpper() == "Y" || userInput.ToUpper() == "YES" || userInput.ToUpper() == "N" || userInput.ToUpper() == "NO");
                 if (!isBoolean)
                 {
-                    if (Animate)
-                    {
-                        AnimateWrite("Invalid input. Please try again.");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Invalid input. Please try again.");
-                    }
+                    Console.WriteLine("Invalid input. Please try again.");
                 }
             } while (!isBoolean);
 
