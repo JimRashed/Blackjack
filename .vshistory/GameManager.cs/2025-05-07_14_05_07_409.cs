@@ -345,7 +345,7 @@ namespace Rashed_Blackjack
             Card cardToAdd;
             foreach (Player player in game.players) //Empties all player's hands back into the deck
             {
-                for (int currentCard = player.Hand.hand.Count; currentCard > 0; currentCard--)
+                for (int currentCard = 0; currentCard < player.Hand.hand.Count; currentCard++)
                 {
                     cardToAdd = player.Hand.RemoveCard();
                     if (cardToAdd != null)
@@ -354,7 +354,7 @@ namespace Rashed_Blackjack
                     }
                 }
             }
-            for (int currentCard = game.dealer.Hand.hand.Count; currentCard > 0; currentCard--) //Empties all the dealer's card into the deck
+            for (int currentCard = 0; currentCard < game.dealer.Hand.hand.Count; currentCard++) //Empties all the dealer's card into the deck
             {
                 cardToAdd = game.dealer.Hand.RemoveCard();
                 if (cardToAdd != null)
