@@ -172,7 +172,6 @@ namespace Rashed_Blackjack
                 else
                 {
                     Utility.AnimateWrite($"{currentPlayer.Name} does not have the funds to participate.");
-                    Console.ReadKey();
                 }
               
             }
@@ -334,7 +333,6 @@ namespace Rashed_Blackjack
                         default:
                             break;
                     }
-                    currentPlayer.Bet = 0; //Resets the player's bet for the next round
                     Console.ReadKey();
                     ClearAndDisplay();
                     

@@ -143,7 +143,6 @@ namespace Rashed_Blackjack
             double bet;
             for (int currentPlayerNumber = 0; currentPlayerNumber < playerCount; currentPlayerNumber++)
             {
-                Console.Clear();
                 Player currentPlayer = game.players[currentPlayerNumber];
                 currentPlayer.Playing = true; //Resets player playing status in case balance has changed
                 if (currentPlayer.Balance < Constants.MINBET) //Checks if player has a sufficient balance to participate
@@ -153,7 +152,7 @@ namespace Rashed_Blackjack
                 
                 if (currentPlayer.Playing) //Checks if player is playing before prompting for bet
                 {
-                    Utility.AnimateWrite($"Current balance: {currentPlayer.Balance.ToString("C")}");
+                    Utility.AnimateWrite($"Current balance: {currentPlayer.Balance}");
                     Utility.AnimateWrite($"{currentPlayer.Name}, please enter your bet for this round");
                     do
                     {
@@ -172,7 +171,6 @@ namespace Rashed_Blackjack
                 else
                 {
                     Utility.AnimateWrite($"{currentPlayer.Name} does not have the funds to participate.");
-                    Console.ReadKey();
                 }
               
             }
@@ -334,10 +332,7 @@ namespace Rashed_Blackjack
                         default:
                             break;
                     }
-                    currentPlayer.Bet = 0; //Resets the player's bet for the next round
                     Console.ReadKey();
-                    ClearAndDisplay();
-                    
                 }
                
             }

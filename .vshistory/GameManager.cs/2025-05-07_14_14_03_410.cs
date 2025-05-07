@@ -172,7 +172,6 @@ namespace Rashed_Blackjack
                 else
                 {
                     Utility.AnimateWrite($"{currentPlayer.Name} does not have the funds to participate.");
-                    Console.ReadKey();
                 }
               
             }

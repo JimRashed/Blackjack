@@ -342,10 +342,6 @@ month = GetIntInRange(1,12)
             Console.ReadKey();
             Console.Clear();
         }
-        public static void PrintGameHeader()
-        {
-
-        }
 
     }
 }
