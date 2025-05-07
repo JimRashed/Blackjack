@@ -21,7 +21,7 @@ namespace Rashed_Blackjack
         public static string Outcome(Player player, Player dealer)
         {
             if (Bust(player.Hand)){
-                return "Bust";
+                return "Loss";
             }
             else if (Bust(dealer.Hand))
             {
@@ -47,7 +47,21 @@ namespace Rashed_Blackjack
                 return "Tie";
             }
         }
-        
+        public static double Payout(Player player, Player dealer)
+        {
+            switch (Outcome(player, dealer))
+            {
+                case "Win":
+                    player.Balance += (player.Bet * 2); //Adds 2x the player's bet to their balance
+                    player.Bet = 0; //Clear the player's bet
+                    break;
+                case "Blackjack":
+                    player.Balance += (player.Bet * 2.5)//Adds 2.5X the player's bet to their balance
+                    break;
+                case "Loss":
+                    
+            }
+        }
          
         
     }

@@ -18,7 +18,5 @@ namespace Rashed_Blackjack
         public const int SECONDCARD = 1;
         public const int DEALERMUSTHITLIMIT = 17;
         public const int BLACKJACKCARDAMOUNT = 2;
-        public const double WINPAYOUTRATIO = 2;
-        public const double BLACKJACKPAYOUTRATIO = 2.5;
     }
 }
