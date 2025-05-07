@@ -33,7 +33,7 @@ namespace Rashed_Blackjack
         }
 
         //Constructors
-        public Deck() 
+        public Deck()
         {
             cardList = new List<Card>(); //Creates a full, shuffled deck of 52 cards.
             Card tempCard;

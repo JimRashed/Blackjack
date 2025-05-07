@@ -319,10 +319,6 @@ namespace Rashed_Blackjack
             playerHand.hand.Add(game.cardDeck.Draw());
 
         }
-        private void EndRound()
-        {
-            
-        }
         
 
         
