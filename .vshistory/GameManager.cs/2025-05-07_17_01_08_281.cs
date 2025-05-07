@@ -268,7 +268,8 @@ namespace Rashed_Blackjack
                             Utility.AnimateWrite($"{currentPlayer.Name} busts.");
                             Console.ReadKey();
                         }
-                    } while (currentPlayer.Playing == false && userChoice != Constants.STAND && !GameRules.Bust(currentPlayer.Hand)); //Menu keeps printing while player does not stand or does not bust
+                    } while (currentPlayer.Playing == false || userChoice != Constants.STAND && !GameRules.Bust(currentPlayer.Hand)); //Menu keeps printing while player does not stand or does not bust
+                    //Silly goofy little mistake. Check forfeiting logic -- I entered a perpetual loop. Please help me.
                 }
                 ClearAndDisplay();
             }
