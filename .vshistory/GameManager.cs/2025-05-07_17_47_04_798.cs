@@ -404,8 +404,7 @@ namespace Rashed_Blackjack
         }
         private void Summary()
         {
-            Utility.AnimateWrite("Would you like to see a summary of actions taken this round? (Y/N)");
-            bool userChoice = Utility.GetUserConsent()
+
         }
         
 

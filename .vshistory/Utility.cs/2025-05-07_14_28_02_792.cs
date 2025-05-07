@@ -247,21 +247,14 @@ month = GetIntInRange(1,12)
           return (uppercase userInput =  Y or Yes)
           ************************************************* 
           */
-        public static bool GetUserConsent(string message, bool Animate = false)
+        public static bool GetUserConsent(string message)
         {
             bool isBoolean = false;
             string userInput;
 
             do
             {
-                if (Animate)
-                {
-                    AnimateWrite(message);
-                }
-                else
-                {
-                    Console.WriteLine(message);
-                }
+                Console.WriteLine(message);
                 userInput = GetNonNullString();
                 isBoolean = (userInput.ToUpper() == "Y" || userInput.ToUpper() == "YES" || userInput.ToUpper() == "N" || userInput.ToUpper() == "NO");
                 if (!isBoolean)
