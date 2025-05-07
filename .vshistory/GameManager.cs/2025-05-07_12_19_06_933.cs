@@ -77,6 +77,12 @@ namespace Rashed_Blackjack
                 Console.Clear();
             }
 
+            GetPlayerBets();
+            InitialDeal();
+            DisplayDealerAndPlayers();
+            PlayPlayerTurns();
+            PlayDealerTurn(game.dealer);
+
 
         }//Populates the list of players in GameState, deals 2 cards to everyone
         private void NewRound()

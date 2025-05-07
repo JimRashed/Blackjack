@@ -42,7 +42,7 @@ namespace Rashed_Blackjack
                     case 1:
                         game = new GameState();
                         gameActive = true;
-                        NewGame();
+                        Setup();
                         break;
                     case 2:
                         //Implement leaderboard display
@@ -58,7 +58,7 @@ namespace Rashed_Blackjack
             } while (!quit);
            
         }
-        private void NewGame()
+        private void Setup()
         {
             Player tempPlayer;
             string name;
@@ -77,16 +77,14 @@ namespace Rashed_Blackjack
                 Console.Clear();
             }
 
-
-        }//Populates the list of players in GameState, deals 2 cards to everyone
-        private void NewRound()
-        {
             GetPlayerBets();
             InitialDeal();
             DisplayDealerAndPlayers();
             PlayPlayerTurns();
             PlayDealerTurn(game.dealer);
-        }
+
+
+        }//Populates the list of players in GameState, deals 2 cards to everyone
         private void InitialDeal()
         {
             //2 cards dealt to the dealer
