@@ -17,6 +17,5 @@ namespace Rashed_Blackjack
         public const int STAND = 2;
         public const int SECONDCARD = 1;
         public const int DEALERMUSTHITLIMIT = 17;
-        public const int BLACKJACKCARDAMOUNT = 2;
     }
 }

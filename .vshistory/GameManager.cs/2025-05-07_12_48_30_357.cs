@@ -89,7 +89,7 @@ namespace Rashed_Blackjack
             PlayPlayerTurns();
             PlayDealerTurn(game.dealer);
             Outcome();
-        } //After each round, add cards back to deck, then shuffle 3 times.
+        }
         private void InitialDeal()
         {
             //2 cards dealt to the dealer

@@ -16,12 +16,9 @@ namespace Rashed_Blackjack
         {
             return (hand.Size == Constants.BLACKJACKCARDAMOUNT && hand.Value == Constants.BLACKJACK);
         }
-        /*
-          public static string Outcome(Player player, Player dealer)
+        public static string Outcome(Player player, Player dealer)
         {
 
         }
-         */
-        
     }
 }

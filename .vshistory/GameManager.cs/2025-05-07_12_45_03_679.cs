@@ -89,7 +89,7 @@ namespace Rashed_Blackjack
             PlayPlayerTurns();
             PlayDealerTurn(game.dealer);
             Outcome();
-        } //After each round, add cards back to deck, then shuffle 3 times.
+        }
         private void InitialDeal()
         {
             //2 cards dealt to the dealer
@@ -184,60 +184,59 @@ namespace Rashed_Blackjack
             for (int currentPlayerNumber = 0; currentPlayerNumber<playerCount; currentPlayerNumber++)
             {
                 Player currentPlayer = game.players[currentPlayerNumber];
-                if (currentPlayer.Playing)
+                do
                 {
-                    do
+                    Console.Clear();
+                    DisplayDealerAndPlayers();
+                    Utility.AnimateWrite($"{currentPlayer.Name}, please choose a move.");
+                    Console.WriteLine("");
+                    Console.WriteLine("1 - Hit");
+                    Console.WriteLine("2 - Stand");
+                    Console.WriteLine("3 - Double Down");
+                    Console.WriteLine("3 - Forfeit");
+                    userChoice = Utility.GetIntInRange(1, 3);
+
+                    switch (userChoice)
                     {
-                        Console.Clear();
-                        DisplayDealerAndPlayers();
-                        Utility.AnimateWrite($"{currentPlayer.Name}, please choose a move.");
-                        Console.WriteLine("");
-                        Console.WriteLine("1 - Hit");
-                        Console.WriteLine("2 - Stand");
-                        Console.WriteLine("3 - Double Down");
-                        Console.WriteLine("3 - Forfeit");
-                        userChoice = Utility.GetIntInRange(1, 3);
-
-                        switch (userChoice)
-                        {
-                            case 1:
-                                Hit(currentPlayer.Hand);
-                                ClearAndDisplay();
-                                Utility.AnimateWrite($"{currentPlayer.Name} hits.");
-                                Console.ReadKey();
-                                break;
-                            case 2:
-                                //Stands
-                                ClearAndDisplay();
-                                Utility.AnimateWrite($"{currentPlayer.Name} stands.");
-                                Console.ReadKey();
-                                break;
-                            case 3:
-                                if (currentPlayer.Balance >= currentPlayer.Bet) //Checks if player has enough in their balance to double their bet
-                                {
-                                    //Double down
-                                    currentPlayer.Balance -= currentPlayer.Bet; //Removes the Bet from the player's balance
-                                    currentPlayer.Bet *= 2; //Doubles the current bet
-                                    Hit(currentPlayer.Hand); //Hits once
-                                    userChoice = Constants.STAND; //Forces turn to end
-                                    ClearAndDisplay(); //Updates board
-
-                                }
-                                else
-                                {
-                                    Utility.AnimateWrite($"{currentPlayer.Name} does not have the funds to double down");
-                                    Console.ReadKey();
-                                }
-                                break;
-                        }
-                        if (GameRules.Bust(currentPlayer.Hand))
-                        {
-                            Utility.AnimateWrite($"{currentPlayer.Name} busts.");
+                        case 1:
+                            Hit(currentPlayer.Hand);
+                            ClearAndDisplay();
+                            Utility.AnimateWrite($"{currentPlayer.Name} hits.");
                             Console.ReadKey();
-                        }
-                    } while (userChoice != Constants.STAND && !GameRules.Bust(currentPlayer.Hand)); //Menu keeps printing while player does not stand or does not bust
-                }
-                ClearAndDisplay();
+                            break;
+                        case 2:
+                            //Stands
+                            ClearAndDisplay();                                                                                                                                                                      
+                            Utility.AnimateWrite($"{currentPlayer.Name} stands.");
+                            Console.ReadKey();
+                            break;
+                        case 3:
+                            if (currentPlayer.Balance >= currentPlayer.Bet) //Checks if player has enough in their balance to double their bet
+                            {
+                                //Double down
+                                currentPlayer.Balance -= currentPlayer.Bet; //Removes the Bet from the player's balance
+                                currentPlayer.Bet *= 2; //Doubles the current bet
+                                Hit(currentPlayer.Hand); //Hits once
+                                userChoice = Constants.STAND; //Forces turn to end
+                                ClearAndDisplay(); //Updates board
+
+                            }
+                            else
+                            {
+                                Utility.AnimateWrite($"{currentPlayer.Name} does not have the funds to double down");
+                                Console.ReadKey();
+                            }
+                                break;
+                    }
+                    if (GameRules.Bust(currentPlayer.Hand))
+                    {
+                        Utility.AnimateWrite($"{currentPlayer.Name} busts.");
+                        Console.ReadKey();
+                    }
+                } while (userChoice != Constants.STAND && !GameRules.Bust(currentPlayer.Hand)); //Menu keeps printing while player does not stand or does not bust
+            
+                Console.Clear();
+                DisplayDealerAndPlayers();
             }
         }
         private void PlayDealerTurn(Player dealer)
