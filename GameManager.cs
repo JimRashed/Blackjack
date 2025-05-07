@@ -32,9 +32,9 @@ namespace Rashed_Blackjack
                 Console.WriteLine("");
                 Console.WriteLine("1 - Begin a new game");
                 Console.WriteLine("2 - Begin a new round");
-                Console.WriteLine("2 - Check the leaderboard");
-                Console.WriteLine("3 - Load a game");
-                Console.WriteLine("4 - Exit Blackjack");
+                Console.WriteLine("3 - Check the leaderboard");
+                Console.WriteLine("4 - Load a game");
+                Console.WriteLine("5 - Exit Blackjack");
 
                 int userChoice = Utility.GetIntInRange(MINMENUCHOICE, MAXMENUCHOICE);
 
@@ -46,12 +46,15 @@ namespace Rashed_Blackjack
                         NewGame();
                         break;
                     case 2:
-                        //Implement leaderboard display
+                        //Check if a game exists, then begin new round.
                         break;
                     case 3:
-                        //Implement loading
+                        //Implement leaderboard display
                         break;
                     case 4:
+                        //Implement loading
+                        break;
+                    case 5:
                         quit = true;
                         break;
 

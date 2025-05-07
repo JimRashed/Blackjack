@@ -23,29 +23,7 @@ namespace Rashed_Blackjack
             if (Bust(player.Hand)){
                 return "Loss";
             }
-            else if (Bust(dealer.Hand))
-            {
-                if (Blackjack(player.Hand))
-                {
-                    return "Blackjack";
-                }
-                else
-                {
-                    return "Win";
-                }
-            }
-            else if (player.Hand.Value > dealer.Hand.Value)
-            {
-                return "Win";
-            }
-            else if (player.Hand.Value < dealer.Hand.Value)
-            {
-                return "Loss";
-            }
-            else
-            {
-                return "Tie";
-            }
+            else if ()
         }
          
         
