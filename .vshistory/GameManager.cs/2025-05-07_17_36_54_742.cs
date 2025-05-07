@@ -15,7 +15,6 @@ namespace Rashed_Blackjack
         const int MINMENUCHOICE = 1;
         const int MAXMENUCHOICE = 5;
         private GameState game;
-        private RoundStats stats;
         private bool gameActive;
         int playerCount;
         int hits, stands, doubleDowns, forfeits, busts = 0;
@@ -100,7 +99,6 @@ namespace Rashed_Blackjack
         private void NewRound()
         {
             game.round++;
-            stats = new RoundStats();
             GetPlayerBets();
             InitialDeal();
             DisplayDealerAndPlayers();
@@ -234,7 +232,7 @@ namespace Rashed_Blackjack
                                 break;
                             case 2:
                                 //Stands
-                                stats.stands++;
+                                stands++;
                                 ClearAndDisplay();
                                 Utility.AnimateWrite($"{currentPlayer.Name} stands.");
                                 Console.ReadKey();
@@ -303,7 +301,6 @@ namespace Rashed_Blackjack
                         Console.ReadKey();
                         if (GameRules.Bust(dealer.Hand))
                         {
-                            busts++;
                             bust = true;
                             Console.Clear();
                             DisplayDealerAndPlayers();
@@ -315,7 +312,6 @@ namespace Rashed_Blackjack
                 if (!bust)
                 {
                     ClearAndDisplay();
-                    stands++;
                     Utility.AnimateWrite("The dealer stands.");
                     Console.ReadKey();
                 }

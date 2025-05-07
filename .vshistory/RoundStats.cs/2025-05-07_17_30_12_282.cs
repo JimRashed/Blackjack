@@ -8,11 +8,11 @@ namespace Rashed_Blackjack
 {
     public struct RoundStats
     {
-        public int hits;
-        public int stands;
-        public int doubleDowns;
-        public int forfeits;
-        public int busts;
+        int hits;
+        int stands;
+        int doubleDowns;
+        int forfeits;
+        int busts;
         public RoundStats(int hits, int stands, int doubleDowns, int forfeits, int busts)
         {
             this.hits = hits;
