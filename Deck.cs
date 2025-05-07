@@ -196,8 +196,8 @@ namespace Rashed_Blackjack
             {
                 for (int currentCard = 0; currentCard < cardList.Count; currentCard++)
                 {
-                    //Switches current card with a card at a random index greater than itself (no need to shuffle twice)
-                    targetedIndex = random.Next(currentCard, cardList.Count);
+                    //Switches current card with a card at a random index
+                    targetedIndex = random.Next(0, cardList.Count);
 
                     tempCard = cardList[targetedIndex]; //Store card
 

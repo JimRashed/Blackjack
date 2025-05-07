@@ -141,7 +141,7 @@ namespace Rashed_Blackjack
                 
             }
             
-        } //Deals 2 card 2 everyone
+        }
         private void GetPlayerBets()
         {
             bool validBet = false;
@@ -401,7 +401,7 @@ namespace Rashed_Blackjack
                     game.cardDeck.PlaceOnTop(cardToAdd);
                 }
             }
-            game.cardDeck.Shuffle(4);
+            game.cardDeck.Shuffle(3);
         }
         private void Summary()
         {
@@ -409,8 +409,6 @@ namespace Rashed_Blackjack
             {
                 Utility.AnimateWrite(stats.ToString());
                 Console.ReadKey();
-                Console.Clear();
-                DisplayDealerAndPlayers();
             }
         }
         
