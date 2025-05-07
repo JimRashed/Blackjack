@@ -192,9 +192,7 @@ namespace Rashed_Blackjack
                 }
                 else
                 {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine(player.ToString());
-                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine($"{player.Name} is not participating in this game, as they lack the funds.");
                 }
                 
             }
