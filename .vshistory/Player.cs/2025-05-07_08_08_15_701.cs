@@ -1,7 +1,6 @@
 ﻿using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -89,20 +88,11 @@ namespace Rashed_Blackjack
         //Override operators
         public override string ToString()
         {
-            if (!dealer)
-            {
-                string player;
-                player = $"{Name} Balance:{Balance} \nCurrent bet: {Bet.ToString("C")}\n Hand: {Hand.ToString()}\nCurrent hand value: {Hand.Value}\n";
+            
+            string player;
+            player = $"{Name} Balance:{Balance} \n{Hand.ToString()}\nCurrent hand value: {Hand.Value}\n";
 
-                return player;
-            }
-            else
-            {
-                string dealer;
-                dealer = $"Dealer \n Hand:{Hand.ToString()}\n Current hand value: {Hand.Value} \n";
-                return dealer;
-            }
-           
+            return player;
         }
 
     }

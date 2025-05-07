@@ -92,14 +92,14 @@ namespace Rashed_Blackjack
             if (!dealer)
             {
                 string player;
-                player = $"{Name} Balance:{Balance} \nCurrent bet: {Bet.ToString("C")}\n Hand: {Hand.ToString()}\nCurrent hand value: {Hand.Value}\n";
+                player = $"{Name} Balance:{Balance} \nCurrent bet: {Bet.ToString("C")}\n{Hand.ToString()}\nCurrent hand value: {Hand.Value}\n";
 
                 return player;
             }
             else
             {
                 string dealer;
-                dealer = $"Dealer \n Hand:{Hand.ToString()}\n Current hand value: {Hand.Value} \n";
+                dealer = $"Dealer \n{Hand.ToString()}\nn$ Current hand value: {Hand.Value} \n";
                 return dealer;
             }
            

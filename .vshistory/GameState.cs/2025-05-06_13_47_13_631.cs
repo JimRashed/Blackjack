@@ -17,7 +17,7 @@ namespace Rashed_Blackjack
         public GameState()
         {
             players = new List<Player>();
-            dealer = new Player("Dealer", 1000, true);
+            dealer = new Player("Dealer", 999);
             cardDeck = new Deck();
         }
         
