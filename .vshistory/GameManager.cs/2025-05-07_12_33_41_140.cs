@@ -190,13 +190,15 @@ namespace Rashed_Blackjack
                     {
                         case 1:
                             Hit(currentPlayer.Hand);
-                            ClearAndDisplay();
+                            Console.Clear();
+                            DisplayDealerAndPlayers();
                             Utility.AnimateWrite($"{currentPlayer.Name} hits.");
                             Console.ReadKey();
                             break;
                         case 2:
                             //Stands
-                            ClearAndDisplay();                                                                                                                                                                      
+                            Console.Clear();
+                            DisplayDealerAndPlayers();
                             Utility.AnimateWrite($"{currentPlayer.Name} stands.");
                             Console.ReadKey();
                             break;
@@ -208,12 +210,13 @@ namespace Rashed_Blackjack
                                 currentPlayer.Bet *= 2; //Doubles the current bet
                                 Hit(currentPlayer.Hand); //Hits once
                                 userChoice = Constants.STAND; //Forces turn to end
-                                ClearAndDisplay(); //Updates board
+                                Console.Clear();
+                                DisplayDealerAndPlayers();
 
                             }
                             else
                             {
-                                Utility.AnimateWrite($"{currentPlayer.Name} does not have the funds to double down");
+                                Utility.AnimateWrite("You do not have the funds to double down");
                                 Console.ReadKey();
                             }
                                 break;

@@ -213,7 +213,7 @@ namespace Rashed_Blackjack
                             }
                             else
                             {
-                                Utility.AnimateWrite($"{currentPlayer.Name} does not have the funds to double down");
+                                Utility.AnimateWrite("You do not have the funds to double down");
                                 Console.ReadKey();
                             }
                                 break;
