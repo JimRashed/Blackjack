@@ -253,11 +253,7 @@ namespace Rashed_Blackjack
                                 }
                                 break;
                             case 4:
-                                ClearAndDisplay();
-                                Utility.AnimateWrite($"{currentPlayer.Name} forfeits. Half their bet is lost.");
-                                currentPlayer.Balance += currentPlayer.Bet / 2;
-                                currentPlayer.Bet = 0;
-                                currentPlayer.Playing = false;
+                                //IMPLEMENT FORFEITING...
                                 break;
                             default:
                                 break;
