@@ -52,7 +52,7 @@ namespace Rashed_Blackjack
                     cardList.Add(tempCard); //Creates a temporary card, adds it to the deck
                 }
             }
-            this.Shuffle(8); //Shuffles 8 times. Just to be sure.
+            this.Shuffle(8);
         } 
         //Override methods
         /*ToString()

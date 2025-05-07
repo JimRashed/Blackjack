@@ -19,7 +19,7 @@ namespace Rashed_Blackjack
         int playerCount;
         public void Start()
         {
-            Utility.PrintGameHeader();
+            Utility.AnimateWrite("Welcome to blackjack!");
             Thread.Sleep(500);
             MainMenu();
             Utility.AnimateWrite("Thank you very much for playing!");
