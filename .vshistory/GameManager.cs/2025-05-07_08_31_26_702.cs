@@ -209,26 +209,10 @@ namespace Rashed_Blackjack
         }
         private void PlayDealerTurn(Player dealer)
         {
-            dealer.Hand.hand[Constants.SECONDCARD].Hidden = false; //Dealer reveals his second card
-            bool stand = false;
+            dealer.Hand.hand[1].Hidden = false;
             Console.Clear();
             DisplayDealerAndPlayers();
-            Thread.Sleep(1000);
-            while (dealer.Hand.Value < Constants.DEALERMUSTHITLIMIT)
-            {
-                Hit(dealer.Hand);
-                Console.Clear();
-                DisplayDealerAndPlayers();
-                Utility.AnimateWrite("The dealer hits.");
-                Thread.Sleep(1000);
-            }
-            Console.Clear();
-            DisplayDealerAndPlayers();
-            Utility.AnimateWrite("The dealer stands.");
-            Thread.Sleep(1000);
             
-
-
         }
         private void Hit(Hand playerHand)
         {

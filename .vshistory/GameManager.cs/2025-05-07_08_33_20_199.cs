@@ -214,21 +214,9 @@ namespace Rashed_Blackjack
             Console.Clear();
             DisplayDealerAndPlayers();
             Thread.Sleep(1000);
-            while (dealer.Hand.Value < Constants.DEALERMUSTHITLIMIT)
-            {
-                Hit(dealer.Hand);
-                Console.Clear();
-                DisplayDealerAndPlayers();
-                Utility.AnimateWrite("The dealer hits.");
-                Thread.Sleep(1000);
-            }
-            Console.Clear();
-            DisplayDealerAndPlayers();
-            Utility.AnimateWrite("The dealer stands.");
-            Thread.Sleep(1000);
+            while (dealer.Hand.Value<17)
             
-
-
+            
         }
         private void Hit(Hand playerHand)
         {

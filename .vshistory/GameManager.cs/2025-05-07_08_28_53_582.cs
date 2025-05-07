@@ -81,7 +81,6 @@ namespace Rashed_Blackjack
             InitialDeal();
             DisplayDealerAndPlayers();
             PlayPlayerTurns();
-            PlayDealerTurn(game.dealer);
 
 
         }//Populates the list of players in GameState, deals 2 cards to everyone
@@ -207,28 +206,9 @@ namespace Rashed_Blackjack
                 DisplayDealerAndPlayers();
             }
         }
-        private void PlayDealerTurn(Player dealer)
+        private void PlayDealerTurn()
         {
-            dealer.Hand.hand[Constants.SECONDCARD].Hidden = false; //Dealer reveals his second card
-            bool stand = false;
-            Console.Clear();
-            DisplayDealerAndPlayers();
-            Thread.Sleep(1000);
-            while (dealer.Hand.Value < Constants.DEALERMUSTHITLIMIT)
-            {
-                Hit(dealer.Hand);
-                Console.Clear();
-                DisplayDealerAndPlayers();
-                Utility.AnimateWrite("The dealer hits.");
-                Thread.Sleep(1000);
-            }
-            Console.Clear();
-            DisplayDealerAndPlayers();
-            Utility.AnimateWrite("The dealer stands.");
-            Thread.Sleep(1000);
             
-
-
         }
         private void Hit(Hand playerHand)
         {

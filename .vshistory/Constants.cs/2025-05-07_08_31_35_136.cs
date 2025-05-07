@@ -14,8 +14,7 @@ namespace Rashed_Blackjack
         public const int INITIALCARDAMOUNT = 2;
         public const double MAXBET = 100000;
         public const double MINBET = 50;
-        public const int STAND = 2;
-        public const int SECONDCARD = 1;
-        public const int DEALERMUSTHITLIMIT = 17;
+        public const int STAND = 2; 
+        public const int SECONDCARD
     }
 }
