@@ -12,7 +12,7 @@ namespace Rashed_Blackjack
         public List<Player> players;
         public Player dealer;
         public Deck cardDeck;
-        public int round;
+        public int turn;
         //Constructor
         public GameState()
         {

@@ -88,7 +88,6 @@ namespace Rashed_Blackjack
         }//Populates the list of players in GameState, deals 2 cards to everyone
         private void NewRound()
         {
-            game.round++;
             GetPlayerBets();
             InitialDeal();
             DisplayDealerAndPlayers();
@@ -143,7 +142,6 @@ namespace Rashed_Blackjack
                 
                 if (currentPlayer.Playing) //Checks if player is playing before prompting for bet
                 {
-                    Utility.AnimateWrite($"Current balance: {currentPlayer.Balance}");
                     Utility.AnimateWrite($"{currentPlayer.Name}, please enter your bet for this round");
                     do
                     {
@@ -299,7 +297,7 @@ namespace Rashed_Blackjack
                     switch (GameRules.Outcome(currentPlayer, game.dealer))
                     {
                         case "Win":
-                            Utility.AnimateWrite($"{currentPlayer.Name} won! They received a payout of 2x their bet.");
+                            Utility.AnimateWrite($"{currentPlayer.Name} won! Their bet was doubled and return to their balance.");
                             currentPlayer.Balance += Constants.WINPAYOUTRATIO * currentPlayer.Bet;
                             break;
                         case "Loss":
@@ -307,11 +305,11 @@ namespace Rashed_Blackjack
                             //No need to do anything, as their bet will be overriden next round.
                             break;
                         case "Tie":
-                            Utility.AnimateWrite($"{currentPlayer.Name}'s hand tied. Their bet was returned to their balance");
+                            Utility.AnimateWrite($"{currentPlayer.Name}'s hand tied. Their bet was returned to them");
                             currentPlayer.Balance += currentPlayer.Bet;
                             break;
                         case "Blackjack":
-                            Utility.AnimateWrite($"{currentPlayer.Name} got a blackjack! They received a playout of 250% of their bet");
+                            Utility.AnimateWrite($"{currentPlayer.Name} got a blackjack! 250% of their bet was added to their balance");
                             currentPlayer.Balance += currentPlayer.Bet * Constants.BLACKJACKPAYOUTRATIO;
                             break;
                         case "Bust":

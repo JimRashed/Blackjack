@@ -88,7 +88,6 @@ namespace Rashed_Blackjack
         }//Populates the list of players in GameState, deals 2 cards to everyone
         private void NewRound()
         {
-            game.round++;
             GetPlayerBets();
             InitialDeal();
             DisplayDealerAndPlayers();
@@ -143,7 +142,6 @@ namespace Rashed_Blackjack
                 
                 if (currentPlayer.Playing) //Checks if player is playing before prompting for bet
                 {
-                    Utility.AnimateWrite($"Current balance: {currentPlayer.Balance}");
                     Utility.AnimateWrite($"{currentPlayer.Name}, please enter your bet for this round");
                     do
                     {

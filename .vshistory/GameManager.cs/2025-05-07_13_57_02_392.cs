@@ -143,7 +143,6 @@ namespace Rashed_Blackjack
                 
                 if (currentPlayer.Playing) //Checks if player is playing before prompting for bet
                 {
-                    Utility.AnimateWrite($"Current balance: {currentPlayer.Balance}");
                     Utility.AnimateWrite($"{currentPlayer.Name}, please enter your bet for this round");
                     do
                     {
