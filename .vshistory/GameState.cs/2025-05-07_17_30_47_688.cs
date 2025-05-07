@@ -12,7 +12,7 @@ namespace Rashed_Blackjack
         public List<Player> players;
         public Player dealer;
         public Deck cardDeck;
-        RoundStats statistics; //Gets built in GameManager after each round
+        RoundStats statistics;
         public int round;
         //Constructor
         public GameState()
@@ -20,6 +20,7 @@ namespace Rashed_Blackjack
             players = new List<Player>();
             dealer = new Player("Dealer", 1000, true); //The 1000 is a placeholder. The Dealer never changes balance.
             cardDeck = new Deck();
+            statistics = new RoundStats();
         }
         
         //Methods for file loading and saving will happen in this class

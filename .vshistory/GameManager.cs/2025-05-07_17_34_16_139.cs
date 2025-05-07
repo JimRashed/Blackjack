@@ -283,7 +283,7 @@ namespace Rashed_Blackjack
             if (!GameRules.NoOnePlaying(game.players))
             {
                 dealer.Hand.hand[Constants.SECONDCARD].Hidden = false; //Dealer reveals his second card
-                bool bust = false;
+                bool stand = false;
                 Console.Clear();
                 DisplayDealerAndPlayers();
                 Utility.AnimateWrite("Dealer's turn!");
@@ -293,7 +293,6 @@ namespace Rashed_Blackjack
                 {
                     while (dealer.Hand.Value < Constants.DEALERMUSTHITLIMIT)
                     {
-                        hits++;
                         Hit(dealer.Hand);
                         Console.Clear();
                         DisplayDealerAndPlayers();
@@ -301,7 +300,6 @@ namespace Rashed_Blackjack
                         Console.ReadKey();
                         if (GameRules.Bust(dealer.Hand))
                         {
-                            bust = true;
                             Console.Clear();
                             DisplayDealerAndPlayers();
                             Utility.AnimateWrite("The dealer busts.");
@@ -309,13 +307,9 @@ namespace Rashed_Blackjack
                         }
                     }
                 }
-                if (!bust)
-                {
-                    ClearAndDisplay();
-                    Utility.AnimateWrite("The dealer stands.");
-                    Console.ReadKey();
-                }
-
+                ClearAndDisplay();
+                Utility.AnimateWrite("The dealer stands.");
+                Console.ReadKey();
             }
             else
             {

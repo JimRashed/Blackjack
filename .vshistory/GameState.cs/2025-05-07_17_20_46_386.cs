@@ -12,7 +12,6 @@ namespace Rashed_Blackjack
         public List<Player> players;
         public Player dealer;
         public Deck cardDeck;
-        RoundStats statistics; //Gets built in GameManager after each round
         public int round;
         //Constructor
         public GameState()
