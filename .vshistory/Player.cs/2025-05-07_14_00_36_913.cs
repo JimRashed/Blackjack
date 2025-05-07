@@ -99,29 +99,11 @@ namespace Rashed_Blackjack
             else
             {
                 string dealer;
-                if (ContainsHiddenCards())
-                {
-                    dealer = $"Dealer \nHand:{Hand.ToString()}\nCurrent hand value: [UNKNOWN] \n";
-                }
-                else
-                {
-                    dealer = $"Dealer \nHand:{Hand.ToString()}\nCurrent hand value: {Hand.Value} \n";
-                }
+                
+                dealer = $"Dealer \nHand:{Hand.ToString()}\nCurrent hand value: {Hand.Value} \n";
                 return dealer;
             }
            
-        }
-        public bool ContainsHiddenCards()
-        {
-            bool hasHidden = false;
-            for (int currentCard = 0; currentCard< Hand.Size; currentCard++)
-            {
-                if (Hand.hand[currentCard].Hidden == true)//Checks if hand contains any cards that are hidden
-                {
-                    hasHidden = true;
-                }
-            }
-            return hasHidden;
         }
 
     }

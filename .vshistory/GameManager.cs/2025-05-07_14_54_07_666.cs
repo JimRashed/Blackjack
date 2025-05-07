@@ -185,8 +185,8 @@ namespace Rashed_Blackjack
         private void DisplayDealerAndPlayers()
         {
             Console.Clear();
-            Console.WriteLine($"{game.dealer.ToString()}");//Display dealer
-            foreach (Player player in game.players) //Display cards
+            Console.WriteLine($"{game.dealer.ToString()}");
+            foreach (Player player in game.players)
             {
                 if (player.Playing)
                 {

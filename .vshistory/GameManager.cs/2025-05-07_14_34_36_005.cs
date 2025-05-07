@@ -185,8 +185,8 @@ namespace Rashed_Blackjack
         private void DisplayDealerAndPlayers()
         {
             Console.Clear();
-            Console.WriteLine($"{game.dealer.ToString()}");//Display dealer
-            foreach (Player player in game.players) //Display cards
+            Console.WriteLine($"{game.dealer.ToString()}");
+            foreach (Player player in game.players)
             {
                 if (player.Playing)
                 {
@@ -268,8 +268,7 @@ namespace Rashed_Blackjack
                             Utility.AnimateWrite($"{currentPlayer.Name} busts.");
                             Console.ReadKey();
                         }
-                    } while (currentPlayer.Playing == false || userChoice != Constants.STAND && !GameRules.Bust(currentPlayer.Hand)); //Menu keeps printing while player does not stand or does not bust
-                    //Silly goofy little mistake. Check forfeiting logic -- I entered a perpetual loop. Please help me.
+                    } while (!currentPlayer.Playing || userChoice != Constants.STAND && !GameRules.Bust(currentPlayer.Hand)); //Menu keeps printing while player does not stand or does not bust
                 }
                 ClearAndDisplay();
             }
