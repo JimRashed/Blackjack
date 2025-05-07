@@ -16,7 +16,6 @@ namespace Rashed_Blackjack
         private double _bet;
         private string _name;
         private bool _playing;
-        private bool dealer;
         //Properties
         public Hand Hand
         {
@@ -74,15 +73,13 @@ namespace Rashed_Blackjack
             }
         }
         //Constructor
-        public Player(string name, double initialSum, bool isDealer = false)
+        public Player(string name, double initialSum)
         {
             Name = name;
             Balance = initialSum;
             Hand = new Hand();
             stats = new PlayerStats();
             Playing = true;
-            dealer = isDealer;
-
 
         }
         //Override operators
