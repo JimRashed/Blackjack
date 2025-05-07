@@ -295,7 +295,7 @@ namespace Rashed_Blackjack
                 {
                     while (dealer.Hand.Value < Constants.DEALERMUSTHITLIMIT)
                     {
-                        stats.hits++;
+                        hits++;
                         Hit(dealer.Hand);
                         Console.Clear();
                         DisplayDealerAndPlayers();
@@ -303,7 +303,7 @@ namespace Rashed_Blackjack
                         Console.ReadKey();
                         if (GameRules.Bust(dealer.Hand))
                         {
-                            stats.busts++;
+                            busts++;
                             bust = true;
                             Console.Clear();
                             DisplayDealerAndPlayers();
@@ -315,7 +315,7 @@ namespace Rashed_Blackjack
                 if (!bust)
                 {
                     ClearAndDisplay();
-                    stats.stands++;
+                    stands++;
                     Utility.AnimateWrite("The dealer stands.");
                     Console.ReadKey();
                 }
@@ -374,7 +374,7 @@ namespace Rashed_Blackjack
         private void Hit(Hand playerHand)
         {
             playerHand.hand.Add(game.cardDeck.Draw());
-            stats.hits++;
+            hits++;
 
         }
         private void EndRound()

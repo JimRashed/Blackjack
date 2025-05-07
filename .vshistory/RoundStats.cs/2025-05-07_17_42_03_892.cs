@@ -21,10 +21,5 @@ namespace Rashed_Blackjack
             this.forfeits = forfeits;
             this.busts = busts;
         }
-        public override string ToString()
-        {
-            return $"{hits} hits | {stands} stands | {doubleDowns} double downs | {forfeits} forfeits | {busts} busts";
-            
-        }
     }
 }
