@@ -12,7 +12,6 @@ namespace Rashed_Blackjack
         public List<Player> players;
         public Player dealer;
         public Deck cardDeck;
-        public Leaderboard leaderboard;
         public int round;
         //Constructor
         public GameState()

@@ -37,12 +37,9 @@ namespace Rashed_Blackjack
                 LeaderboardEntry newEntry = new LeaderboardEntry(name);
                 newEntry.Modify(outcome);
             }
-
-            //Sort leaderboard to ensure valid order
-            Sort(); 
+            
         }
-        //Selection sort based on score
-        public void Sort()
+        public void Sort()//Sorts based on score
         {
             int lowestIndex;
             LeaderboardEntry tempStorage;
@@ -60,16 +57,6 @@ namespace Rashed_Blackjack
                 tempStorage = entries[outerLoop];
                 entries[outerLoop] = entries[lowestIndex];
                 entries[lowestIndex] = tempStorage;
-            }
-        }
-        //Full leaderboard output
-        public void ToString()
-        {
-            Console.WriteLine("----------------LEADERBOARD--------------------");
-            Console.WriteLine("NAME|SCORE|WINRATIO|LOSSES|TIES|WINS");
-            foreach (LeaderboardEntry entry in entries)
-            {
-                Console.WriteLine(entry.ToString());
             }
         }
 
