@@ -344,27 +344,22 @@ namespace Rashed_Blackjack
                     {
                         case "Win":
                             Utility.AnimateWrite($"{currentPlayer.Name} won! They received a payout of 2x their bet.");
-                            currentPlayer.stats.wins++;
                             currentPlayer.Balance += Constants.WINPAYOUTRATIO * currentPlayer.Bet;
                             break;
                         case "Loss":
                             Utility.AnimateWrite($"{currentPlayer.Name} lost. Their bet was lost.");
-                            currentPlayer.stats.losses++;
                             //No need to do anything, as their bet will be overriden next round.
                             break;
                         case "Tie":
                             Utility.AnimateWrite($"{currentPlayer.Name}'s hand tied. Their bet was returned to their balance");
                             currentPlayer.Balance += currentPlayer.Bet;
-                            currentPlayer.stats.ties++;
                             break;
                         case "Blackjack":
                             Utility.AnimateWrite($"{currentPlayer.Name} got a blackjack! They received a playout of 250% of their bet");
                             currentPlayer.Balance += currentPlayer.Bet * Constants.BLACKJACKPAYOUTRATIO;
-                            currentPlayer.stats.wins++;
                             break;
                         case "Bust":
                             Utility.AnimateWrite($"{currentPlayer.Name} busted earlier. Their bet was lost.");
-                            currentPlayer.stats.losses++;
                             //Once again, no need to do anything.
                             break;
                         default:
