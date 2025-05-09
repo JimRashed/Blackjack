@@ -8,10 +8,10 @@ namespace Rashed_Blackjack
 {
     public enum Outcomes
     {
-        Win,
-        Loss,
-        Tie,
-        Blackjack,
-        Bust
+        Win = 1,
+        Loss = -1,
+        Tie = 0,
+        Blackjack = 2,
+        Bust = -1,
     }
 }

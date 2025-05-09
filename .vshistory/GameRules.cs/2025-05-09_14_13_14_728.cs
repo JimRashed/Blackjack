@@ -17,33 +17,33 @@ namespace Rashed_Blackjack
         {
             return (hand.Size == Constants.BLACKJACKCARDAMOUNT && hand.Value == Constants.BLACKJACK);
         }
-        public static Outcomes Outcome(Player player, Player dealer)
+        public static string Outcome(Player player, Player dealer)
         {
             if (Bust(player.Hand)){
-                return Outcomes.Bust;
+                return "Bust";
             }
             else if (Bust(dealer.Hand))
             {
                 if (Blackjack(player.Hand))
                 {
-                    return Outcomes.Blackjack;
+                    return "Blackjack";
                 }
                 else
                 {
-                    return Outcomes.Win;
+                    return "Win";
                 }
             }
             else if (player.Hand.Value > dealer.Hand.Value)
             {
-                return Outcomes.Win;
+                return "Win";
             }
             else if (player.Hand.Value < dealer.Hand.Value)
             {
-                return Outcomes.Loss;
+                return "Loss";
             }
             else
             {
-                return Outcomes.Tie;
+                return "Tie";
             }
         }
         public static bool NoOnePlaying(List<Player> players)
