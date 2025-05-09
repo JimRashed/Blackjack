@@ -76,7 +76,7 @@ namespace Rashed_Blackjack
                 return Losses + Wins + Ties == 0 ? 0 : (Wins / Losses + Wins + Ties);
             }
         }
-        public LeaderboardEntry(string name, int losses = 0, int wins = 0, int ties = 0, int score = 0)
+        public LeaderboardEntry(string name, int losses, int wins, int ties, int score)
         {
             Name = name;
             Losses = losses;

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,23 +40,7 @@ namespace Rashed_Blackjack
         }
         public void Sort()//Sorts based on score
         {
-            int lowestIndex;
-            LeaderboardEntry tempStorage;
-            for (int outerLoop = 0; outerLoop < entries.Count; outerLoop++)
-            {
-                lowestIndex = outerLoop;
 
-                for (int innerLoop = outerLoop + 1; innerLoop < entries.Count; innerLoop++)
-                {
-                    if (entries[innerLoop].Score < entries[lowestIndex].Score)
-                    {
-                        lowestIndex = innerLoop;
-                    }
-                }
-                tempStorage = entries[outerLoop];
-                entries[outerLoop] = entries[lowestIndex];
-                entries[lowestIndex] = tempStorage;
-            }
         }
 
     }

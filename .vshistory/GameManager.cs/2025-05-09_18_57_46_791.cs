@@ -78,7 +78,7 @@ namespace Rashed_Blackjack
         private void NewGame()
         {
             Player tempPlayer;
-            string name; //I need to input name validation... Reusing names is gonna break everything rn
+            string name;
             double balance;
             Utility.AnimateWrite("How many players would you like to include in the game? (2-4)"); 
             playerCount = Utility.GetIntInRange(Constants.MINPLAYERCOUNT, Constants.MAXPLAYERCOUNT);
