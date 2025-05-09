@@ -367,7 +367,7 @@ namespace Rashed_Blackjack
                             game.leaderboard.AddOrModifyEntry(currentPlayer.Name, outcome);
 
                             break;
-                        case Outcomes.Bust:
+                        case Outcomes.Bust.ToString():
                             Utility.AnimateWrite($"{currentPlayer.Name} busted earlier. Their bet was lost.");
                             game.leaderboard.AddOrModifyEntry(currentPlayer.Name, outcome);
 

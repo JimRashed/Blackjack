@@ -12,6 +12,6 @@ namespace Rashed_Blackjack
         Loss = -1,
         Tie = 0,
         Blackjack = 2,
-        Bust = -2,
+        Bust = -1,
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,7 +20,6 @@ namespace Rashed_Blackjack
             players = new List<Player>();
             dealer = new Player("Dealer", 1000, true); //The 1000 is a placeholder. The Dealer never changes balance.
             cardDeck = new Deck();
-            leaderboard = new Leaderboard();
         }
         
         //Methods for file loading and saving will happen in this class

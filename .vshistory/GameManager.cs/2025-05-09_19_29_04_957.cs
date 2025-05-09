@@ -340,37 +340,31 @@ namespace Rashed_Blackjack
                 Player currentPlayer = game.players[currentPlayerNumber];
                 if (currentPlayer.Playing)
                 {
-                    Outcomes outcome = GameRules.Outcome(currentPlayer, game.dealer);
-                    switch (outcome)
+                    switch (GameRules.Outcome(currentPlayer, game.dealer))
                     {
                         case Outcomes.Win:
                             Utility.AnimateWrite($"{currentPlayer.Name} won! They received a payout of 2x their bet.");
      
                             currentPlayer.Balance += Constants.WINPAYOUTRATIO * currentPlayer.Bet;
-                            game.leaderboard.AddOrModifyEntry(currentPlayer.Name, outcome);
                             break;
-                        case Outcomes.Loss: 
+                        case Outcomes.Loss:
                             Utility.AnimateWrite($"{currentPlayer.Name} lost. Their bet was lost.");
-                            game.leaderboard.AddOrModifyEntry(currentPlayer.Name, outcome);
-
+           
                             //No need to do anything, as their bet will be overriden next round.
                             break;
                         case Outcomes.Tie:
                             Utility.AnimateWrite($"{currentPlayer.Name}'s hand tied. Their bet was returned to their balance");
                             currentPlayer.Balance += currentPlayer.Bet;
-                            game.leaderboard.AddOrModifyEntry(currentPlayer.Name, outcome);
-
+           
                             break;
                         case Outcomes.Blackjack:
                             Utility.AnimateWrite($"{currentPlayer.Name} got a blackjack! They received a playout of 250% of their bet");
                             currentPlayer.Balance += currentPlayer.Bet * Constants.BLACKJACKPAYOUTRATIO;
-                            game.leaderboard.AddOrModifyEntry(currentPlayer.Name, outcome);
-
+                    
                             break;
                         case Outcomes.Bust:
                             Utility.AnimateWrite($"{currentPlayer.Name} busted earlier. Their bet was lost.");
-                            game.leaderboard.AddOrModifyEntry(currentPlayer.Name, outcome);
-
+                      
                             //Once again, no need to do anything.
                             break;
                         default:
