@@ -69,5 +69,22 @@ namespace Rashed_Blackjack
                 _score = value;
             }
         }
+
+        public void Modify(Outcomes outcome)
+        {
+            Score += (int)outcome;
+            if (outcome == Outcomes.Blackjack || outcome == Outcomes.Win)
+            {
+                Wins++;
+            }
+            else if (outcome == Outcomes.Loss || outcome == Outcomes.Bust)
+            {
+                Losses++;
+            }
+            else
+            {
+                Ties++;
+            }
+        }
     }
 }
