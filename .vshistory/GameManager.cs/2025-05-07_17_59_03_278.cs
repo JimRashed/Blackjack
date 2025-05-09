@@ -401,7 +401,7 @@ namespace Rashed_Blackjack
                     game.cardDeck.PlaceOnTop(cardToAdd);
                 }
             }
-            game.cardDeck.Shuffle(2);
+            game.cardDeck.Shuffle(4);
         }
         private void Summary()
         {
