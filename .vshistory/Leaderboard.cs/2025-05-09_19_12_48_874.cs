@@ -17,25 +17,17 @@ namespace Rashed_Blackjack
         public void AddOrModifyEntry(string name, Outcomes outcome)
         {
             bool entryExists = false;
+
             if (entries.Count != 0)//Checks if list is null before accessing
             {
                 foreach (LeaderboardEntry entry in entries) //Scrolls through list entries
                 {
                     if (entry.Name == name)//Checks if name matches
                     {
-                        entryExists = true;
-                        entry.Modify(outcome); //Updates entry based on outcome
-                        
+                        entryExists = true; //Reports that entry does exist
                     }
                 }
             }
-
-            if (!entryExists)
-            {
-                LeaderboardEntry newEntry = new LeaderboardEntry()
-            }
-            
-            
 
 
 

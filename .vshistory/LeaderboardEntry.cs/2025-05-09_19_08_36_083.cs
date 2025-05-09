@@ -76,14 +76,6 @@ namespace Rashed_Blackjack
                 return Losses + Wins + Ties == 0 ? 0 : (Wins / Losses + Wins + Ties);
             }
         }
-        public LeaderboardEntry(string name, int losses, int wins, int ties, int score)
-        {
-            Name = name;
-            Losses = losses;
-            Wins = wins;
-            Ties = ties;
-            Score = score;
-        }
 
         public void Modify(Outcomes outcome)
         {
@@ -103,7 +95,7 @@ namespace Rashed_Blackjack
         }
         public override string ToString()
         {
-            return $"{Name}|{Score}|{winRatio}|{Losses}|{Ties}|{Wins}|";
+            return $"{Name}|{winRatio}|{Losses}|{Ties}|{Wins}|";
         }
     }
 }

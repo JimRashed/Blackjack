@@ -78,11 +78,7 @@ namespace Rashed_Blackjack
         }
         public LeaderboardEntry(string name, int losses, int wins, int ties, int score)
         {
-            Name = name;
-            Losses = losses;
-            Wins = wins;
-            Ties = ties;
-            Score = score;
+
         }
 
         public void Modify(Outcomes outcome)
