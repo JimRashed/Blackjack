@@ -12,7 +12,6 @@ namespace Rashed_Blackjack
     {
         //Fields
         private Hand _hand;
-        public PlayerStats stats;
         private double _balance;
         private double _bet;
         private string _name;
@@ -80,7 +79,6 @@ namespace Rashed_Blackjack
             Name = name;
             Balance = initialSum;
             Hand = new Hand();
-            stats = new PlayerStats();
             Playing = true;
             dealer = isDealer;
 

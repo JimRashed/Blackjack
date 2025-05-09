@@ -14,10 +14,6 @@ namespace Rashed_Blackjack
         {
             entries = new List<LeaderboardEntry>();
         }
-        public void AddOrModifyEntry(string name, int )
-        {
-
-        }
 
     }
 }
