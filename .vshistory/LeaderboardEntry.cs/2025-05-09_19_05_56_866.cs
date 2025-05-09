@@ -69,13 +69,6 @@ namespace Rashed_Blackjack
                 _score = value;
             }
         }
-        public double winRatio
-        {
-            get
-            {
-                return Losses + Wins + Ties == 0 ? 0 : (Wins / Losses + Wins + Ties);
-            }
-        }
 
         public void Modify(Outcomes outcome)
         {
@@ -92,10 +85,6 @@ namespace Rashed_Blackjack
             {
                 Ties++;
             }
-        }
-        public override string ToString()
-        {
-            return $"{Name}|{winRatio}|{Losses}|{Ties}|{Wins}|";
         }
     }
 }
