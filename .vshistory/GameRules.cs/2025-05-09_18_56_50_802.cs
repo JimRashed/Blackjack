@@ -33,10 +33,6 @@ namespace Rashed_Blackjack
                     return Outcomes.Win;
                 }
             }
-            else if (Blackjack(player.Hand))
-            {
-                return Outcomes.Blackjack;
-            }
             else if (player.Hand.Value > dealer.Hand.Value)
             {
                 return Outcomes.Win;

@@ -13,7 +13,7 @@ namespace Rashed_Blackjack
     public class GameManager
     {
         const int MINMENUCHOICE = 1;
-        const int MAXMENUCHOICE = 6;
+        const int MAXMENUCHOICE = 5;
         private GameState game;
         private RoundStats stats;
         private bool gameActive;
@@ -37,9 +37,8 @@ namespace Rashed_Blackjack
                 Console.WriteLine("1 - Begin a new game");
                 Console.WriteLine("2 - Begin a new round");
                 Console.WriteLine("3 - Check the leaderboard");
-                Console.WriteLine("4 - Save the current game");
-                Console.WriteLine("5 - Load a game");
-                Console.WriteLine("6 - Exit Blackjack");
+                Console.WriteLine("4 - Load a game");
+                Console.WriteLine("5 - Exit Blackjack");
 
                 int userChoice = Utility.GetIntInRange(MINMENUCHOICE, MAXMENUCHOICE);
 
@@ -63,23 +62,12 @@ namespace Rashed_Blackjack
                         }
                             break;
                     case 3:
-                        if (gameActive)
-                        {
-                            game.leaderboard.ToString();
-                        }
-                        else
-                        {
-                            Utility.AnimateWrite("There is currently no leaderboard to display. Please create or load a game first.");
-                            Console.ReadKey();
-                            Console.Clear();
-                        }
-                            break;
+                        //Implement leaderboard display
+                        break;
                     case 4:
-                        //Implement saving
+                        //Implement loading
                         break;
                     case 5:
-                    //Implement loading
-                    case 6:
                         quit = true;
                         break;
 
