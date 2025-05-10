@@ -90,8 +90,7 @@ namespace Rashed_Blackjack
                         }
                             break;
                     case 5:
-                        game.Load();
-                        break;
+                    //Implement loading
                     case 6:
                         quit = true;
                         break;
