@@ -437,7 +437,6 @@ namespace Rashed_Blackjack
         }
         private void Summary()
         {
-            Utility.AnimateWrite($"End of round {game.round}!");
             if(Utility.GetUserConsent("Would you like to see the actions taken this round? (Y/N)", true))
             {
                 Utility.AnimateWrite(stats.ToString());
@@ -445,11 +444,6 @@ namespace Rashed_Blackjack
                 Console.Clear();
                 DisplayDealerAndPlayers();
             }
-        }
-        private void NewPage()
-        {
-            Console.Clear();
-            Utility.PrintGameHeader();
         }
         
 

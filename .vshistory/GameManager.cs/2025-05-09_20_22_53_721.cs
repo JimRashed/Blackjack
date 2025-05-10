@@ -446,11 +446,6 @@ namespace Rashed_Blackjack
                 DisplayDealerAndPlayers();
             }
         }
-        private void NewPage()
-        {
-            Console.Clear();
-            Utility.PrintGameHeader();
-        }
         
 
         
