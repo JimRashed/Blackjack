@@ -32,7 +32,8 @@ namespace Rashed_Blackjack
             bool quit = false;
             do
             {
-                Utility.NewPage();
+                Console.Clear();
+                Utility.PrintGameHeader();
                 Utility.AnimateWrite("Please choose an option from the menu below:");
                 Console.WriteLine("");
                 Console.WriteLine("1 - Begin a new game");
@@ -79,16 +80,8 @@ namespace Rashed_Blackjack
                         }
                             break;
                     case 4:
-                        if (gameActive)
-                        {
-                            game.Save();
-                        }
-                        else
-                        {
-                            Utility.AnimateWrite("There is currently no game to save. Please create a game first.");
-                            Console.ReadKey();
-                        }
-                            break;
+                        //Implement saving
+                        break;
                     case 5:
                     //Implement loading
                     case 6:

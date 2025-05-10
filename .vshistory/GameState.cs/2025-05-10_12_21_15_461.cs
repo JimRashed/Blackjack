@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,19 +23,17 @@ namespace Rashed_Blackjack
             cardDeck = new Deck();
             leaderboard = new Leaderboard();
         }
-
+        
         //Methods for file loading and saving will happen in this class
         public void Save()
         {
             string fileName;
             string file;
             bool quit = false;
-
-
+            
             Console.WriteLine("Saving current leaderboard state to file...");
             Console.WriteLine("Please input the name of the file where leaderboard will be saved (Do not enter file extension. Including the file extension voids any save success guarantee.) Enter 'exit' to abort.");
             fileName = Utility.GetNonNullString();
-
 
             if (fileName == Constants.EXIT) //Allows player to exit program early if they changed their mind
             {
@@ -44,37 +41,11 @@ namespace Rashed_Blackjack
             }
             else
             {
-                StreamWriter gameRecorder = null;
-                try
-                {
-                    file = Constants.GAMEFILEPATH + fileName + Constants.FILEEXTENSION;
-                    gameRecorder = new StreamWriter(file);
-                    //Save players
-                    //Save dealer
-                    //Save deck
-                    //Save Leaderboard
-                    leaderboard.SaveBoard(fileName);
-                    //Save round number
-
-                }
-                catch (Exception e)
-                {
-
-                }
-                finally
-                {
-                    if (gameRecorder != null)
-                    {
-                        gameRecorder.Close();
-                    }
-                }
-               
-
-
+                file = Constants.GAMEFILEPATH + fileName + Constants.FILEEXTENSION;
             }
-
+               
         }
-
+        
 
 
     }
