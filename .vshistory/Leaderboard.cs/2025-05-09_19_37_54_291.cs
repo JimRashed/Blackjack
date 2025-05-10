@@ -27,6 +27,7 @@ namespace Rashed_Blackjack
                     {
                         entryExists = true;
                         entry.Modify(outcome); //Updates entry based on outcome
+                        
                     }
                 }
             }
@@ -35,15 +36,10 @@ namespace Rashed_Blackjack
             {
                 LeaderboardEntry newEntry = new LeaderboardEntry(name);
                 newEntry.Modify(outcome);
-                entries.Add(newEntry);
             }
 
-            //Sort leaderboard to ensure valid order if there's more than 1 entry
-            if (entries.Count > 1)
-            {
-                Sort();
-            }
-            
+            //Sort leaderboard to ensure valid order
+            Sort(); 
         }
         //Selection sort based on score
         public void Sort()
@@ -65,10 +61,6 @@ namespace Rashed_Blackjack
                 entries[outerLoop] = entries[lowestIndex];
                 entries[lowestIndex] = tempStorage;
             }
-        }
-        public void Clear()
-        {
-            entries.Clear();
         }
         //Full leaderboard output
         public void ToString()

@@ -73,16 +73,7 @@ namespace Rashed_Blackjack
         {
             get
             {
-                int matchesPlayed = Losses + Wins + Ties;
-                //return Losses + Wins + Ties == 0 ? 0 : (Wins / Losses + Wins + Ties); //faulty ass line of code.
-                if (matchesPlayed == 0)
-                {
-                    return 0;
-                }
-                else
-                {
-                    return Wins / matchesPlayed;
-                }
+                return Losses + Wins + Ties == 0 ? 0 : (Wins / Losses + Wins + Ties);
             }
         }
         public LeaderboardEntry(string name, int losses = 0, int wins = 0, int ties = 0, int score = 0)

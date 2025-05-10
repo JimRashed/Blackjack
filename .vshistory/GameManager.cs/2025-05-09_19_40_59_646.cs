@@ -32,8 +32,6 @@ namespace Rashed_Blackjack
             bool quit = false;
             do
             {
-                Console.Clear();
-                Utility.PrintGameHeader();
                 Utility.AnimateWrite("Please choose an option from the menu below:");
                 Console.WriteLine("");
                 Console.WriteLine("1 - Begin a new game");
@@ -67,10 +65,7 @@ namespace Rashed_Blackjack
                     case 3:
                         if (gameActive)
                         {
-                            Console.Clear();
-                            Utility.PrintGameHeader();
                             game.leaderboard.ToString();
-                            Console.ReadKey();
                         }
                         else
                         {
@@ -94,10 +89,6 @@ namespace Rashed_Blackjack
         }
         private void NewGame()
         {
-            //Clears any players left over from previous game
-            game.players.Clear();
-            //Clears leaderboard left over from previous game
-            game.leaderboard.
             Player tempPlayer;
             string name; //I need to input name validation... Reusing names is gonna break everything rn
             double balance;

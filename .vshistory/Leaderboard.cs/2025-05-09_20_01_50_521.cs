@@ -66,10 +66,6 @@ namespace Rashed_Blackjack
                 entries[lowestIndex] = tempStorage;
             }
         }
-        public void Clear()
-        {
-            entries.Clear();
-        }
         //Full leaderboard output
         public void ToString()
         {
