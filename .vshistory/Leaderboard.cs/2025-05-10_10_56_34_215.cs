@@ -80,18 +80,21 @@ namespace Rashed_Blackjack
                 Console.WriteLine(entry.ToString());
             }
         }
-        public  void SaveBoard(string fileName)
+        public static void SaveBoard(List<Player> leaderboard)
         {
             StreamWriter sWriter = null; //Declaring sWriter without assigning it causes an error during closing, so sWriter is simply assigned to null
             try
             {
+                string fileName;
                 string file;
                 bool quit = false;
-                Player currentEntry = new LeaderboardEntry();
+                Player currentPlayer = new Player();
 
-                //filename to save under is received from the GameState saving method
+                Console.WriteLine("Saving current leaderboard state to file...");
+                Console.WriteLine("Please input the name of the file where leaderboard will be saved (Do not enter file extension. Including the file extension voids any save success guarantee.) Enter 'exit' to abort.");
+                fileName = GetNonNullString();
 
-                if (fileName == Constants.EXIT) //Allows player to exit program early if they changed their mind
+                if (fileName == EXIT) //Allows player to exit program early if they changed their mind
                 {
                     quit = true;
                 }
@@ -100,13 +103,13 @@ namespace Rashed_Blackjack
                 {
 
 
-                    file = Constants.BOARDFILEPATH + fileName + Constants.FILEXTENSION;
+                    file = FILEPATH + fileName + FILEEXTENSION;
 
                     sWriter = new StreamWriter(file);
 
-                    for (int LBIndex = 0; LBIndex < entries.Count; LBIndex++) //Saves entire leaderboard to file line by line
+                    for (int LBIndex = 0; LBIndex < leaderboard.Count; LBIndex++) //Saves entire leaderboard to file line by line
                     {
-                        currentPlayer = entries[LBIndex];
+                        currentPlayer = leaderboard[LBIndex];
                         sWriter.WriteLine($"{currentPlayer.name},{currentPlayer.score},{Convert.ToString(currentPlayer.finishTime)},{currentPlayer.gamesWon},{currentPlayer.age},{currentPlayer.favoriteAnimal},");
                     }
 

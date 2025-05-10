@@ -22,9 +22,5 @@ namespace Rashed_Blackjack
         public const int BLACKJACKCARDAMOUNT = 2;
         public const double WINPAYOUTRATIO = 2;
         public const double BLACKJACKPAYOUTRATIO = 2.5;
-        public const string EXIT = "exit";
-        public const string BOARDFILEPATH = "../../../SavedBoards/";
-        public const string GAMEFILEPATH = "../../../SavedGames/";
-        public const string FILEXTENSION = ".csv";
     }
 }

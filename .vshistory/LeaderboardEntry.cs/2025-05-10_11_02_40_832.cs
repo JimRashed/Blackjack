@@ -85,14 +85,6 @@ namespace Rashed_Blackjack
                 }
             }
         }
-        public LeaderboardEntry()
-        {
-            Name = null;
-            Losses = 0;
-            Wins = 0;
-            Ties = 0;
-            Score = 0;
-        }
         public LeaderboardEntry(string name, int losses = 0, int wins = 0, int ties = 0, int score = 0)
         {
             Name = name;
