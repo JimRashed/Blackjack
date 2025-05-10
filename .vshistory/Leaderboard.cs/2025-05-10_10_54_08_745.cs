@@ -80,59 +80,6 @@ namespace Rashed_Blackjack
                 Console.WriteLine(entry.ToString());
             }
         }
-        public static void SaveBoard(List<Player> leaderboard)
-        {
-            StreamWriter sWriter = null; //Declaring sWriter without assigning it causes an error during closing, so sWriter is simply assigned to null
-            try
-            {
-                string fileName;
-                string file;
-                bool quit = false;
-                Player currentPlayer = new Player();
-
-                Console.WriteLine("Saving current leaderboard state to file...");
-                Console.WriteLine("Please input the name of the file where leaderboard will be saved (Do not enter file extension. Including the file extension voids any save success guarantee.) Enter 'exit' to abort.");
-                fileName = GetNonNullString();
-
-                if (fileName == EXIT) //Allows player to exit program early if they changed their mind
-                {
-                    quit = true;
-                }
-
-                if (!quit)
-                {
-
-
-                    file = FILEPATH + fileName + FILEEXTENSION;
-
-                    sWriter = new StreamWriter(file);
-
-                    for (int LBIndex = 0; LBIndex < leaderboard.Count; LBIndex++) //Saves entire leaderboard to file line by line
-                    {
-                        currentPlayer = leaderboard[LBIndex];
-                        sWriter.WriteLine($"{currentPlayer.name},{currentPlayer.score},{Convert.ToString(currentPlayer.finishTime)},{currentPlayer.gamesWon},{currentPlayer.age},{currentPlayer.favoriteAnimal},");
-                    }
-
-                    Console.WriteLine($"Leaderboard state saved under file {fileName}.csv");
-
-                    Console.ReadKey();
-                }
-
-
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("An error occured during file saving. Please verify that your input was correct and contained no illegal characters (/, <, !, \", etc.");
-            }
-            finally
-            {
-                if (sWriter != null) //Ensures function never ends with StreamWriter still open
-                {
-                    sWriter.Close();
-                }
-                DisplayLeaderboard(leaderboard); //Refreshes leaderboard
-            }
-        }
 
     }
 }
