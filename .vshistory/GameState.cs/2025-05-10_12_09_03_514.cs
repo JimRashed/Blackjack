@@ -39,7 +39,6 @@ namespace Rashed_Blackjack
             {
                 quit = true;
             }
-            file = Constants.GAMEFILEPATH + fileName + Constants.FILEEXTENSION;
         }
         
 

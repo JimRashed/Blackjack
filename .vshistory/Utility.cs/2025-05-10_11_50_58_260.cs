@@ -365,19 +365,8 @@ month = GetIntInRange(1,12)
             Console.Clear();
             PrintGameHeader();
         }
-        public static bool DoesFileExist(string file)
-        {
-            if (File.Exists(file))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-
+        
+           
 
     }
 }
