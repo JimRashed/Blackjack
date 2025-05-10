@@ -68,7 +68,8 @@ namespace Rashed_Blackjack
                     }
                     //Save Leaderboard
                     leaderboard.SaveBoard(fileName);
-                    Utility.AnimateWrite($"Game saved! Save file name: {fileName}");
+                    
+
                 }
                 catch (Exception e)
                 {

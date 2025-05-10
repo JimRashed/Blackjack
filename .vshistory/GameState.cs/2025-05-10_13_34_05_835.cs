@@ -53,26 +53,21 @@ namespace Rashed_Blackjack
                     gameRecorder.WriteLine(round);
                     //Save numbers of players (for loading)
                     gameRecorder.WriteLine(players.Count);
+                    foreach(Player player in players)
+                    {
+
+                    }
                     //Save players
-                    foreach (Player player in players)
-                    {
-                        gameRecorder.WriteLine($"{player.Name},{player.Balance},{player.Bet},{player.Playing}"); //Bet and playing are a bit redundant since loading happens between rounds, but for clarity purposes, I'll leave them in. 
-                        //No need to save cards, there will be no mid-round saves
-                    }
-                    //No need to save dealer, a new one will be created in the new round
+                    //Save dealer
                     //Save deck
-                    gameRecorder.WriteLine(cardDeck.CardsLeft);
-                    foreach (Card card in cardDeck.cardList)
-                    {
-                        gameRecorder.WriteLine($"{card.Rank},{card.Suit}"); 
-                    }
                     //Save Leaderboard
                     leaderboard.SaveBoard(fileName);
-                    Utility.AnimateWrite($"Game saved! Save file name: {fileName}");
+                    
+
                 }
                 catch (Exception e)
                 {
-                    Utility.AnimateWrite("Error saving gamestate...");
+
                 }
                 finally
                 {

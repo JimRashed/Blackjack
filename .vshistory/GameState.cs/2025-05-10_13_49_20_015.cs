@@ -64,15 +64,16 @@ namespace Rashed_Blackjack
                     gameRecorder.WriteLine(cardDeck.CardsLeft);
                     foreach (Card card in cardDeck.cardList)
                     {
-                        gameRecorder.WriteLine($"{card.Rank},{card.Suit}"); 
+                        gameRecorder.WriteLine($"{card.Rank},{card.Suit},{card.Hidden}"); //Hidden, too, is a bit redundant. There are no hidden cards in the deck... This is just for clarity.
                     }
                     //Save Leaderboard
                     leaderboard.SaveBoard(fileName);
-                    Utility.AnimateWrite($"Game saved! Save file name: {fileName}");
+                    
+
                 }
                 catch (Exception e)
                 {
-                    Utility.AnimateWrite("Error saving gamestate...");
+
                 }
                 finally
                 {
