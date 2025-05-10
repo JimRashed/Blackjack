@@ -113,6 +113,7 @@ namespace Rashed_Blackjack
                 balance = Utility.GetDoubleInRange(Constants.MINBET, 100000);
                 tempPlayer = new Player(name, balance);
                 game.players.Add(tempPlayer);
+                Console.Clear();
             }
             NewRound();
 

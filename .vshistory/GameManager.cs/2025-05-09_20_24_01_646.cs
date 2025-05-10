@@ -105,7 +105,6 @@ namespace Rashed_Blackjack
             playerCount = Utility.GetIntInRange(Constants.MINPLAYERCOUNT, Constants.MAXPLAYERCOUNT);
             for (int currentPlayer = 0; currentPlayer< playerCount; currentPlayer++)
             {
-                NewPage();
                 
                 Utility.AnimateWrite($"What will be the name of player {currentPlayer + 1}?");
                 name = Utility.GetNonNullString();
@@ -113,6 +112,7 @@ namespace Rashed_Blackjack
                 balance = Utility.GetDoubleInRange(Constants.MINBET, 100000);
                 tempPlayer = new Player(name, balance);
                 game.players.Add(tempPlayer);
+                Console.Clear();
             }
             NewRound();
 
@@ -169,7 +169,7 @@ namespace Rashed_Blackjack
             double bet;
             for (int currentPlayerNumber = 0; currentPlayerNumber < playerCount; currentPlayerNumber++)
             {
-                NewPage();
+                Console.Clear();
                 Player currentPlayer = game.players[currentPlayerNumber];
                 currentPlayer.Playing = true; //Resets player playing status in case balance has changed
                 if (currentPlayer.Balance < Constants.MINBET) //Checks if player has a sufficient balance to participate
@@ -210,7 +210,7 @@ namespace Rashed_Blackjack
         }
         private void DisplayDealerAndPlayers()
         {
-            NewPage();
+            Console.Clear();
             Console.WriteLine($"{game.dealer.ToString()}");//Display dealer
             foreach (Player player in game.players) //Display cards
             {
