@@ -146,10 +146,7 @@ namespace Rashed_Blackjack
 
             finally
             {
-                if (sReader != null)
-                {
-                    sReader.Close();
-                }
+                sReader.Close();
             }
         }
 

@@ -88,6 +88,7 @@ namespace Rashed_Blackjack
             try
             {
                 string file;
+                bool quit = false;
 
                 //filename to save under is received from the GameState saving method and already validated
                 file = Constants.BOARDFILEPATH + fileName + Constants.FILEEXTENSION; //Creates a valid file path by concatenating its parts
@@ -146,10 +147,7 @@ namespace Rashed_Blackjack
 
             finally
             {
-                if (sReader != null)
-                {
-                    sReader.Close();
-                }
+                sReader.Close();
             }
         }
 

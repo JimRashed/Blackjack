@@ -69,7 +69,7 @@ namespace Rashed_Blackjack
                         {
                             Console.Clear();
                             Utility.PrintGameHeader();
-                            game.leaderboard.PrintLeaderboard();
+                            game.leaderboard.ToString();
                             Console.ReadKey();
                         }
                         else

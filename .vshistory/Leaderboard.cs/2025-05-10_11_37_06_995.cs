@@ -73,7 +73,7 @@ namespace Rashed_Blackjack
             entries.Clear();
         }
         //Full leaderboard output
-        public void PrintLeaderboard()
+        public void ToString()
         {
             Console.WriteLine("----------------LEADERBOARD--------------------");
             Console.WriteLine("NAME|SCORE|WINRATIO|WINS|TIES|LOSSES");
@@ -88,6 +88,7 @@ namespace Rashed_Blackjack
             try
             {
                 string file;
+                bool quit = false;
 
                 //filename to save under is received from the GameState saving method and already validated
                 file = Constants.BOARDFILEPATH + fileName + Constants.FILEEXTENSION; //Creates a valid file path by concatenating its parts
@@ -128,10 +129,11 @@ namespace Rashed_Blackjack
             StreamReader sReader = null;
             try
             {
-                string line; ;
+                string line = "Placeholder";
                 sReader = new StreamReader(fileToLoad);
-                while ((line = sReader.ReadLine()) != null)
+                while (line != null)
                 {
+                    line = sReader.ReadLine();
                     playerInfo = line.Split(',');
                     LeaderboardEntry tempEntry = new LeaderboardEntry(playerInfo[0], int.Parse(playerInfo[1]), int.Parse(playerInfo[2]), int.Parse(playerInfo[3]), int.Parse(playerInfo[4]));
                     entries.Add(tempEntry);//No need to call AddOrModify entry here, as the board is guaranteed to be empty at this point.
@@ -146,10 +148,7 @@ namespace Rashed_Blackjack
 
             finally
             {
-                if (sReader != null)
-                {
-                    sReader.Close();
-                }
+                sReader.Close();
             }
         }
 
