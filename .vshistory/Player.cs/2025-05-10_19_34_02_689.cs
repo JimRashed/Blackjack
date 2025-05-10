@@ -109,50 +109,6 @@ namespace Rashed_Blackjack
             }
            
         }
-        public void Print()
-        {
-            if (!dealer)
-            {
-                Console.WriteLine($"{Name} Balance: {Balance.ToString("C")}");
-                Console.WriteLine($"Current bet: {Bet.ToString("C")}");
-                Console.Write($"Hand: ");
-                //Print each hand in appropriate color
-                for (int currentCard = 0; currentCard < Hand.Size; currentCard++)
-                {
-                    Console.ForegroundColor = Hand.hand[currentCard].Color;
-                    Console.Write(Hand.hand[currentCard].ToString());
-                    Console.ForegroundColor = ConsoleColor.White;
-                }
-                Console.Write("\n");
-                
-                Console.Write($"Current hand value: ");
-                if (Hand.Value > Constants.BLACKJACK)
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write(Hand.Value);
-                    Console.ForegroundColor = ConsoleColor.White;
-                }
-                else if (Hand.Value == Constants.BLACKJACK)
-                {
-                    Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.Write(Hand.Value);
-                    Console.ForegroundColor = ConsoleColor.White;
-                }
-                else
-                {
-                    Console.Write(Hand.Value);
-                }
-                Console.WriteLine("");
-                if (GameRules.Blackjack(Hand))
-                {
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("BLACKJACK!");
-                    Console.ForegroundColor = ConsoleColor.White;
-                }
-
-
-            }
-        }
         public bool ContainsHiddenCards()
         {
             bool hasHidden = false;

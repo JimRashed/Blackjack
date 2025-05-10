@@ -228,7 +228,7 @@ namespace Rashed_Blackjack
             {
                 if (player.Playing)
                 {
-                    //Console.WriteLine(player.ToString());
+                    Console.WriteLine(player.ToString());
                 }
                 else
                 {

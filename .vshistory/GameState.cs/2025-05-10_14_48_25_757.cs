@@ -128,7 +128,6 @@ namespace Rashed_Blackjack
                 {
                     cardDeck.cardList.Clear();
                 }
-                players.Clear();
 
 
                 StreamReader gameReader = null;

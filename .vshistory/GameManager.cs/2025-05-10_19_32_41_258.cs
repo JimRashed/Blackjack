@@ -228,7 +228,7 @@ namespace Rashed_Blackjack
             {
                 if (player.Playing)
                 {
-                    //Console.WriteLine(player.ToString());
+                    Console.WriteLine(player.ToString());
                 }
                 else
                 {
@@ -238,7 +238,7 @@ namespace Rashed_Blackjack
                 }
                 
             }
-        } //Consider replacing this with a "Display game" method that would keep the blackjack header at the top and add colors and indicate when blackjack occurs and stuff. Definitely better organize positioning. I'd like the layout like a blackjack table : dealer at top, players side by side
+        } //Consider replacing this with a "Display game" method that would keep the blackjack header at the top and add colors n shi
         private void PlayPlayerTurns()
         {
             int userChoice;

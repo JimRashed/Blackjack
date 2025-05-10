@@ -368,10 +368,7 @@ month = GetIntInRange(1,12)
         }
         public static void PrintNewGamePage()
         {
-            Console.Clear();
-            Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.WriteLine("   __    _            ___            \r\n  /  )  //         / (   >         / \r\n /--<  // __.  _. /_  __/___.  _. /_ \r\n/___/_</_(_/|_(__/ <_/ / (_/|_(__/ <_\r\n                    <_/              \r\n                                     ");
-            Console.ForegroundColor = ConsoleColor.White;
+
         }
         public static bool DoesFileExist(string file)
         {
