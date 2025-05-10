@@ -111,7 +111,7 @@ namespace Rashed_Blackjack
             //Clears leaderboard left over from previous game
             game.leaderboard.Clear();
             Player tempPlayer;
-            string name; 
+            string name; //I need to input name validation... Reusing names is gonna break everything rn
             double balance;
             Utility.AnimateWrite("How many players would you like to include in the game? (2-4)"); 
             int playerCount = Utility.GetIntInRange(Constants.MINPLAYERCOUNT, Constants.MAXPLAYERCOUNT);
@@ -457,32 +457,6 @@ namespace Rashed_Blackjack
                 Console.Clear();
                 DisplayDealerAndPlayers();
             }
-        }
-        private string GetUniqueName()
-        {
-            bool isUnique = false;
-            string name;
-            do
-            {
-                name = Utility.GetNonNullString();
-                isUnique = IsNameUnique(name);
-                if (!isUnique)
-                {
-                    Utility.AnimateWrite($"The name {name} is already taken! Please choose another one.");
-                }
-            } while (!isUnique);
-            return name;
-        }
-        private bool IsNameUnique(string name)
-        {
-            foreach (Player player in game.players)
-            {
-                if (player.Name == name)
-                {
-                    return false;
-                }
-            }
-            return true;
         }
        
         

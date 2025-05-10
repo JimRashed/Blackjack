@@ -461,28 +461,15 @@ namespace Rashed_Blackjack
         private string GetUniqueName()
         {
             bool isUnique = false;
-            string name;
             do
             {
-                name = Utility.GetNonNullString();
-                isUnique = IsNameUnique(name);
-                if (!isUnique)
-                {
-                    Utility.AnimateWrite($"The name {name} is already taken! Please choose another one.");
-                }
-            } while (!isUnique);
-            return name;
-        }
-        private bool IsNameUnique(string name)
-        {
-            foreach (Player player in game.players)
-            {
-                if (player.Name == name)
-                {
-                    return false;
-                }
+                string name = Utility.GetNonNullString();
+                isUnique 
             }
-            return true;
+            
+            
+
+
         }
        
         
