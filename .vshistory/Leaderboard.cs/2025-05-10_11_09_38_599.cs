@@ -107,10 +107,11 @@ namespace Rashed_Blackjack
                     for (int LBIndex = 0; LBIndex < entries.Count; LBIndex++) //Saves entire leaderboard to file line by line
                     {
                         LeaderboardEntry currentEntry = entries[LBIndex];
-                        sWriter.WriteLine($"{currentEntry.Name},{currentEntry.Losses},{currentEntry.Wins},{currentEntry.Ties},{currentEntry.Score}");
+                        sWriter.WriteLine($"{currentEntry.Name},{currentEntry.Score},{currentEntry.winRatio},{currentEntry.Wins},{currentEntry.Ties},{currentEntry.Losses},");
                     }
 
                     Console.WriteLine($"Leaderboard state saved under file {fileName}.csv");
+
                     Console.ReadKey();
                 }
 

@@ -80,7 +80,7 @@ namespace Rashed_Blackjack
                 Console.WriteLine(entry.ToString());
             }
         }
-        public void SaveBoard(string fileName)
+        public  void SaveBoard(string fileName)
         {
             StreamWriter sWriter = null; //Declaring sWriter without assigning it causes an error during closing, so sWriter is simply assigned to null
             try
@@ -107,10 +107,11 @@ namespace Rashed_Blackjack
                     for (int LBIndex = 0; LBIndex < entries.Count; LBIndex++) //Saves entire leaderboard to file line by line
                     {
                         LeaderboardEntry currentEntry = entries[LBIndex];
-                        sWriter.WriteLine($"{currentEntry.Name},{currentEntry.Losses},{currentEntry.Wins},{currentEntry.Ties},{currentEntry.Score}");
+                        sWriter.WriteLine($"{currentEntry.Name},{currentEntry.Score},{currentEntry.winRatio},{currentEntry.Wins},{currentEntry.Ties},{currentEntry.Losses},");
                     }
 
                     Console.WriteLine($"Leaderboard state saved under file {fileName}.csv");
+
                     Console.ReadKey();
                 }
 
@@ -127,10 +128,6 @@ namespace Rashed_Blackjack
                     sWriter.Close();
                 }
             }
-        }
-        public void LoadBoard()
-        {
-
         }
 
     }

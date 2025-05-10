@@ -80,14 +80,14 @@ namespace Rashed_Blackjack
                 Console.WriteLine(entry.ToString());
             }
         }
-        public void SaveBoard(string fileName)
+        public  void SaveBoard(string fileName)
         {
             StreamWriter sWriter = null; //Declaring sWriter without assigning it causes an error during closing, so sWriter is simply assigned to null
             try
             {
                 string file;
                 bool quit = false;
-             
+                LeaderboardEntry currentEntry = new LeaderboardEntry();
 
                 //filename to save under is received from the GameState saving method
 
@@ -100,17 +100,18 @@ namespace Rashed_Blackjack
                 {
 
 
-                    file = Constants.BOARDFILEPATH + fileName + Constants.FILEXTENSION; //Creates a valid file path by concatenating its parts
+                    file = Constants.BOARDFILEPATH + fileName + Constants.FILEXTENSION;
 
                     sWriter = new StreamWriter(file);
 
                     for (int LBIndex = 0; LBIndex < entries.Count; LBIndex++) //Saves entire leaderboard to file line by line
                     {
-                        LeaderboardEntry currentEntry = entries[LBIndex];
-                        sWriter.WriteLine($"{currentEntry.Name},{currentEntry.Losses},{currentEntry.Wins},{currentEntry.Ties},{currentEntry.Score}");
+                        currentPlayer = entries[LBIndex];
+                        sWriter.WriteLine($"{currentPlayer.name},{currentPlayer.score},{Convert.ToString(currentPlayer.finishTime)},{currentPlayer.gamesWon},{currentPlayer.age},{currentPlayer.favoriteAnimal},");
                     }
 
                     Console.WriteLine($"Leaderboard state saved under file {fileName}.csv");
+
                     Console.ReadKey();
                 }
 
@@ -126,11 +127,8 @@ namespace Rashed_Blackjack
                 {
                     sWriter.Close();
                 }
+                DisplayLeaderboard(leaderboard); //Refreshes leaderboard
             }
-        }
-        public void LoadBoard()
-        {
-
         }
 
     }
