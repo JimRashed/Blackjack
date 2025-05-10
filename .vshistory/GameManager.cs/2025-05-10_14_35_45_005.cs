@@ -17,6 +17,7 @@ namespace Rashed_Blackjack
         private GameState game;
         private RoundStats stats;
         private bool gameActive;
+        int playerCount;
         int hits, stands, doubleDowns, forfeits, busts = 0;
         public void Start()
         {
@@ -89,12 +90,7 @@ namespace Rashed_Blackjack
                         }
                             break;
                     case 5:
-                        if (!gameActive)
-                        {
-                            game = new GameState();
-                        }
                         game.Load();
-                        gameActive = true;
                         break;
                     case 6:
                         quit = true;
@@ -114,7 +110,7 @@ namespace Rashed_Blackjack
             string name; //I need to input name validation... Reusing names is gonna break everything rn
             double balance;
             Utility.AnimateWrite("How many players would you like to include in the game? (2-4)"); 
-            int playerCount = Utility.GetIntInRange(Constants.MINPLAYERCOUNT, Constants.MAXPLAYERCOUNT);
+            playerCount = Utility.GetIntInRange(Constants.MINPLAYERCOUNT, Constants.MAXPLAYERCOUNT);
             for (int currentPlayer = 0; currentPlayer< playerCount; currentPlayer++)
             {
                 Utility.NewPage();
@@ -179,7 +175,7 @@ namespace Rashed_Blackjack
         {
             bool validBet = false;
             double bet;
-            for (int currentPlayerNumber = 0; currentPlayerNumber < game.players.Count; currentPlayerNumber++)
+            for (int currentPlayerNumber = 0; currentPlayerNumber < playerCount; currentPlayerNumber++)
             {
                 Utility.NewPage();
                 Player currentPlayer = game.players[currentPlayerNumber];
@@ -242,7 +238,7 @@ namespace Rashed_Blackjack
         private void PlayPlayerTurns()
         {
             int userChoice;
-            for (int currentPlayerNumber = 0; currentPlayerNumber<game.players.Count; currentPlayerNumber++)
+            for (int currentPlayerNumber = 0; currentPlayerNumber<playerCount; currentPlayerNumber++)
             {
                 Player currentPlayer = game.players[currentPlayerNumber];
                 if (currentPlayer.Playing)
@@ -368,7 +364,7 @@ namespace Rashed_Blackjack
         }
         private void Outcome()
         {
-            for (int currentPlayerNumber = 0; currentPlayerNumber < game.players.Count; currentPlayerNumber++)
+            for (int currentPlayerNumber = 0; currentPlayerNumber < playerCount; currentPlayerNumber++)
             {
                 Player currentPlayer = game.players[currentPlayerNumber];
                 if (currentPlayer.Playing)

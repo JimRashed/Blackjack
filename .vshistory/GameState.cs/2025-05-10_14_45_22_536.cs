@@ -140,7 +140,6 @@ namespace Rashed_Blackjack
 
                     //Load player profiles (using number of players)
                     int playerCount = int.Parse(gameReader.ReadLine());
-                    
                     for (int currentPlayer = 0; currentPlayer < playerCount; currentPlayer++)
                     {
                         playerInfo = gameReader.ReadLine().Split(',');
