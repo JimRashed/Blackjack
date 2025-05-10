@@ -89,7 +89,6 @@ namespace Rashed_Blackjack
             {
                 string file;
                 bool quit = false;
-
                 //filename to save under is received from the GameState saving method and already validated
                 file = Constants.BOARDFILEPATH + fileName + Constants.FILEEXTENSION; //Creates a valid file path by concatenating its parts
                 sWriter = new StreamWriter(file);

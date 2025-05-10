@@ -25,6 +25,6 @@ namespace Rashed_Blackjack
         public const string EXIT = "exit";
         public const string BOARDFILEPATH = "../../../SavedBoards/";
         public const string GAMEFILEPATH = "../../../SavedGames/";
-        public const string FILEEXTENSION = ".csv";
+        public const string FILEXTENSION = ".csv";
     }
 }

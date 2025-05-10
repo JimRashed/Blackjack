@@ -89,19 +89,38 @@ namespace Rashed_Blackjack
             {
                 string file;
                 bool quit = false;
+             
 
-                //filename to save under is received from the GameState saving method and already validated
-                file = Constants.BOARDFILEPATH + fileName + Constants.FILEEXTENSION; //Creates a valid file path by concatenating its parts
-                sWriter = new StreamWriter(file);
-                for (int LBIndex = 0; LBIndex < entries.Count; LBIndex++) //Saves entire leaderboard to file line by line
+                //filename to save under is received from the GameState saving method
+
+                if (fileName == Constants.EXIT) //Allows player to exit program early if they changed their mind
                 {
-                    LeaderboardEntry currentEntry = entries[LBIndex];
-                    sWriter.WriteLine($"{currentEntry.Name},{currentEntry.Losses},{currentEntry.Wins},{currentEntry.Ties},{currentEntry.Score}");
+                    quit = true;
                 }
+
+                if (!quit)
+                {
+
+
+                    file = Constants.BOARDFILEPATH + fileName + Constants.FILEXTENSION; //Creates a valid file path by concatenating its parts
+
+                    sWriter = new StreamWriter(file);
+
+                    for (int LBIndex = 0; LBIndex < entries.Count; LBIndex++) //Saves entire leaderboard to file line by line
+                    {
+                        LeaderboardEntry currentEntry = entries[LBIndex];
+                        sWriter.WriteLine($"{currentEntry.Name},{currentEntry.Losses},{currentEntry.Wins},{currentEntry.Ties},{currentEntry.Score}");
+                    }
+
+                    Console.WriteLine($"Leaderboard state saved under file {fileName}.csv");
+                    Console.ReadKey();
+                }
+
+
             }
             catch (Exception e)
             {
-                Console.WriteLine("An error occured during file saving.");
+                Console.WriteLine("An error occured during file saving. Please verify that your input was correct and contained no illegal characters (/, <, !, \", etc.");
             }
             finally
             {
@@ -118,12 +137,10 @@ namespace Rashed_Blackjack
             bool fileExists = false;
             bool quit = false;
             string[] playerInfo;
-            //It is important to note that name prompting and file verification will NOT happen here. That's GameState's job. When calling GameState's Save method,
-            //2 files will be created with the same name, but in different folders. One for the game, one for the leaderboard. So, there's no need to check if a leaderboard file with a certain name exists,
-            //as the name is already checked in GameState
+
             do //Guarantees an existing leaderboard file
             {
-             
+                Console.WriteLine("Please input the name of the leaderboard save file to load (no file extensions, name ONLY) or 'exit' to abort");
                 quit = fileName == Constants.EXIT;
 
 
