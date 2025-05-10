@@ -135,6 +135,7 @@ namespace Rashed_Blackjack
                     gameReader = new StreamReader(fileToLoad);
 
                     //Load round number
+
                     round = int.Parse(gameReader.ReadLine());
 
                     //Load player profiles (using number of players)
@@ -146,20 +147,14 @@ namespace Rashed_Blackjack
                         players.Add(tempPlayer);
                     }
 
-                    //Load deck (using number of cards)
+                    //Load deck
                     int deckCards = int.Parse(gameReader.ReadLine());
                     for (int currentCard = 0; currentCard < deckCards; currentCard++)
                     {
                         cardInfo = gameReader.ReadLine().Split(',');
-                        Card tempCard = new Card(Enum.Parse<Rank>(cardInfo[0]), Enum.Parse<Suit>(cardInfo[1]));
-                        cardDeck.PlaceOnTop(tempCard);
+                        Card tempCard = new Card((Rank)cardInfo[0],)
+
                     }
-
-                    //Load leaderboard
-                    leaderboard.LoadBoard(fileName);
-
-                    Utility.AnimateWrite("Game loaded!");
-                    Console.ReadKey();
                     
                 }
 
@@ -174,6 +169,7 @@ namespace Rashed_Blackjack
                     {
                         gameReader.Close();
                     }
+                   
                 }
             }
         }

@@ -56,8 +56,8 @@ namespace Rashed_Blackjack
                     //Save players
                     foreach (Player player in players)
                     {
-                        gameRecorder.WriteLine($"{player.Name},{player.Balance}"); 
-                        //No need to save hands, there will be no mid-round saves
+                        gameRecorder.WriteLine($"{player.Name},{player.Balance},{player.Bet},{player.Playing}"); //Bet and playing are a bit redundant since loading happens between rounds, but for clarity purposes, I'll leave them in. 
+                        //No need to save cards, there will be no mid-round saves
                     }
                     //No need to save dealer, a new one will be created in the new round
                     //Save deck
@@ -95,14 +95,13 @@ namespace Rashed_Blackjack
             bool fileExists = false;
             bool quit = false;
             string[] playerInfo;
-            string[] cardInfo;
             Utility.AnimateWrite("Beginning game loading...");
             do //Guarantees an existing leaderboard file
             {
                 Console.WriteLine("Please input the name of the save file to load (no file extensions, name ONLY) or 'exit' to abort");
                 fileName = Utility.GetNonNullString();
                 quit = fileName == Constants.EXIT;
-                fileToLoad = Constants.GAMEFILEPATH + fileName + Constants.FILEEXTENSION; 
+                fileToLoad = Constants.GAMEFILEPATH + fileName + Constants.FILEEXTENSION; //This line has to remain outside of the if statement for the streamreader to work.
                 if (!quit)
                 {
 
@@ -122,45 +121,24 @@ namespace Rashed_Blackjack
 
             if (!quit)
             {
-                //Now that we have a guaranteed valid save file exists, GameState's current data can be wiped.
-                if (cardDeck.cardList.Count != 0)
-                {
-                    cardDeck.cardList.Clear();
-                }
+                //Now that we have a guaranteed valid save file exists, we can GameState's current data
                 players.Clear();
+                cardDeck.cardList.Clear();
 
-                StreamReader gameReader = null;
+                
+
+                //Create all players and place them in list from file info
+                StreamReader sReader = null;
                 try
                 {
-                    gameReader = new StreamReader(fileToLoad);
-
-                    //Load round number
-                    round = int.Parse(gameReader.ReadLine());
-
-                    //Load player profiles (using number of players)
-                    int playerCount = int.Parse(gameReader.ReadLine());
-                    for (int currentPlayer = 0; currentPlayer < playerCount; currentPlayer++)
+                    string line = "Placeholder";
+                    sReader = new StreamReader(fileToLoad);
+                    while (line != null)
                     {
-                        playerInfo = gameReader.ReadLine().Split(',');
-                        Player tempPlayer = new Player(playerInfo[0], int.Parse(playerInfo[1]));
-                        players.Add(tempPlayer);
+                        line = sReader.ReadLine();
+                        playerInfo = line.Split(',');
+                        CreatePlayer(leaderboard, playerInfo);
                     }
-
-                    //Load deck (using number of cards)
-                    int deckCards = int.Parse(gameReader.ReadLine());
-                    for (int currentCard = 0; currentCard < deckCards; currentCard++)
-                    {
-                        cardInfo = gameReader.ReadLine().Split(',');
-                        Card tempCard = new Card(Enum.Parse<Rank>(cardInfo[0]), Enum.Parse<Suit>(cardInfo[1]));
-                        cardDeck.PlaceOnTop(tempCard);
-                    }
-
-                    //Load leaderboard
-                    leaderboard.LoadBoard(fileName);
-
-                    Utility.AnimateWrite("Game loaded!");
-                    Console.ReadKey();
-                    
                 }
 
                 catch (Exception e)
@@ -170,12 +148,12 @@ namespace Rashed_Blackjack
 
                 finally
                 {
-                    if (gameReader != null)
-                    {
-                        gameReader.Close();
-                    }
+                    sReader.Close();
                 }
             }
+
+            //Display updated leaderboard
+            DisplayLeaderboard(leaderboard);
         }
 
 

@@ -56,8 +56,8 @@ namespace Rashed_Blackjack
                     //Save players
                     foreach (Player player in players)
                     {
-                        gameRecorder.WriteLine($"{player.Name},{player.Balance}"); 
-                        //No need to save hands, there will be no mid-round saves
+                        gameRecorder.WriteLine($"{player.Name},{player.Balance}"); //Bet and playing are a bit redundant since loading happens between rounds, but for clarity purposes, I'll leave them in. 
+                        //No need to save cards, there will be no mid-round saves
                     }
                     //No need to save dealer, a new one will be created in the new round
                     //Save deck
@@ -95,7 +95,6 @@ namespace Rashed_Blackjack
             bool fileExists = false;
             bool quit = false;
             string[] playerInfo;
-            string[] cardInfo;
             Utility.AnimateWrite("Beginning game loading...");
             do //Guarantees an existing leaderboard file
             {
@@ -135,6 +134,7 @@ namespace Rashed_Blackjack
                     gameReader = new StreamReader(fileToLoad);
 
                     //Load round number
+
                     round = int.Parse(gameReader.ReadLine());
 
                     //Load player profiles (using number of players)
@@ -142,24 +142,7 @@ namespace Rashed_Blackjack
                     for (int currentPlayer = 0; currentPlayer < playerCount; currentPlayer++)
                     {
                         playerInfo = gameReader.ReadLine().Split(',');
-                        Player tempPlayer = new Player(playerInfo[0], int.Parse(playerInfo[1]));
-                        players.Add(tempPlayer);
                     }
-
-                    //Load deck (using number of cards)
-                    int deckCards = int.Parse(gameReader.ReadLine());
-                    for (int currentCard = 0; currentCard < deckCards; currentCard++)
-                    {
-                        cardInfo = gameReader.ReadLine().Split(',');
-                        Card tempCard = new Card(Enum.Parse<Rank>(cardInfo[0]), Enum.Parse<Suit>(cardInfo[1]));
-                        cardDeck.PlaceOnTop(tempCard);
-                    }
-
-                    //Load leaderboard
-                    leaderboard.LoadBoard(fileName);
-
-                    Utility.AnimateWrite("Game loaded!");
-                    Console.ReadKey();
                     
                 }
 
@@ -174,6 +157,7 @@ namespace Rashed_Blackjack
                     {
                         gameReader.Close();
                     }
+                   
                 }
             }
         }

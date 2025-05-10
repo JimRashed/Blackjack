@@ -157,9 +157,6 @@ namespace Rashed_Blackjack
 
                     //Load leaderboard
                     leaderboard.LoadBoard(fileName);
-
-                    Utility.AnimateWrite("Game loaded!");
-                    Console.ReadKey();
                     
                 }
 
@@ -174,6 +171,7 @@ namespace Rashed_Blackjack
                     {
                         gameReader.Close();
                     }
+                   
                 }
             }
         }

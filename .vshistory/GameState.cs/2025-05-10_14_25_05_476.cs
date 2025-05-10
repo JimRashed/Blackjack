@@ -95,7 +95,6 @@ namespace Rashed_Blackjack
             bool fileExists = false;
             bool quit = false;
             string[] playerInfo;
-            string[] cardInfo;
             Utility.AnimateWrite("Beginning game loading...");
             do //Guarantees an existing leaderboard file
             {
@@ -135,6 +134,7 @@ namespace Rashed_Blackjack
                     gameReader = new StreamReader(fileToLoad);
 
                     //Load round number
+
                     round = int.Parse(gameReader.ReadLine());
 
                     //Load player profiles (using number of players)
@@ -142,24 +142,8 @@ namespace Rashed_Blackjack
                     for (int currentPlayer = 0; currentPlayer < playerCount; currentPlayer++)
                     {
                         playerInfo = gameReader.ReadLine().Split(',');
-                        Player tempPlayer = new Player(playerInfo[0], int.Parse(playerInfo[1]));
-                        players.Add(tempPlayer);
+                        
                     }
-
-                    //Load deck (using number of cards)
-                    int deckCards = int.Parse(gameReader.ReadLine());
-                    for (int currentCard = 0; currentCard < deckCards; currentCard++)
-                    {
-                        cardInfo = gameReader.ReadLine().Split(',');
-                        Card tempCard = new Card(Enum.Parse<Rank>(cardInfo[0]), Enum.Parse<Suit>(cardInfo[1]));
-                        cardDeck.PlaceOnTop(tempCard);
-                    }
-
-                    //Load leaderboard
-                    leaderboard.LoadBoard(fileName);
-
-                    Utility.AnimateWrite("Game loaded!");
-                    Console.ReadKey();
                     
                 }
 
@@ -174,6 +158,7 @@ namespace Rashed_Blackjack
                     {
                         gameReader.Close();
                     }
+                   
                 }
             }
         }
