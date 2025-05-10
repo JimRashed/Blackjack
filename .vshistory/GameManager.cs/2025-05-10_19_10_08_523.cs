@@ -120,7 +120,7 @@ namespace Rashed_Blackjack
                 Utility.NewPage();
                 
                 Utility.AnimateWrite($"What will be the name of player {currentPlayer + 1}?");
-                name = GetUniqueName();
+                name = Utility.GetNonNullString();
                 Utility.AnimateWrite($"What will be {name}'s starting balance? (must be greater than minimum bet (50)"); //Make this more descriptive
                 balance = Utility.GetDoubleInRange(Constants.MINBET, 100000);
                 tempPlayer = new Player(name, balance);
