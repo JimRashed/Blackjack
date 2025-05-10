@@ -97,7 +97,7 @@ namespace Rashed_Blackjack
             //Clears any players left over from previous game
             game.players.Clear();
             //Clears leaderboard left over from previous game
-            game.leaderboard.Clear();
+            game.leaderboard.
             Player tempPlayer;
             string name; //I need to input name validation... Reusing names is gonna break everything rn
             double balance;

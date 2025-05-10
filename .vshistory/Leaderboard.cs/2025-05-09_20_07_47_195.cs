@@ -48,22 +48,22 @@ namespace Rashed_Blackjack
         //Selection sort based on score
         public void Sort()
         {
-            int highestIndex;
+            int lowestIndex;
             LeaderboardEntry tempStorage;
             for (int outerLoop = 0; outerLoop < entries.Count; outerLoop++)
             {
-                highestIndex = outerLoop;
+                lowestIndex = outerLoop;
 
                 for (int innerLoop = outerLoop + 1; innerLoop < entries.Count; innerLoop++)
                 {
-                    if (entries[innerLoop].Score > entries[highestIndex].Score)
+                    if (entries[innerLoop].Score < entries[lowestIndex].Score)
                     {
-                        highestIndex = innerLoop;
+                        lowestIndex = innerLoop;
                     }
                 }
                 tempStorage = entries[outerLoop];
-                entries[outerLoop] = entries[highestIndex];
-                entries[highestIndex] = tempStorage;
+                entries[outerLoop] = entries[lowestIndex];
+                entries[lowestIndex] = tempStorage;
             }
         }
         public void Clear()
