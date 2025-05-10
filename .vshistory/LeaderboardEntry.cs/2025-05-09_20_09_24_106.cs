@@ -81,7 +81,7 @@ namespace Rashed_Blackjack
                 }
                 else
                 {
-                    return (double)Wins / (double)matchesPlayed;
+                    return Wins / matchesPlayed;
                 }
             }
         }
@@ -112,7 +112,7 @@ namespace Rashed_Blackjack
         }
         public override string ToString()
         {
-            return $"{Name} | {Score} | {winRatio*100}% | {Losses} | {Ties} | {Wins} |";
+            return $"{Name}|{Score}|{winRatio}|{Losses}|{Ties}|{Wins}|";
         }
     }
 }

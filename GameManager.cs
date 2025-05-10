@@ -202,7 +202,7 @@ namespace Rashed_Blackjack
                 }
               
             }
-        }
+        } 
         private void ClearAndDisplay()
         {
             Console.Clear();
@@ -226,7 +226,7 @@ namespace Rashed_Blackjack
                 }
                 
             }
-        }
+        } //Consider replacing this with a "Display game" method that would keep the blackjack header at the top and add colors n shi
         private void PlayPlayerTurns()
         {
             int userChoice;

@@ -81,7 +81,7 @@ namespace Rashed_Blackjack
                 }
                 else
                 {
-                    return (double)Wins / (double)matchesPlayed;
+                    return Wins / matchesPlayed;
                 }
             }
         }
