@@ -384,17 +384,6 @@ month = GetIntInRange(1,12)
                 return false;
             }
         }
-        public static void WriteLineBelowSameX(string text)
-        {
-            // Get current cursor position
-            (int x, int y) = Console.GetCursorPosition();
-
-            // Move cursor down one line, same X
-            Console.SetCursorPosition(x, y + 1);
-
-            //Output
-            Console.Write(text);
-        }
 
 
 
