@@ -332,7 +332,6 @@ namespace Rashed_Blackjack
                         if (GameRules.Bust(currentPlayer.Hand))
                         {
                             stats.busts++;
-                            ClearAndDisplay();
                             Utility.AnimateWrite($"{currentPlayer.Name} busts.");
                             Console.ReadKey();
                         }
@@ -397,7 +396,6 @@ namespace Rashed_Blackjack
                 if (currentPlayer.Playing)
                 {
                     Outcomes outcome = GameRules.Outcome(currentPlayer, game.dealer);
-                    ClearAndDisplay();
                     switch (outcome)
                     {
                         case Outcomes.Win:

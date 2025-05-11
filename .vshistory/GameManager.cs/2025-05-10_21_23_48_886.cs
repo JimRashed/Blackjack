@@ -332,7 +332,6 @@ namespace Rashed_Blackjack
                         if (GameRules.Bust(currentPlayer.Hand))
                         {
                             stats.busts++;
-                            ClearAndDisplay();
                             Utility.AnimateWrite($"{currentPlayer.Name} busts.");
                             Console.ReadKey();
                         }
@@ -347,7 +346,8 @@ namespace Rashed_Blackjack
             {
                 dealer.Hand.hand[Constants.SECONDCARD].Hidden = false; //Dealer reveals his second card
                 bool bust = false;
-                ClearAndDisplay();
+                Console.Clear();
+                DisplayDealerAndPlayers();
                 Utility.AnimateWrite("Dealer's turn!");
                 Utility.AnimateWrite("The dealer reveals his second card.");
                 Console.ReadKey();
@@ -357,14 +357,16 @@ namespace Rashed_Blackjack
                     {
                         stats.hits++;
                         Hit(dealer.Hand);
-                        ClearAndDisplay();
+                        Console.Clear();
+                        DisplayDealerAndPlayers();
                         Utility.AnimateWrite("The dealer hits.");
                         Console.ReadKey();
                         if (GameRules.Bust(dealer.Hand))
                         {
                             stats.busts++;
                             bust = true;
-                            ClearAndDisplay();
+                            Console.Clear();
+                            DisplayDealerAndPlayers();
                             Utility.AnimateWrite("The dealer busts.");
                             Console.ReadKey();
                         }
@@ -397,7 +399,6 @@ namespace Rashed_Blackjack
                 if (currentPlayer.Playing)
                 {
                     Outcomes outcome = GameRules.Outcome(currentPlayer, game.dealer);
-                    ClearAndDisplay();
                     switch (outcome)
                     {
                         case Outcomes.Win:

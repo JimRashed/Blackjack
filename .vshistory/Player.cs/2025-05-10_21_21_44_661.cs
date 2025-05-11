@@ -177,11 +177,6 @@ namespace Rashed_Blackjack
                     {
                         Console.ForegroundColor = ConsoleColor.Blue;
                         Console.Write(Hand.Value);
-                        if (GameRules.Blackjack(Hand))
-                        {
-                            Console.ForegroundColor = ConsoleColor.Green;
-                            Console.Write(" BLACKJACK!");
-                        }
                         Console.ForegroundColor = ConsoleColor.White;
                     }
                     else
@@ -190,6 +185,12 @@ namespace Rashed_Blackjack
                     }
                     Console.WriteLine("");
 
+                    if (GameRules.Blackjack(Hand))
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("BLACKJACK!");
+                        Console.ForegroundColor = ConsoleColor.White;
+                    }
                 }
                 else
                 {
