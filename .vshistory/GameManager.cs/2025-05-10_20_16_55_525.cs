@@ -298,7 +298,6 @@ namespace Rashed_Blackjack
                                     userChoice = Constants.STAND; //Forces turn to end
                                     ClearAndDisplay(); //Updates board
                                     Utility.AnimateWrite($"{currentPlayer.Name} doubles down.");
-                                    Console.ReadKey();
 
                                 }
                                 else

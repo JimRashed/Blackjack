@@ -256,21 +256,15 @@ namespace Rashed_Blackjack
                 {
                     do
                     {
-                        ClearAndDisplay();
-                        if (game.players.Count < 4)
-                        {
-                            Utility.AnimateWrite($"{currentPlayer.Name}, please choose a move.");
-                            Console.WriteLine("");
-                            Console.WriteLine("1 - Hit");
-                            Console.WriteLine("2 - Stand");
-                            Console.WriteLine("3 - Double Down");
-                            Console.WriteLine("4 - Forfeit");
-                        }
-                        else
-                        {
-                            Utility.AnimateWrite($"{currentPlayer.Name}, choose a move: 1-Hit, 2-Stand, 3-Double down, 4-Forfeit");
-                        }
-                            userChoice = Utility.GetIntInRange(Constants.MINPLAYERMOVE, Constants.MAXPLAYERMOVE);
+                        Console.Clear();
+                        DisplayDealerAndPlayers();
+                        Utility.AnimateWrite($"{currentPlayer.Name}, please choose a move.");
+                        Console.WriteLine("");
+                        Console.WriteLine("1 - Hit");
+                        Console.WriteLine("2 - Stand");
+                        Console.WriteLine("3 - Double Down");
+                        Console.WriteLine("4 - Forfeit");
+                        userChoice = Utility.GetIntInRange(Constants.MINPLAYERMOVE, Constants.MAXPLAYERMOVE);
 
                         switch (userChoice)
                         {
@@ -298,7 +292,6 @@ namespace Rashed_Blackjack
                                     userChoice = Constants.STAND; //Forces turn to end
                                     ClearAndDisplay(); //Updates board
                                     Utility.AnimateWrite($"{currentPlayer.Name} doubles down.");
-                                    Console.ReadKey();
 
                                 }
                                 else
