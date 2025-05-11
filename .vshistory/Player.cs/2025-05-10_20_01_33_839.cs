@@ -150,9 +150,7 @@ namespace Rashed_Blackjack
                     Console.WriteLine("BLACKJACK!");
                     Console.ForegroundColor = ConsoleColor.White;
                 }
-            }
-            else
-            {
+
 
             }
         }

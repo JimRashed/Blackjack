@@ -67,11 +67,11 @@ namespace Rashed_Blackjack
             //Derive color based on suit
             if ((int)Suit%2 == 0)
             {
-                Color = ConsoleColor.DarkGray;
+                Color = ConsoleColor.Black;
             }
             else
             {
-                Color = ConsoleColor.DarkRed;
+                Color = ConsoleColor.Red;
             }
             Hidden = hidden;
         }

@@ -4,7 +4,6 @@ using System.Diagnostics.Tracing;
 using System.Linq;
 using System.Numerics;
 using System.Runtime.CompilerServices;
-using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -223,17 +222,13 @@ namespace Rashed_Blackjack
         }
         private void DisplayDealerAndPlayers()
         {
-            string seperator = "-------------------------------";
-            Console.Clear();
+            Utility.PrintNewGamePage();
             Console.WriteLine($"{game.dealer.ToString()}");//Display dealer
-            Console.WriteLine(seperator);
             foreach (Player player in game.players) //Display cards
             {
-               
                 if (player.Playing)
                 {
                     //Console.WriteLine(player.ToString());
-                    player.Print();
                 }
                 else
                 {
@@ -241,8 +236,7 @@ namespace Rashed_Blackjack
                     Console.WriteLine(player.ToString());
                     Console.ForegroundColor = ConsoleColor.White;
                 }
-                Console.WriteLine(seperator);
-
+                
             }
         } //Consider replacing this with a "Display game" method that would keep the blackjack header at the top and add colors and indicate when blackjack occurs and stuff. Definitely better organize positioning. I'd like the layout like a blackjack table : dealer at top, players side by side
         private void PlayPlayerTurns()

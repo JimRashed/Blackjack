@@ -120,7 +120,7 @@ namespace Rashed_Blackjack
                 for (int currentCard = 0; currentCard < Hand.Size; currentCard++)
                 {
                     Console.ForegroundColor = Hand.hand[currentCard].Color;
-                    Console.Write($"{Hand.hand[currentCard].ToString()} ");
+                    Console.Write(Hand.hand[currentCard].ToString());
                     Console.ForegroundColor = ConsoleColor.White;
                 }
                 Console.Write("\n");
@@ -143,16 +143,13 @@ namespace Rashed_Blackjack
                     Console.Write(Hand.Value);
                 }
                 Console.WriteLine("");
-
                 if (GameRules.Blackjack(Hand))
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("BLACKJACK!");
                     Console.ForegroundColor = ConsoleColor.White;
                 }
-            }
-            else
-            {
+
 
             }
         }
