@@ -5,15 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Rashed_Blackjack
-{ /*
-   * Programming 2 – Project – Winter 2025
-   * Created by: Jimmy Rashed, 6291812
-   * Tested by: Daniel Oleinic
-   * Relationship: Friend
-   * Date: May 11th, 2025
-   *
-   * Description: The goal of this class is to store a single player's hand as well as the actions that can be performed on it: Adding, Removing, Displaying, and sorting. 
-   */
+{
     public class Hand
     {
         

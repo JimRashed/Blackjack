@@ -7,15 +7,6 @@ using System.Threading.Tasks;
 
 namespace Rashed_Blackjack
 {
-    /*
-  * Programming 2 – Project – Winter 2025
-  * Created by: Jimmy Rashed, 6291812
-  * Tested by: Daniel Oleinic
-  * Relationship: Friend
-  * Date: May 11th, 2025
-  *
-  * Description: The goal of this class is to store the all information pertaining to a single card. It holds a card's rank, suit, color, and visibility. It contains methods for display, equality checking, and hashcode generation
-  */
     public class Card
     {
         //Fields
@@ -214,7 +205,6 @@ namespace Rashed_Blackjack
             return hash;
         }
         //Override operators
-        //All operator overrides perform comparisons using enum values of Suit and Rank.
         public static bool operator >(Card card1, Card card2)
         {
             if (card1.Suit > card2.Suit)

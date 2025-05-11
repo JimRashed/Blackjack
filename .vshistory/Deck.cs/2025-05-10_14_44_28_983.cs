@@ -37,7 +37,14 @@ namespace Rashed_Blackjack
         {
             cardList = new List<Card>(); //Creates a full, shuffled deck of 52 cards.
             Card tempCard;
-            //Makes a card for every possible Suit/Rank combination using their appropriate enums
+            /*
+            for (int i = 1; i <= 52; i++) //Ensures that 52 different cards are created in order.  1 to 52.
+            {
+                Card tempCard = new Card(i);
+                cardList.Add(tempCard);
+            }
+            this.Shuffle(); //Shuffles cards in deck
+            */
             foreach (Suit suit in Enum.GetValues(typeof(Suit))){ //Documentation for enum iteration found at https://stackoverflow.com/questions/972307/how-to-loop-through-all-enum-values-in-c
                 foreach (Rank rank in Enum.GetValues(typeof(Rank)))
                 {
