@@ -194,13 +194,19 @@ namespace Rashed_Blackjack
           @Returns
           Returns nothing (void)
           *************************************************
+          @Examples
+
+          hand.Sort();  // Sorts the player's hand of cards
+
+          playerHand.Sort();  // Sorts the cards in playerHand
+          *************************************************
           @Pseudocode
           For outerLoop from 0 to Size - 1
               Set lowestIndex to outerLoop
               For innerLoop from outerLoop + 1 to Size
                   If hand[innerLoop] is smaller than hand[lowestIndex]
                       Set lowestIndex to innerLoop
-              Swap hand[outerLoop] and hand[lowestIndex] using temporary variable tempStorage to avoid overwriting
+              Swap hand[outerLoop] and hand[lowestIndex]
           *************************************************
         */
         public void Sort()

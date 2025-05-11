@@ -333,39 +333,7 @@ month = GetIntInRange(1,12)
             }
             return userInput;
         }
-        /*  AnimateWrite
-          *************************************************
-          Purpose: Outputs a string one character at a time 
-          with a delay between each character
-          *************************************************
-          @Algorithm:
-          Loop through each character in the message  
-          Print character to console  
-          Delay using Thread.Sleep  
-          Create 
-          Introduce new line
-          @Param
-          string message: the message to animate
-          *************************************************
-          @Exceptions
-          None
-          *************************************************
-          @Returns
-          Returns nothing 
-          *************************************************
-          @Examples
-
-          Utility.AnimateWrite("Welcome to Blackjack!");
-
-          Utility.AnimateWrite("Loading...");
-          *************************************************
-          @Pseudocode
-          For each character in message
-              Print character
-              Wait 1 milliseconds
-          Print new line
-          *************************************************
-        */
+        //Functions exactly like Console.WriteLine(), but waits 1 millisecond between each character.
         public static void AnimateWrite(string toWrite)
         {
             for (int i = 0; i < toWrite.Length; i++)

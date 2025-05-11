@@ -42,7 +42,7 @@ namespace Rashed_Blackjack
                     }
                 }
                 return valueSum;
-            } 
+            } //This logic is faulty. come back to it.
         }
         //Constructors
         public Hand()
@@ -118,7 +118,7 @@ namespace Rashed_Blackjack
           @Pseudocode
           Declare Card tempCard, set to last card in hand (count-1)
           Remove last card in hand (count-1)
-          Call Suit() on this instance of Hand
+          Call OrderBySuit() on this instance of Hand
           return tempCard
           ************************************************* 
           */
@@ -137,7 +137,7 @@ namespace Rashed_Blackjack
                 return null;
             }
         }
-        /*  Contains() 
+        /*  RemoveCard() 
           *************************************************
           Purpose: Checks if a hand contains a received card
           *************************************************
@@ -175,34 +175,6 @@ namespace Rashed_Blackjack
             }
             return false;
         }
-        /* Sort()
-          *************************************************
-          Purpose: Sorts the cards in the hand from lowest to highest 
-          using the selection sort algorithm.
-          *************************************************
-          @Algorithm:
-          Use a nested loop to find the lowest card in the unsorted portion  
-          Swap the lowest card with the first unsorted card  
-          Repeat until all cards are sorted
-          *************************************************
-          @Param
-          Receives no parameters
-          *************************************************
-          @Exceptions
-          None
-          *************************************************
-          @Returns
-          Returns nothing (void)
-          *************************************************
-          @Pseudocode
-          For outerLoop from 0 to Size - 1
-              Set lowestIndex to outerLoop
-              For innerLoop from outerLoop + 1 to Size
-                  If hand[innerLoop] is smaller than hand[lowestIndex]
-                      Set lowestIndex to innerLoop
-              Swap hand[outerLoop] and hand[lowestIndex] using temporary variable tempStorage to avoid overwriting
-          *************************************************
-        */
         public void Sort()
         {
             int lowestIndex;

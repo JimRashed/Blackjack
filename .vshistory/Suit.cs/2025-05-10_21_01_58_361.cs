@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace Rashed_Blackjack
 {
-    //A simple enum for enumerating the possible suits of a card
     public enum Suit
     {
         Clubs,
