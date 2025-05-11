@@ -344,7 +344,6 @@ month = GetIntInRange(1,12)
             Console.Write("\n");
 
         } 
-        //Outputs the program header to the console
         public static void PrintHeader()
         {
             string seperator = "****************************";
@@ -358,19 +357,16 @@ month = GetIntInRange(1,12)
             Console.ReadKey();
             Console.Clear();
         }
-        //Outputs the game header to the console
         public static void PrintGameHeader()
         {
             Console.WriteLine("██████╗ ██╗      █████╗  ██████╗██╗  ██╗     ██╗ █████╗  ██████╗██╗  ██╗\r\n██╔══██╗██║     ██╔══██╗██╔════╝██║ ██╔╝     ██║██╔══██╗██╔════╝██║ ██╔╝\r\n██████╔╝██║     ███████║██║     █████╔╝      ██║███████║██║     █████╔╝ \r\n██╔══██╗██║     ██╔══██║██║     ██╔═██╗ ██   ██║██╔══██║██║     ██╔═██╗ \r\n██████╔╝███████╗██║  ██║╚██████╗██║  ██╗╚█████╔╝██║  ██║╚██████╗██║  ██╗\r\n╚═════╝ ╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ ╚════╝ ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝\r\n                                                                        ");
             //Console.WriteLine("▀█████████▄   ▄█          ▄████████  ▄████████    ▄█   ▄█▄      ▄█    ▄████████  ▄████████    ▄█   ▄█▄ \r\n  ███    ███ ███         ███    ███ ███    ███   ███ ▄███▀     ███   ███    ███ ███    ███   ███ ▄███▀ \r\n  ███    ███ ███         ███    ███ ███    █▀    ███▐██▀       ███   ███    ███ ███    █▀    ███▐██▀   \r\n ▄███▄▄▄██▀  ███         ███    ███ ███         ▄█████▀        ███   ███    ███ ███         ▄█████▀    \r\n▀▀███▀▀▀██▄  ███       ▀███████████ ███        ▀▀█████▄        ███ ▀███████████ ███        ▀▀█████▄    \r\n  ███    ██▄ ███         ███    ███ ███    █▄    ███▐██▄       ███   ███    ███ ███    █▄    ███▐██▄   \r\n  ███    ███ ███▌    ▄   ███    ███ ███    ███   ███ ▀███▄     ███   ███    ███ ███    ███   ███ ▀███▄ \r\n▄█████████▀  █████▄▄██   ███    █▀  ████████▀    ███   ▀█▀ █▄ ▄███   ███    █▀  ████████▀    ███   ▀█▀ \r\n             ▀                                   ▀         ▀▀▀▀▀▀                            ▀         ");
         }
-        //Clears the page, the outputs the game header
         public static void NewPage()
         {
             Console.Clear();
             PrintGameHeader();
         }
-        //Clears the page, then outputs a different game header
         public static void PrintNewGamePage()
         {
             Console.Clear();
@@ -378,7 +374,6 @@ month = GetIntInRange(1,12)
             Console.WriteLine("   __    _            ___            \r\n  /  )  //         / (   >         / \r\n /--<  // __.  _. /_  __/___.  _. /_ \r\n/___/_</_(_/|_(__/ <_/ / (_/|_(__/ <_\r\n                    <_/              \r\n                                     ");
             Console.ForegroundColor = ConsoleColor.White;
         }
-        //Checks if a file exists. Code is self-explanatory.
         public static bool DoesFileExist(string file)
         {
             if (File.Exists(file))
@@ -389,6 +384,17 @@ month = GetIntInRange(1,12)
             {
                 return false;
             }
+        }
+        public static void WriteLineBelowSameX(string text)
+        {
+            // Get current cursor position
+            (int x, int y) = Console.GetCursorPosition();
+
+            // Move cursor down one line, same X
+            Console.SetCursorPosition(x, y + 1);
+
+            //Output
+            Console.Write(text);
         }
 
 

@@ -11,15 +11,6 @@ using System.Xml.Linq;
 
 namespace Rashed_Blackjack
 {
-    /*
-   * Programming 2 – Project – Winter 2025
-   * Created by: Jimmy Rashed, 6291812
-   * Tested by: Daniel Oleinic
-   * Relationship: Friend
-   * Date: May 11th, 2025
-   *
-   * Description: The goal of this program is to create a fully playable version of the card game "Blackjack" in C# .NET with additional file saving/loading features and a leaderboard. 
-   */
     public class GameManager
     {
         const int MINMENUCHOICE = 1;
@@ -33,6 +24,8 @@ namespace Rashed_Blackjack
             Utility.PrintGameHeader();
             Thread.Sleep(500);
             MainMenu();
+           
+           
             Utility.PrintNewGamePage();
             Utility.AnimateWrite("Thank you very much for playing!");
             Console.ReadKey();
@@ -249,7 +242,7 @@ namespace Rashed_Blackjack
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine(player.ToString()); //Using ToString instead of print here as Print() messes with colors. The whole player profile needs to be monotone.
+                    Console.WriteLine(player.ToString());
                     Console.ForegroundColor = ConsoleColor.White;
                 }
                 Console.WriteLine(seperator);

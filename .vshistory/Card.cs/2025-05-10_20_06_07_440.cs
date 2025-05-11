@@ -83,8 +83,6 @@ namespace Rashed_Blackjack
          Purpose: returns the contents of a card as a string
          *************************************************
          @Algorithm:
-         Check if card is hidden, return [HIDDEN] if so
-         Otherwise
          Add rank and symbol of card to a string
          return string
          *************************************************
@@ -95,16 +93,16 @@ namespace Rashed_Blackjack
          None
          *************************************************
          @Returns
-         Returns a string containing the contents of the card.
+         Returns an integer greater than minValue and less
+         er than maxValue
          *************************************************
          @Examples
           Console.WriteLine(mycard.ToString());
          *************************************************
          @Pseudocode
-         Check if card.Hidden is true, return [HIDDEN if so]
-         else
          Perform switch statement on card suit
                return rank and appropriate suit symbol for each suit
+               if no suit, return appropriate joker color
          ************************************************* 
          */
         public override string ToString()

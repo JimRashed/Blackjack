@@ -249,7 +249,7 @@ namespace Rashed_Blackjack
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine(player.ToString()); //Using ToString instead of print here as Print() messes with colors. The whole player profile needs to be monotone.
+                    Console.WriteLine(player.ToString());
                     Console.ForegroundColor = ConsoleColor.White;
                 }
                 Console.WriteLine(seperator);

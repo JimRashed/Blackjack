@@ -8,15 +8,6 @@ using System.Threading.Tasks;
 
 namespace Rashed_Blackjack
 {
-   /*
-   * Programming 2 – Project – Winter 2025
-   * Created by: Jimmy Rashed, 6291812
-   * Tested by: Daniel Oleinic
-   * Relationship: Friend
-   * Date: May 11th, 2025
-   *
-   * Description: The goal of this class is to store the all variables pertaining to the 'data' of the game. It is also responsible for saving and loading said data in files.
-   */
     public class GameState
     {
         //Fields
@@ -47,7 +38,11 @@ namespace Rashed_Blackjack
             fileName = Utility.GetNonNullString();
 
 
-            if (fileName != Constants.EXIT) //Allows player to exit program early if they changed their mind
+            if (fileName == Constants.EXIT) //Allows player to exit program early if they changed their mind
+            {
+                quit = true;
+            }
+            else
             {
                 StreamWriter gameRecorder = null;
                 try
@@ -84,9 +79,12 @@ namespace Rashed_Blackjack
                 {
                     if (gameRecorder != null)
                     {
-                        gameRecorder.Close(); //Closes the StreamWriter.
+                        gameRecorder.Close();
                     }
                 }
+
+
+
             }
 
         }

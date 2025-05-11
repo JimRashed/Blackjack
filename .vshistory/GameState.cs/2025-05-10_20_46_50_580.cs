@@ -84,7 +84,7 @@ namespace Rashed_Blackjack
                 {
                     if (gameRecorder != null)
                     {
-                        gameRecorder.Close(); //Closes the StreamWriter.
+                        gameRecorder.Close();
                     }
                 }
             }

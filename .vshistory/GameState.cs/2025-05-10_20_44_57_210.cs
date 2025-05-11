@@ -47,7 +47,11 @@ namespace Rashed_Blackjack
             fileName = Utility.GetNonNullString();
 
 
-            if (fileName != Constants.EXIT) //Allows player to exit program early if they changed their mind
+            if (fileName == Constants.EXIT) //Allows player to exit program early if they changed their mind
+            {
+                quit = true;
+            }
+            else
             {
                 StreamWriter gameRecorder = null;
                 try
@@ -84,9 +88,12 @@ namespace Rashed_Blackjack
                 {
                     if (gameRecorder != null)
                     {
-                        gameRecorder.Close(); //Closes the StreamWriter.
+                        gameRecorder.Close();
                     }
                 }
+
+
+
             }
 
         }
