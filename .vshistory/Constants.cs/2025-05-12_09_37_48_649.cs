@@ -45,9 +45,5 @@ namespace Rashed_Blackjack
         public const string GAMEFILEPATH = "../../../SavedGames/";
         //The file extension to use in save files.
         public const string FILEEXTENSION = ".csv";
-        //The max value of an ace card
-        public const int ACEVALUE = 11;
-        //The value of a face card
-        public const int FACECARDVALUE = 10;
     }
 }

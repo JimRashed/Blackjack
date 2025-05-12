@@ -35,32 +35,8 @@ namespace Rashed_Blackjack
                 int aceCount = 0;
                 foreach(Card card in hand)
                 {
-                    switch (card.Rank)
-                    {
-                        case Rank.Ace:
-                            valueSum += Constants.ACEVALUE;
-                            aceCount++;
-                            break;
-                        case Rank.King:
-                        case Rank.Queen:
-                        case Rank.Jack:
-                        case Rank.Ten:
-                            valueSum += Constants.FACECARDVALUE;
-                            break;
-                        default:
-                            valueSum += (int)card.Rank;
-                            break;
-                    }
-                }
 
-                //Reduce value by 10 for each ace if hand goes over
-                while (valueSum > Constants.BLACKJACK && aceCount > 0)
-                {
-                    valueSum -= 10; //Changes the value of each ace in the hand to 1
-                    aceCount--;
                 }
-
-                return valueSum;
             } 
         }
         //Constructors

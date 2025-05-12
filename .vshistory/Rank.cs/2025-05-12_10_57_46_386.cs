@@ -18,9 +18,9 @@ namespace Rashed_Blackjack
         Eight,
         Nine,
         Ten,
-        Jack, 
-        Queen, 
-        King, 
-        Ace
+        Jack, //12
+        Queen, //13
+        King, //14
+        Ace = 11
     }
 }

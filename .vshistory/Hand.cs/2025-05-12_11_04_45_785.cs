@@ -39,7 +39,6 @@ namespace Rashed_Blackjack
                     {
                         case Rank.Ace:
                             valueSum += Constants.ACEVALUE;
-                            aceCount++;
                             break;
                         case Rank.King:
                         case Rank.Queen:
@@ -52,15 +51,6 @@ namespace Rashed_Blackjack
                             break;
                     }
                 }
-
-                //Reduce value by 10 for each ace if hand goes over
-                while (valueSum > Constants.BLACKJACK && aceCount > 0)
-                {
-                    valueSum -= 10; //Changes the value of each ace in the hand to 1
-                    aceCount--;
-                }
-
-                return valueSum;
             } 
         }
         //Constructors

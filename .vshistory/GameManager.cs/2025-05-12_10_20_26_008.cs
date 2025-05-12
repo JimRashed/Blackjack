@@ -28,7 +28,6 @@ namespace Rashed_Blackjack
         private RoundStats stats;
         private bool gameActive;
         int hits, stands, doubleDowns, forfeits, busts = 0;
-        //FACE CARDS ARE ALL DISPLAYED AS 10's. FIX THIS OR I WILL HAVE YOUR HEAD.
         public void Start()
         {
             Utility.PrintGameHeader();

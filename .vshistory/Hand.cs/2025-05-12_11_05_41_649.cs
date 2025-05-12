@@ -55,12 +55,6 @@ namespace Rashed_Blackjack
 
                 //Reduce value by 10 for each ace if hand goes over
                 while (valueSum > Constants.BLACKJACK && aceCount > 0)
-                {
-                    valueSum -= 10; //Changes the value of each ace in the hand to 1
-                    aceCount--;
-                }
-
-                return valueSum;
             } 
         }
         //Constructors
