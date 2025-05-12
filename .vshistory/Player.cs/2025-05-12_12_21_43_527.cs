@@ -142,7 +142,7 @@ namespace Rashed_Blackjack
                 {
                     Console.Write(Hand.Value);
                 }
-                Console.Write("");
+                Console.WriteLine("");
 
                 if (GameRules.Blackjack(Hand))
                 {
