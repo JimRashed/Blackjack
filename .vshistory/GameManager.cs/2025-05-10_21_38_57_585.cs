@@ -124,7 +124,7 @@ namespace Rashed_Blackjack
             Player tempPlayer;
             string name; 
             double balance;
-            Utility.AnimateWrite("How many players would you like to include in the game? (2-4)"); 
+            Utility.AnimateWrite("How many players would you like to include in the game? (1-4)"); 
             int playerCount = Utility.GetIntInRange(Constants.MINPLAYERCOUNT, Constants.MAXPLAYERCOUNT);
             for (int currentPlayer = 0; currentPlayer< playerCount; currentPlayer++)
             {
@@ -452,7 +452,6 @@ namespace Rashed_Blackjack
             Card cardToAdd;
             foreach (Player player in game.players) //Empties all player's hands back into the deck
             {
-                /*
                 for (int currentCard = player.Hand.hand.Count; currentCard > 0; currentCard--)
                 {
                     cardToAdd = player.Hand.RemoveCard();
@@ -460,15 +459,8 @@ namespace Rashed_Blackjack
                     {
                         game.cardDeck.PlaceOnTop(cardToAdd);
                     }
-                }*/
-                while (player.Hand.hand.Count > 0)
-                {
-                    cardToAdd = player.Hand.RemoveCard();
-                    cardToAdd.Hidden = false; //Resets hidden status, just in case
-                    game.cardDeck.PlaceOnTop(cardToAdd);
                 }
             }
-            /*
             for (int currentCard = game.dealer.Hand.hand.Count; currentCard > 0; currentCard--) //Empties all the dealer's card into the deck
             {
                 cardToAdd = game.dealer.Hand.RemoveCard();
@@ -476,12 +468,6 @@ namespace Rashed_Blackjack
                 {
                     game.cardDeck.PlaceOnTop(cardToAdd);
                 }
-            }*/
-            while (game.dealer.Hand.hand.Count > 0)
-            {
-                cardToAdd = game.dealer.Hand.RemoveCard();
-                cardToAdd.Hidden = false;
-                game.cardDeck.PlaceOnTop(cardToAdd);
             }
             game.cardDeck.Shuffle(2);
         }

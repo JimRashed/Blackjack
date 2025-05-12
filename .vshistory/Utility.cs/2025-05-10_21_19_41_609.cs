@@ -19,58 +19,58 @@ namespace Rashed_Blackjack
     public static class Utility
     {
         /*  GetIntInRange() 
-        *************************************************
-        Purpose: Takes input from user over and over until
-        input is an integer falling within the range specified
-        during function call
-        *************************************************
-        @Algorithm:
-        Get user input
-        Check if input is greater than minimum value and
-        less that maximum value
-        Loop until input is correct
-        Return input 
-        *************************************************
-        @Param
-        Receives 2 parameters:
-        int minValue: the minimum allowed value for the 
-        return
-        int maxValue: the maximum allowed value for the 
-        return
+*************************************************
+Purpose: Takes input from user over and over until
+input is an integer falling within the range specified
+during function call
+*************************************************
+@Algorithm:
+Get user input
+Check if input is greater than minimum value and
+less that maximum value
+Loop until input is correct
+Return input 
+*************************************************
+@Param
+Receives 2 parameters:
+int minValue: the minimum allowed value for the 
+return
+int maxValue: the maximum allowed value for the 
+return
 
-        *************************************************
-        @Exceptions
-        None
-        *************************************************
-        @Returns
-        Returns an integer greater than minValue and less
-        er than maxValue
+*************************************************
+@Exceptions
+None
+*************************************************
+@Returns
+Returns an integer greater than minValue and less
+er than maxValue
 
-        *************************************************
-        @Examples
+*************************************************
+@Examples
 
-        int choice; //Needs to be between 1 and 6
-        choice = GetIntInRange(1,6)
+int choice; //Needs to be between 1 and 6
+choice = GetIntInRange(1,6)
 
-        int month; //Needs to be between 1 and 12
-        month = GetIntInRange(1,12)
+int month; //Needs to be between 1 and 12
+month = GetIntInRange(1,12)
 
-        *************************************************
-        @Pseudocode
-         Declare bool isInRange, set to false
-         Declare int userInput
-         Begin do while loop: while (isInRange = false)
-             Call function IntParse with Console.ReadLine() as argument
-             Set userInput to return value
-             Set isInRange to (userInput >= minValue && userInput <= maxValue
-             Begin if statement: if (isInRange= false)
-                 Output error message
-             End of if statement
-         End of do while
+*************************************************
+@Pseudocode
+ Declare bool isInRange, set to false
+ Declare int userInput
+ Begin do while loop: while (isInRange = false)
+     Call function IntParse with Console.ReadLine() as argument
+     Set userInput to return value
+     Set isInRange to (userInput >= minValue && userInput <= maxValue
+     Begin if statement: if (isInRange= false)
+         Output error message
+     End of if statement
+ End of do while
 
-         Return userInput
-        ************************************************* 
-        */
+ Return userInput
+************************************************* 
+*/
         public static int GetIntInRange(int minValue, int maxValue)
         {
             bool isInRange = false;
@@ -403,11 +403,8 @@ namespace Rashed_Blackjack
         //Outputs the game header to the console
         public static void PrintGameHeader()
         {
-            //Console.ForegroundColor = ConsoleColor.Yellow;
-            //Console.WriteLine("██████╗ ██╗      █████╗  ██████╗██╗  ██╗     ██╗ █████╗  ██████╗██╗  ██╗\r\n██╔══██╗██║     ██╔══██╗██╔════╝██║ ██╔╝     ██║██╔══██╗██╔════╝██║ ██╔╝\r\n██████╔╝██║     ███████║██║     █████╔╝      ██║███████║██║     █████╔╝ \r\n██╔══██╗██║     ██╔══██║██║     ██╔═██╗ ██   ██║██╔══██║██║     ██╔═██╗ \r\n██████╔╝███████╗██║  ██║╚██████╗██║  ██╗╚█████╔╝██║  ██║╚██████╗██║  ██╗\r\n╚═════╝ ╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ ╚════╝ ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝\r\n                                                                        ");
-          
-            Console.WriteLine("▀█████████▄   ▄█          ▄████████  ▄████████    ▄█   ▄█▄      ▄█    ▄████████  ▄████████    ▄█   ▄█▄ \r\n  ███    ███ ███         ███    ███ ███    ███   ███ ▄███▀     ███   ███    ███ ███    ███   ███ ▄███▀ \r\n  ███    ███ ███         ███    ███ ███    █▀    ███▐██▀       ███   ███    ███ ███    █▀    ███▐██▀   \r\n ▄███▄▄▄██▀  ███         ███    ███ ███         ▄█████▀        ███   ███    ███ ███         ▄█████▀    \r\n▀▀███▀▀▀██▄  ███       ▀███████████ ███        ▀▀█████▄        ███ ▀███████████ ███        ▀▀█████▄    \r\n  ███    ██▄ ███         ███    ███ ███    █▄    ███▐██▄       ███   ███    ███ ███    █▄    ███▐██▄   \r\n  ███    ███ ███▌    ▄   ███    ███ ███    ███   ███ ▀███▄     ███   ███    ███ ███    ███   ███ ▀███▄ \r\n▄█████████▀  █████▄▄██   ███    █▀  ████████▀    ███   ▀█▀ █▄ ▄███   ███    █▀  ████████▀    ███   ▀█▀ \r\n             ▀                                   ▀         ▀▀▀▀▀▀                            ▀         ");
-            //Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("██████╗ ██╗      █████╗  ██████╗██╗  ██╗     ██╗ █████╗  ██████╗██╗  ██╗\r\n██╔══██╗██║     ██╔══██╗██╔════╝██║ ██╔╝     ██║██╔══██╗██╔════╝██║ ██╔╝\r\n██████╔╝██║     ███████║██║     █████╔╝      ██║███████║██║     █████╔╝ \r\n██╔══██╗██║     ██╔══██║██║     ██╔═██╗ ██   ██║██╔══██║██║     ██╔═██╗ \r\n██████╔╝███████╗██║  ██║╚██████╗██║  ██╗╚█████╔╝██║  ██║╚██████╗██║  ██╗\r\n╚═════╝ ╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ ╚════╝ ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝\r\n                                                                        ");
+            //Console.WriteLine("▀█████████▄   ▄█          ▄████████  ▄████████    ▄█   ▄█▄      ▄█    ▄████████  ▄████████    ▄█   ▄█▄ \r\n  ███    ███ ███         ███    ███ ███    ███   ███ ▄███▀     ███   ███    ███ ███    ███   ███ ▄███▀ \r\n  ███    ███ ███         ███    ███ ███    █▀    ███▐██▀       ███   ███    ███ ███    █▀    ███▐██▀   \r\n ▄███▄▄▄██▀  ███         ███    ███ ███         ▄█████▀        ███   ███    ███ ███         ▄█████▀    \r\n▀▀███▀▀▀██▄  ███       ▀███████████ ███        ▀▀█████▄        ███ ▀███████████ ███        ▀▀█████▄    \r\n  ███    ██▄ ███         ███    ███ ███    █▄    ███▐██▄       ███   ███    ███ ███    █▄    ███▐██▄   \r\n  ███    ███ ███▌    ▄   ███    ███ ███    ███   ███ ▀███▄     ███   ███    ███ ███    ███   ███ ▀███▄ \r\n▄█████████▀  █████▄▄██   ███    █▀  ████████▀    ███   ▀█▀ █▄ ▄███   ███    █▀  ████████▀    ███   ▀█▀ \r\n             ▀                                   ▀         ▀▀▀▀▀▀                            ▀         ");
         }
         //Clears the page, the outputs the game header
         public static void NewPage()
