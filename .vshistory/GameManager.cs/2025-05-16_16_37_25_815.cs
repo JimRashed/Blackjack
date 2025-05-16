@@ -1108,14 +1108,16 @@ namespace Rashed_Blackjack
        * None
        *************************************************
        * @Returns
-       * Returns a boolean declaring if the name was unique or not
+       * Returns true if the name is unique; otherwise, returns false.
        *************************************************
        * @Examples
+       * // To check if a proposed name is unique:
+       * // bool unique = IsNameUnique("Alice");
        *************************************************
        * @Pseudocode
        * For each player in game.players
-           * If player.Name is equal to name
-              * Return false
+       * If player.Name is equal to name
+       * Return false
        * Return true
        *************************************************
        */

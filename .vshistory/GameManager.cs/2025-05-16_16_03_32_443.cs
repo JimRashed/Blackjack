@@ -696,42 +696,6 @@ namespace Rashed_Blackjack
                 ClearAndDisplay();
             }
         }
-        /* PlayDealerTurn(Player dealer)
-        *************************************************
-        * Purpose: Simulates the dealer's turn according to standard Blackjack rules.
-        *************************************************
-        * @Algorithm:
-        * 1. Check if any players are still actively playing. If not, skip the dealer's turn.
-        * 2. Reveal the dealer's hidden second card.
-        * 3. While the dealer's hand value is less than the dealer's hit limit (typically 17):
-        * 4. Deal another card to the dealer's hand.
-        * 5. Check if the dealer has busted (hand value exceeds 21).
-        * 6. Once the dealer's hand value is 17 or more, or if the dealer busts, their turn ends.
-        * 7. Display the final state of the dealer's hand.
-        *************************************************
-        * @Param
-        * dealer: The Player object representing the dealer.
-        *************************************************
-        * @Exceptions
-        * None
-        *************************************************
-        * @Returns
-        * Returns nothing
-        *************************************************
-        * @Examples
-        *************************************************
-        * @Pseudocode
-        * If no players are actively playing
-            * Display message explaining that turn will be skipped.
-        * Else
-        * Reveal dealer's hidden card
-        * While dealer's hand value < 17
-            * Deal card to dealer
-            * If dealer's hand value > 21
-             * Dealer busts, end turn
-        * Display dealer's final hand
-        *************************************************
-        */
         private void PlayDealerTurn(Player dealer)
         {
             if (!GameRules.NoOnePlaying(game.players))
@@ -780,63 +744,6 @@ namespace Rashed_Blackjack
 
 
         }
-        /* Outcome()
-       *************************************************
-       * Purpose: Determines the outcome of the round for each active player and updates their balance and the leaderboard accordingly.
-       *************************************************
-       * @Algorithm:
-       * 1. Iterate through each player in the game.
-       * 2. If the player is currently playing:
-       * 4. Determine the outcome of their hand compared to the dealer's hand using game rules.
-       * 5. Clear and display the game state.
-       * 6. Based on the outcome (Win, Loss, Tie, Blackjack, Bust):
-       * 7. Display a message describing the outcome.
-       * 8. Update the player's balance based on the payout rules.
-       * 9. Record the outcome on the leaderboard.
-       * 10. Reset the player's bet to zero for the next round.
-       * 11 Wait for user input before continuing.
-       * 12  Clear and redisplay the game state.
-       *************************************************
-       * @Param
-       * Receives no parameters.
-       *************************************************
-       * @Exceptions
-       * None
-       *************************************************
-       * @Returns
-       * Returns nothing
-       *************************************************
-       * @Examples
-       *************************************************
-       * @Pseudocode
-       * For each player in game.players
-       * If player is playing
-         * Determine outcome using GameRules.Outcome(player, dealer)
-       * Clear and display game state
-       * Switch (outcome)
-       * Case Win:
-           * Display win message
-           * Update player balance (increase by 2 * bet)
-           * Update leaderboard (add/modify entry)
-       * Case Loss:
-           * Display loss message
-           * Update leaderboard (add/modify entry)
-       * Case Tie:
-           * Display tie message
-           * Update player balance (return bet)
-           * Update leaderboard (add/modify entry)
-       * Case Blackjack:
-           * Display blackjack message
-           * Update player balance (increase by 2.5 * bet)
-           * Update leaderboard (add/modify entry)
-       * Case Bust:
-           * Display bust message
-           * Update leaderboard (add/modify entry)
-       * Reset player's bet to 0
-       * Wait for user input
-       * Clear and display game state
-       *************************************************
-       */
         private void Outcome()
         {
             for (int currentPlayerNumber = 0; currentPlayerNumber < game.players.Count; currentPlayerNumber++)
@@ -889,78 +796,12 @@ namespace Rashed_Blackjack
                
             }
         }
-        /*  Hit(Hand playerHand)
-       *************************************************
-       * Purpose: Deals a single card from the game's deck to the specified player's hand and records the hit.
-       *************************************************
-       * @Algorithm:
-       * 1. Draw a card from the top of the game's card deck.
-       * 2. Add the drawn card to the provided player's hand.
-       * 3. Increment the count of hits for the current round.
-       *************************************************
-       * @Param
-       * playerHand: The Hand object of the player who is receiving the card.
-       *************************************************
-       * @Exceptions
-       * None
-       *************************************************
-       * @Returns
-       * Returns void.
-       *************************************************
-       *************************************************
-       * @Pseudocode
-       * Draw a card from game.cardDeck
-       * Add card to playerHand.hand
-       * Increment stats.hits
-       *************************************************
-       */
         private void Hit(Hand playerHand)
         {
             playerHand.hand.Add(game.cardDeck.Draw());
             stats.hits++;
 
         }
-        /* EndRound()
-         *************************************************
-         * Purpose: Cleans up after a round by returning all played cards to the deck and shuffling it.
-         *************************************************
-         * @Algorithm:
-         * 1. For each player in the game:
-             * 2. While the player's hand contains cards:
-                 * 3. Remove a card from the player's hand.
-                 * 4. Ensure the card's hidden status is reset to false.
-                 * 5. Place the card back on top of the game's card deck.
-         * 6. While the dealer's hand contains cards:
-             * 7. Remove a card from the dealer's hand.
-             * 8. Ensure the card's hidden status is reset to false.
-             * 9. Place the card back on top of the game's card deck.
-         * 10. Shuffle the game's card deck.
-         *************************************************
-         * @Param
-         * Receives no parameters.
-         *************************************************
-         * @Exceptions
-         * None
-         *************************************************
-         * @Returns
-         * Returns nothing
-         *************************************************
-         * @Examples
-         * 
-         *************************************************
-         * @Pseudocode
-         * For each player in game.players
-             * While player's hand card count > 0
-                 * Remove card from player's hand
-                 * Set card's Hidden to false
-                 * Place card on top of game.cardDeck
-         * While dealer's hand has cards
-             * Remove card from dealer's hand
-             * Set card's Hidden to false
-             * Place card on top of game.cardDeck
-         * Shuffle game.cardDeck (2 times)
-         *************************************************
-         */
         private void EndRound()
         {
             Card cardToAdd;
@@ -999,38 +840,6 @@ namespace Rashed_Blackjack
             }
             game.cardDeck.Shuffle(2);
         }
-        /* Summary()
-         *************************************************
-         * Purpose: Displays a summary of the round, including an option to view detailed actions.
-         *************************************************
-         * @Algorithm:
-         * 1. Display the current round number to the user.
-         * 2. Ask the user if they would like to see the detailed actions taken during the round.
-         * 3. If the user consents:
-         * 4. Display the round statistics (e.g., hits, stands, busts).
-         * 5. Wait for user input to continue.
-         * 6. Clear the console.
-         * 7. Redisplay the hands of the dealer and players.
-         *************************************************
-         * @Param
-         * Receives no parameters.
-         *************************************************
-         * @Exceptions
-         * None
-         *************************************************
-         * @Returns
-         * Returns nothing
-         *************************************************
-         * @Examples
-         *************************************************
-         * @Pseudocode
-         * call AnimateWrite($"End of round {game.round}!")
-         * If User agrees to see round actions
-             * Call AnimateWrite(stats.ToString())
-             * Call Console.ReadKey()
-             * Call ClearAndDisplay()
-         *************************************************
-         */
         private void Summary()
         {
             Utility.AnimateWrite($"End of round {game.round}!");
@@ -1038,44 +847,10 @@ namespace Rashed_Blackjack
             {
                 Utility.AnimateWrite(stats.ToString());
                 Console.ReadKey();
-                ClearAndDisplay();
+                Console.Clear();
+                DisplayDealerAndPlayers();
             }
         }
-        /* GetUniqueName()
-        *************************************************
-        * Purpose: Prompts the user for a player name and ensures that the entered name is unique among the current players in the game.
-        *************************************************
-        * @Algorithm:
-        * 1. Initialize a boolean to indicate if a unique name has been obtained.
-        * 2. Declare a variable to store the player's name.
-        * 3. Repeat the following until a unique name is entered:
-        * 4. Prompt the user to enter a name (ensuring it's not null or empty).
-        * 5 Check if the entered name already exists among the current players.
-        * 6. If the name is not unique, inform the user and prompt again.
-        * 7. Return the unique name provided by the user.
-        *************************************************
-        * @Param
-        * Receives no parameters.
-        *************************************************
-        * @Exceptions
-        * None
-        *************************************************
-        * @Returns
-        * Returns the unique string representing the player's name.
-        *************************************************
-        * @Examples
-        *************************************************
-        * @Pseudocode
-        * Declare bool isUnique = false
-        * Do
-            * name = GetNonNullString()
-            * isUnique = IsNameUnique(name)
-                * If !isUnique
-                * Output error message
-        * While !isUnique
-        * Return name
-        *************************************************
-        */
         private string GetUniqueName()
         {
             bool isUnique = false;
@@ -1091,34 +866,6 @@ namespace Rashed_Blackjack
             } while (!isUnique);
             return name;
         }
-        /* IsNameUnique(string name)
-       *************************************************
-       * Purpose: Checks if a given name is unique among the names of the current players in the game.
-       *************************************************
-       * @Algorithm:
-       * 1. Iterate through each player in the game's list of players.
-       * 2. For each player, compare their name to the provided name.
-          * 3. If a player is found with a name that matches the provided name, return false 
-       * 4. If the loop completes without finding a matching name, return true
-       *************************************************
-       * @Param
-       * name: The string representing the name to check for uniqueness.
-       *************************************************
-       * @Exceptions
-       * None
-       *************************************************
-       * @Returns
-       * Returns a boolean declaring if the name was unique or not
-       *************************************************
-       * @Examples
-       *************************************************
-       * @Pseudocode
-       * For each player in game.players
-           * If player.Name is equal to name
-              * Return false
-       * Return true
-       *************************************************
-       */
         private bool IsNameUnique(string name)
         {
             foreach (Player player in game.players)

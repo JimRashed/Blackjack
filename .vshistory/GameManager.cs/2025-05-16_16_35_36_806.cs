@@ -1041,7 +1041,9 @@ namespace Rashed_Blackjack
                 ClearAndDisplay();
             }
         }
-        /* GetUniqueName()
+        /*
+        *************************************************
+        * GetUniqueName()
         *************************************************
         * Purpose: Prompts the user for a player name and ensures that the entered name is unique among the current players in the game.
         *************************************************
@@ -1064,14 +1066,16 @@ namespace Rashed_Blackjack
         * Returns the unique string representing the player's name.
         *************************************************
         * @Examples
+        * // To get a unique name for a new player:
+        * // string playerName = GetUniqueName();
         *************************************************
         * @Pseudocode
-        * Declare bool isUnique = false
+        * isUnique = false
         * Do
-            * name = GetNonNullString()
-            * isUnique = IsNameUnique(name)
-                * If !isUnique
-                * Output error message
+        * name = GetNonNullString()
+        * isUnique = IsNameUnique(name)
+        * If !isUnique
+        * AnimateWrite($"The name {name} is already taken!...")
         * While !isUnique
         * Return name
         *************************************************
@@ -1091,34 +1095,6 @@ namespace Rashed_Blackjack
             } while (!isUnique);
             return name;
         }
-        /* IsNameUnique(string name)
-       *************************************************
-       * Purpose: Checks if a given name is unique among the names of the current players in the game.
-       *************************************************
-       * @Algorithm:
-       * 1. Iterate through each player in the game's list of players.
-       * 2. For each player, compare their name to the provided name.
-          * 3. If a player is found with a name that matches the provided name, return false 
-       * 4. If the loop completes without finding a matching name, return true
-       *************************************************
-       * @Param
-       * name: The string representing the name to check for uniqueness.
-       *************************************************
-       * @Exceptions
-       * None
-       *************************************************
-       * @Returns
-       * Returns a boolean declaring if the name was unique or not
-       *************************************************
-       * @Examples
-       *************************************************
-       * @Pseudocode
-       * For each player in game.players
-           * If player.Name is equal to name
-              * Return false
-       * Return true
-       *************************************************
-       */
         private bool IsNameUnique(string name)
         {
             foreach (Player player in game.players)

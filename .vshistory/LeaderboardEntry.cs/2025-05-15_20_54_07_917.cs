@@ -101,6 +101,7 @@ namespace Rashed_Blackjack
             Ties = ties;
             Score = score;
         }
+
         public void Modify(Outcomes outcome)
         {
             Score += (int)outcome;
