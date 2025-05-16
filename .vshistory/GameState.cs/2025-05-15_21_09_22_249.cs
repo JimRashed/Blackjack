@@ -164,34 +164,34 @@ namespace Rashed_Blackjack
          * @Pseudocode
          * Prompt for fileName
          * Do
-             * Check if file exists
-             * If not exists and fileName is not EXIT
-             * Display "Error: File not found."
-             * While file does not exist and fileName is not EXIT
+         * Check if file exists
+         * If not exists and fileName is not EXIT
+         * Display "Error: File not found."
+         * While file does not exist and fileName is not EXIT
          * If fileName is not EXIT
-             * Reinstantiate dealer
-             * Clear cardDeck
-             * Clear players
-             * Create gameReader
-             * Try
-                 * Read round
-                 * Read playerCount
-                 * For currentPlayer from 0 to playerCount - 1
-                 * Read playerInfo (split by ',')
-                 * Create new Player with playerInfo[0] and int.Parse(playerInfo[1])
-                 * Add tempPlayer to players
-                 * Read deckCards
-                 * For currentCard from 0 to deckCards - 1
-                 * Read cardInfo (split by ',')
-                 * Create new Card with Enum.Parse(cardInfo[0]) and Enum.Parse(cardInfo[1])
-                 * cardDeck.PlaceOnTop(tempCard)
-                 * leaderboard.LoadBoard(fileName)
-                 * Display "Game loaded!"
-             * Catch Exception e
-                * // Handle exception (e.g., display error)
-             * Finally
-                 * If gameReader is not null
-                 * Close gameReader
+         * Reinstantiate dealer
+         * Clear cardDeck
+         * Clear players
+         * Create gameReader
+         * Try
+         * Read round
+         * Read playerCount
+         * For currentPlayer from 0 to playerCount - 1
+         * Read playerInfo (split by ',')
+         * Create new Player with playerInfo[0] and int.Parse(playerInfo[1])
+         * Add tempPlayer to players
+         * Read deckCards
+         * For currentCard from 0 to deckCards - 1
+         * Read cardInfo (split by ',')
+         * Create new Card with Enum.Parse(cardInfo[0]) and Enum.Parse(cardInfo[1])
+         * cardDeck.PlaceOnTop(tempCard)
+         * leaderboard.LoadBoard(fileName)
+         * Display "Game loaded!"
+         * Catch Exception e
+         * // Handle exception (e.g., display error)
+         * Finally
+         * If gameReader is not null
+         * Close gameReader
          *************************************************
          */
         public void Load()

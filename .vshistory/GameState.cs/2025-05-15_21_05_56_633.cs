@@ -34,7 +34,9 @@ namespace Rashed_Blackjack
             leaderboard = new Leaderboard();
         }
 
-        /*Save()
+        /*
+        *************************************************
+        * Save()
         *************************************************
         * Purpose: Saves the current game state to a file.
         *************************************************
@@ -134,66 +136,6 @@ namespace Rashed_Blackjack
             }
 
         }
-        /* Load()
-         *************************************************
-         * Purpose: Loads a previously saved game state from a file.
-         *************************************************
-         * @Algorithm:
-         * 1. Ask the user for the name of the saved game file.
-         * 2. Keep asking until a valid file is found or the user chooses to exit.
-         * 3. If a valid file is selected:
-         * 4. Reset the current game by creating a new dealer and clearing the existing players and deck.
-         * 5. Read the saved information from the file in the correct order: round number, player details, and the cards in the deck.
-         * 6. Load the leaderboard data from its corresponding file.
-         * 7. Inform the user that the game has been loaded.
-         * 8. Handle any issues that might occur while trying to read the file.
-         * 9. Ensure that the file is properly closed after attempting to read it.
-         *************************************************
-         * @Param
-         * Receives no parameters.
-         *************************************************
-         * @Exceptions
-         * None
-         *************************************************
-         * @Returns
-         * Returns nothing
-         *************************************************
-         * @Examples
-         * game.Load();
-         *************************************************
-         * @Pseudocode
-         * Prompt for fileName
-         * Do
-             * Check if file exists
-             * If not exists and fileName is not EXIT
-             * Display "Error: File not found."
-             * While file does not exist and fileName is not EXIT
-         * If fileName is not EXIT
-             * Reinstantiate dealer
-             * Clear cardDeck
-             * Clear players
-             * Create gameReader
-             * Try
-                 * Read round
-                 * Read playerCount
-                 * For currentPlayer from 0 to playerCount - 1
-                 * Read playerInfo (split by ',')
-                 * Create new Player with playerInfo[0] and int.Parse(playerInfo[1])
-                 * Add tempPlayer to players
-                 * Read deckCards
-                 * For currentCard from 0 to deckCards - 1
-                 * Read cardInfo (split by ',')
-                 * Create new Card with Enum.Parse(cardInfo[0]) and Enum.Parse(cardInfo[1])
-                 * cardDeck.PlaceOnTop(tempCard)
-                 * leaderboard.LoadBoard(fileName)
-                 * Display "Game loaded!"
-             * Catch Exception e
-                * // Handle exception (e.g., display error)
-             * Finally
-                 * If gameReader is not null
-                 * Close gameReader
-         *************************************************
-         */
         public void Load()
         {
             string fileName;

@@ -142,15 +142,14 @@ namespace Rashed_Blackjack
                 {
                     Console.Write(Hand.Value);
                 }
-                Console.Write("");
+                Console.WriteLine("");
 
                 if (GameRules.Blackjack(Hand))
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine(" BLACKJACK!"); //ENSURE THIS ONLY DISPLAYS IF NO HIDDEN CARDS
+                    Console.WriteLine("BLACKJACK!"); //ENSURE THIS ONLY DISPLAYS IF NO HIDDEN CARDS
                     Console.ForegroundColor = ConsoleColor.White;
                 }
-                Console.WriteLine("");
             }
             else
             {

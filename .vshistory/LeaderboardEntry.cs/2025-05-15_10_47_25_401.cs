@@ -120,7 +120,7 @@ namespace Rashed_Blackjack
         }
         public override string ToString()
         {
-            return $" {Name} | {Score} | {winRatio*100}% | {Wins} | {Ties} | {Losses} |";
+            return $"{Name} | {Score} | {winRatio*100}% | {Wins} | {Ties} | {Losses} |";
         }
     }
 }

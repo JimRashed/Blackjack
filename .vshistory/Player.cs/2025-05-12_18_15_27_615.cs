@@ -147,10 +147,9 @@ namespace Rashed_Blackjack
                 if (GameRules.Blackjack(Hand))
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine(" BLACKJACK!"); //ENSURE THIS ONLY DISPLAYS IF NO HIDDEN CARDS
+                    Console.WriteLine("BLACKJACK!"); //ENSURE THIS ONLY DISPLAYS IF NO HIDDEN CARDS
                     Console.ForegroundColor = ConsoleColor.White;
                 }
-                Console.WriteLine("");
             }
             else
             {

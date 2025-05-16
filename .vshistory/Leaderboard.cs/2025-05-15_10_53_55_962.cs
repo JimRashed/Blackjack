@@ -76,7 +76,7 @@ namespace Rashed_Blackjack
         public void PrintLeaderboard()
         {
             Console.WriteLine("----------------LEADERBOARD--------------------");
-            Console.WriteLine(" NAME | SCORE | WINRATIO | WINS | TIES | LOSSES");
+            Console.WriteLine($"{"NAME |", -10} SCORE | WINRATIO | WINS | TIES | LOSSES ");
             foreach (LeaderboardEntry entry in entries)
             {
                 Console.WriteLine(entry.ToString());

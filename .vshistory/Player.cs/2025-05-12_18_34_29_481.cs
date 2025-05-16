@@ -147,7 +147,7 @@ namespace Rashed_Blackjack
                 if (GameRules.Blackjack(Hand))
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine(" BLACKJACK!"); //ENSURE THIS ONLY DISPLAYS IF NO HIDDEN CARDS
+                    Console.WriteLine("BLACKJACK!"); //ENSURE THIS ONLY DISPLAYS IF NO HIDDEN CARDS
                     Console.ForegroundColor = ConsoleColor.White;
                 }
                 Console.WriteLine("");
@@ -160,7 +160,7 @@ namespace Rashed_Blackjack
                 for (int currentCard = 0; currentCard < Hand.Size; currentCard++)
                 {
                     Console.ForegroundColor = Hand.hand[currentCard].Color;
-                    Console.Write($"{Hand.hand[currentCard].ToString()} ");
+                    Console.WriteLine($"{Hand.hand[currentCard].ToString()} ");
                     Console.ForegroundColor = ConsoleColor.White;
                 }
                 Console.Write("\n");
@@ -189,7 +189,7 @@ namespace Rashed_Blackjack
                     {
                         Console.Write(Hand.Value);
                     }
-                    Console.WriteLine("");
+                    Console.Write("");
 
                 }
                 else
