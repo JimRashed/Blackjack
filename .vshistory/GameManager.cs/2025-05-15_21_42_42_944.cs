@@ -564,7 +564,7 @@ namespace Rashed_Blackjack
                 Console.WriteLine(seperator);
 
             }
-        }  
+        } //Consider replacing this with a "Display game" method that would keep the blackjack header at the top and add colors and indicate when blackjack occurs and stuff. Definitely better organize positioning. I'd like the layout like a blackjack table : dealer at top, players side by side
         private void PlayPlayerTurns()
         {
             int userChoice;

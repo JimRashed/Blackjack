@@ -473,7 +473,9 @@ namespace Rashed_Blackjack
               
             }
         }
-        /* ClearAndDisplay()
+        /*
+         *************************************************
+         * ClearAndDisplay()
          *************************************************
          * Purpose: Clears the console and then displays the current state of the game (dealer and players' hands).
          *************************************************
@@ -504,42 +506,6 @@ namespace Rashed_Blackjack
             Console.Clear();
             DisplayDealerAndPlayers();
         }
-        /* DisplayDealerAndPlayers()
-         *************************************************
-         * Purpose: Displays the hands and relevant information for the dealer and all players.
-         *************************************************
-         * @Algorithm:
-         * 1. Display the dealer's information and hand 
-         * 2. For each player:
-         * . If the player is active, display their hand and bet.
-         * . If the player is not active, display their name 
-         * 3. Print the separator line after each player.
-         *************************************************
-         * @Param
-         * Receives no parameters.
-         *************************************************
-         * @Exceptions
-         * None
-         *************************************************
-         * @Returns
-         * Returns nothing
-         *************************************************
-         * @Examples
-         *************************************************
-         * @Pseudocode
-         * Call Console.Clear()
-         * Call game.dealer.Print() 
-         * Console.WriteLine(seperator)
-         * For each player in game.players
-             * If player.Playing is true
-                * player.Print() 
-             * Else
-                 * Set Console.ForegroundColor to Red
-                * Console.WriteLine(player.ToString())
-                  * Set Console.ForegroundColor to White
-         * Console.WriteLine(seperator)
-         *************************************************
-         */
         private void DisplayDealerAndPlayers()
         {
             string seperator = "-------------------------------";
@@ -564,7 +530,7 @@ namespace Rashed_Blackjack
                 Console.WriteLine(seperator);
 
             }
-        }  
+        } //Consider replacing this with a "Display game" method that would keep the blackjack header at the top and add colors and indicate when blackjack occurs and stuff. Definitely better organize positioning. I'd like the layout like a blackjack table : dealer at top, players side by side
         private void PlayPlayerTurns()
         {
             int userChoice;

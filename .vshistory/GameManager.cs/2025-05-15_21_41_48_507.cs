@@ -504,7 +504,9 @@ namespace Rashed_Blackjack
             Console.Clear();
             DisplayDealerAndPlayers();
         }
-        /* DisplayDealerAndPlayers()
+        /*
+         *************************************************
+         * DisplayDealerAndPlayers()
          *************************************************
          * Purpose: Displays the hands and relevant information for the dealer and all players.
          *************************************************
@@ -527,16 +529,16 @@ namespace Rashed_Blackjack
          * @Examples
          *************************************************
          * @Pseudocode
-         * Call Console.Clear()
-         * Call game.dealer.Print() 
+         * Console.Clear()
+         * game.dealer.Print() // Assuming a Print() method exists for Player
          * Console.WriteLine(seperator)
          * For each player in game.players
-             * If player.Playing is true
-                * player.Print() 
-             * Else
-                 * Set Console.ForegroundColor to Red
-                * Console.WriteLine(player.ToString())
-                  * Set Console.ForegroundColor to White
+         * If player.Playing is true
+         * player.Print() // Assuming a Print() method exists for Player
+         * Else
+         * Set Console.ForegroundColor to Red
+         * Console.WriteLine(player.ToString())
+         * Set Console.ForegroundColor to White
          * Console.WriteLine(seperator)
          *************************************************
          */
@@ -564,7 +566,7 @@ namespace Rashed_Blackjack
                 Console.WriteLine(seperator);
 
             }
-        }  
+        } //Consider replacing this with a "Display game" method that would keep the blackjack header at the top and add colors and indicate when blackjack occurs and stuff. Definitely better organize positioning. I'd like the layout like a blackjack table : dealer at top, players side by side
         private void PlayPlayerTurns()
         {
             int userChoice;

@@ -565,6 +565,53 @@ namespace Rashed_Blackjack
 
             }
         }  
+         /*
+         *************************************************
+         * PlayPlayerTurns()
+         *************************************************
+         * Purpose: Allows each active player to take their turn by choosing to hit, stand, double down, or forfeit.
+         *************************************************
+         * @Algorithm:
+         * 1. Iterate through each player in the game.
+         * 2. If the player is currently playing:
+         *  Enter a loop that continues until the player chooses to stand or busts.
+         *  Clear and display the current game state.
+         *  Prompt the player to choose a move (hit, stand, double down, forfeit).
+         *  Based on the player's choice:
+         *   Hit: Deal a card to the player.
+         *   Stand: End the player's turn.
+         *   Double Down: If the player has sufficient funds, double their bet and deal one more card, then end their turn.
+         *   Forfeit: The player loses half their bet and their turn ends.
+         *  After each action, check if the player has busted. If so, end their turn.
+         * 3. After all players have taken their turns, clear and display the final game state.
+         *************************************************
+         * @Param
+         * Receives no parameters.
+         *************************************************
+         * @Exceptions
+         * None
+         *************************************************
+         * @Returns
+         * Returns nothing
+         *************************************************
+         * @Examples
+         *************************************************
+         * @Pseudocode
+         * For each currentPlayerNumber from 0 to game.players.Count - 1
+         * currentPlayer = game.players[currentPlayerNumber]
+         * If currentPlayer.Playing is true
+         * Do
+         * ClearAndDisplay()
+         * Prompt currentPlayer for move (Hit, Stand, Double Down, Forfeit)
+         * userChoice = GetIntInRange(MINPLAYERMOVE, MAXPLAYERMOVE)
+         * Switch (userChoice)
+         * Case HIT: Hit(currentPlayer.Hand), ClearAndDisplay(), AnimateWrite($"{currentPlayer.Name} hits."), ReadKey()
+         * Case STAND: stats.stands++, ClearAndDisplay(), AnimateWrite($"{currentPlayer.Name} stands."), ReadKey()
+         * Case DOUBLE_DOWN: If currentPlayer.Balance >= currentPlayer.Bet, stats.doubleDowns++, currentPlayer.Balance -= currentPlayer.Bet, currentPlayer.Bet *= 2, Hit(currentPlayer.Hand), userChoice = STAND, ClearAndDisplay(), AnimateWrite($"{currentPlayer.Name} doubles down."), ReadKey(), Else, AnimateWrite($"{currentPlayer.Name} does not have funds..."), ReadKey()
+         * Case FORFEIT: stats.forfeits++, ClearAndDisplay(), AnimateWrite($"{currentPlayer.Name} forfeits..."), currentPlayer.Balance += currentPlayer.Bet / 2, currentPlayer.Bet = 0, currentPlayer.Playing = false, ReadKey()
+         * If Bust(currentPlayer.Hand)
+         * stats.busts++, ClearAndDisplay(), AnimateWrite
+         */
         private void PlayPlayerTurns()
         {
             int userChoice;
