@@ -96,7 +96,7 @@ namespace Rashed_Blackjack
         * Returns nothing
         *************************************************
         * @Examples
-        * gameManager.MainMenu();
+        * // gameManager.MainMenu();
         *************************************************
         * @Pseudocode
         * Do
@@ -217,7 +217,8 @@ namespace Rashed_Blackjack
         * Returns void.
         *************************************************
         * @Examples
-        * gameManager.NewGame();
+        * // This method is typically called from the MainMenu().
+        * // gameManager.NewGame();
         *************************************************
         * @Pseudocode
         * Call game.players.Clear()
@@ -287,7 +288,8 @@ namespace Rashed_Blackjack
     * Returns nothing
     *************************************************
     * @Examples
-    * gameManager.NewRound();
+    * // This method is called to start a new round after a game has been initialized.
+    * // gameManager.NewRound();
     *************************************************
     * @Pseudocode
     * game.round++
@@ -318,40 +320,6 @@ namespace Rashed_Blackjack
 
 
         } //After each round, add cards back to deck, then shuffle 3 times.
-        /* InitialDeal()
-        *************************************************
-        * Purpose: Deals the initial two cards to the dealer and all active players at the start of a round.
-        *************************************************
-        * @Algorithm:
-        * 1. Deal two cards to the dealer, ensuring the second card is initially hidden.
-        * 2. For each player who is currently playing:
-        * a. Deal two cards to the player.
-        * 3. Sort the hands of the dealer and each player.
-        *************************************************
-        * @Param
-        * Receives no parameters.
-        *************************************************
-        * @Exceptions
-        * None
-        *************************************************
-        * @Returns
-        * Returns nothing
-        *************************************************
-        * @Examples
-        * gameManager.InitialDeal();
-        *************************************************
-        * @Pseudocode
-        * For currentCard from 0 to INITIALCARDAMOUNT - 1
-        * game.dealer.Hand.AddCard(game.cardDeck.Draw())
-        * game.dealer.Hand.Sort()
-        * game.dealer.Hand.hand[game.dealer.Hand.Size - 1].Hidden = true
-        * For each currentPlayer in game.players
-        * If currentPlayer.Playing is true
-        * For currentCard from 0 to INITIALCARDAMOUNT - 1
-        * game.players[currentPlayer].Hand.AddCard(game.cardDeck.Draw())
-        * game.players[currentPlayer].Hand.Sort()
-        *************************************************
-        */
         private void InitialDeal()
         {
             //2 cards dealt to the dealer
@@ -380,59 +348,7 @@ namespace Rashed_Blackjack
                 
             }
             
-        } //Deals 2 cards to everyone
-        /* GetPlayerBets()
-         *************************************************
-         * Purpose: Prompts each active player to place their bet for the current round.
-         *************************************************
-         * @Algorithm:
-         * 1. Iterate through each player in the game.
-         * 2. For each player:
-         * a. Reset their playing status to true.
-         * b. Check if the player has sufficient balance to meet the minimum bet. If not, set their playing status to false.
-         * c. If the player is playing:
-         *  Display their current balance.
-         *  Prompt them to enter their bet, ensuring it's within the allowed range and does not exceed their balance.
-         * Deduct the bet from their balance.
-         * . Record their bet for the current round.
-         * d. If the player is not playing (due to insufficient funds), inform them.
-         *************************************************
-         * @Param
-         * Receives no parameters.
-         *************************************************
-         * @Exceptions
-         * None
-         *************************************************
-         * @Returns
-         * Returns nothing
-         *************************************************
-         * @Examples
-         * // This method is called at the beginning of each new round.
-         * // gameManager.GetPlayerBets();
-         *************************************************
-         * @Pseudocode
-         * For each currentPlayerNumber from 0 to game.players.Count - 1
-         * NewPage()
-         * currentPlayer = game.players[currentPlayerNumber]
-         * currentPlayer.Playing = true
-         * If currentPlayer.Balance < MINBET
-              * currentPlayer.Playing = false
-         * If currentPlayer.Playing is true
-             * AnimateWrite($"Current balance: ...")
-             * AnimateWrite($"{currentPlayer.Name}, please enter your bet...")
-             * Do
-                 * bet = GetDoubleInRange(MINBET, ...)
-                 * validBet = bet <= currentPlayer.Balance
-                     * If !validBet
-                     * AnimateWrite("The bet you attempted...")
-             * While !validBet
-             * currentPlayer.Balance -= bet
-             * currentPlayer.Bet = bet
-             * Else
-                 * AnimateWrite($"{currentPlayer.Name} does not have the funds...")
-                 * ReadKey()
-         *************************************************
-         */
+        } //Deals 2 card 2 everyone
         private void GetPlayerBets()
         {
             bool validBet = false;

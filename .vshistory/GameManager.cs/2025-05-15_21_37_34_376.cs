@@ -381,7 +381,9 @@ namespace Rashed_Blackjack
             }
             
         } //Deals 2 cards to everyone
-        /* GetPlayerBets()
+        /*
+         *************************************************
+         * GetPlayerBets()
          *************************************************
          * Purpose: Prompts each active player to place their bet for the current round.
          *************************************************
@@ -391,10 +393,10 @@ namespace Rashed_Blackjack
          * a. Reset their playing status to true.
          * b. Check if the player has sufficient balance to meet the minimum bet. If not, set their playing status to false.
          * c. If the player is playing:
-         *  Display their current balance.
-         *  Prompt them to enter their bet, ensuring it's within the allowed range and does not exceed their balance.
-         * Deduct the bet from their balance.
-         * . Record their bet for the current round.
+         * i. Display their current balance.
+         * ii. Prompt them to enter their bet, ensuring it's within the allowed range and does not exceed their balance.
+         * iii. Deduct the bet from their balance.
+         * iv. Record their bet for the current round.
          * d. If the player is not playing (due to insufficient funds), inform them.
          *************************************************
          * @Param
@@ -404,7 +406,7 @@ namespace Rashed_Blackjack
          * None
          *************************************************
          * @Returns
-         * Returns nothing
+         * Returns void.
          *************************************************
          * @Examples
          * // This method is called at the beginning of each new round.
@@ -416,21 +418,21 @@ namespace Rashed_Blackjack
          * currentPlayer = game.players[currentPlayerNumber]
          * currentPlayer.Playing = true
          * If currentPlayer.Balance < MINBET
-              * currentPlayer.Playing = false
+         * currentPlayer.Playing = false
          * If currentPlayer.Playing is true
-             * AnimateWrite($"Current balance: ...")
-             * AnimateWrite($"{currentPlayer.Name}, please enter your bet...")
-             * Do
-                 * bet = GetDoubleInRange(MINBET, ...)
-                 * validBet = bet <= currentPlayer.Balance
-                     * If !validBet
-                     * AnimateWrite("The bet you attempted...")
-             * While !validBet
-             * currentPlayer.Balance -= bet
-             * currentPlayer.Bet = bet
-             * Else
-                 * AnimateWrite($"{currentPlayer.Name} does not have the funds...")
-                 * ReadKey()
+         * AnimateWrite($"Current balance: ...")
+         * AnimateWrite($"{currentPlayer.Name}, please enter your bet...")
+         * Do
+         * bet = GetDoubleInRange(MINBET, ...)
+         * validBet = bet <= currentPlayer.Balance
+         * If !validBet
+         * AnimateWrite("The bet you attempted...")
+         * While !validBet
+         * currentPlayer.Balance -= bet
+         * currentPlayer.Bet = bet
+         * Else
+         * AnimateWrite($"{currentPlayer.Name} does not have the funds...")
+         * ReadKey()
          *************************************************
          */
         private void GetPlayerBets()

@@ -381,7 +381,9 @@ namespace Rashed_Blackjack
             }
             
         } //Deals 2 cards to everyone
-        /* GetPlayerBets()
+        /*
+         *************************************************
+         * GetPlayerBets()
          *************************************************
          * Purpose: Prompts each active player to place their bet for the current round.
          *************************************************
