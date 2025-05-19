@@ -1172,18 +1172,17 @@ namespace Rashed_Blackjack
             Console.WriteLine("If the player gets a blackjack and the dealer gets anything else,");
             Console.WriteLine("The player's score goes up by 2 and they win 250% of their bet.");
             Console.WriteLine(" ");
-            Console.WriteLine("If the player's hand is greater than the dealer's, the player wins,");
-            Console.WriteLine("The player's score goes up by 1 and their win 200% of their bet.");
-            Console.WriteLine(" ");
             Console.WriteLine("If the player's hand is over 21, the player loses regardless of the dealer's hand,");
             Console.WriteLine("The player's score goes down by 2 and they lose their bet.");
+            Console.WriteLine(" ");
+            Console.WriteLine("If the player's hand is greater than the dealer's, the player wins,");
+            Console.WriteLine("The player's score goes up by 1 and their win 200% of their bet.");
             Console.WriteLine(" ");
             Console.WriteLine("If the player's hand is lower than the dealer's, the player loses,");
             Console.WriteLine("The player's score goes down by 1 and they lose their bet.");
             Console.WriteLine(" ");
-            Console.WriteLine("Otherwise, if the player and the dealer's hands are equal,");
+            Console.WriteLine("If the player and the dealer's hands are equal,");
             Console.WriteLine("The player's score is unaffected and their bet is refunded.");
-            Console.WriteLine("Good luck in your games!");
             Console.ReadKey();
 
 

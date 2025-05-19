@@ -1183,7 +1183,6 @@ namespace Rashed_Blackjack
             Console.WriteLine(" ");
             Console.WriteLine("Otherwise, if the player and the dealer's hands are equal,");
             Console.WriteLine("The player's score is unaffected and their bet is refunded.");
-            Console.WriteLine("Good luck in your games!");
             Console.ReadKey();
 
 

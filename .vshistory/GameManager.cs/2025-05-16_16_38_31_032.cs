@@ -23,7 +23,7 @@ namespace Rashed_Blackjack
     public class GameManager
     {
         const int MINMENUCHOICE = 1;
-        const int MAXMENUCHOICE = 7;
+        const int MAXMENUCHOICE = 6;
         private GameState game;
         private RoundStats stats;
         private bool gameActive;
@@ -127,8 +127,7 @@ namespace Rashed_Blackjack
                 Console.WriteLine("3 - Check the leaderboard");
                 Console.WriteLine("4 - Save the current game");
                 Console.WriteLine("5 - Load a game");
-                Console.WriteLine("6 - View Blackjack rules");
-                Console.WriteLine("7 - Exit Blackjack");
+                Console.WriteLine("6 - Exit Blackjack");
 
                 int userChoice = Utility.GetIntInRange(MINMENUCHOICE, MAXMENUCHOICE);
 
@@ -186,9 +185,6 @@ namespace Rashed_Blackjack
                         gameActive = true;
                         break;
                     case 6:
-                        PrintGameRules();
-                        break;
-                    case 7:
                         quit = true;
                         break;
 
@@ -1133,62 +1129,6 @@ namespace Rashed_Blackjack
                 }
             }
             return true;
-        }
-        private void PrintGameRules()
-        {
-            Utility.NewPage();
-            Utility.AnimateWrite("Welcome to Blackjack!");
-            Console.WriteLine("In this game, players fight off individually against a dealer. While multiple players may compete at the same table, their matches are entirely independent of one another.");
-            Console.WriteLine("The goal of the game is to get your hand's value as close to 21 without exceeding it.");
-            Console.WriteLine("------------------------------------");
-            Console.WriteLine(" ");
-            Console.WriteLine("Hand values are calculated in the following way: number cards (2-10) are worth their respective number, face cards are worth 10, and Aces are worth 11 if the hand's value is under 21 and 1 if it exceeds it.");
-            Console.WriteLine(" ");
-            Console.WriteLine("When a round begins, 2 cards are dealt to each player and to the dealer. The dealer's second card is initially hidden.");
-            Console.WriteLine("If a player's hand is worth 21 during the initial deal, that is called a 'Blackjack', the best possible hand. This guarantees that the player or the dealer with a blackjack will either win or tie.");
-            Console.WriteLine(" ");
-            Console.WriteLine("Now that you know the goal of the game, press a key to read about the functioning of player turns");
-            Console.ReadKey();
-
-            Utility.NewPage();
-            Utility.AnimateWrite("Turn rules");
-            Console.WriteLine("------------------------------------");
-            Console.WriteLine("When it is a player's turn, that player will have 4 options:");
-            Console.WriteLine("1 - Hit: Draw a card from the deck");
-            Console.WriteLine("2 - Stand: End the player's turn.");
-            Console.WriteLine("3 - Double down: Double your bet and hit only once, automatically standing after");
-            Console.WriteLine("4 - Forfeit: Choose to give up, granting the player half their bet back");
-            Console.WriteLine("A player's turn will keep going until they either get a hand value greater than 21 or choose to stand/forfeit");
-            Console.WriteLine(" ");
-            Console.WriteLine("Once all player's turns have ended, the dealer plays their turn.");
-            Console.WriteLine("The dealer first reveals their second card, then keeps hitting until the value of their hand is equal or greater than 17");
-            Console.ReadKey();
-
-            Utility.NewPage();
-            Utility.AnimateWrite("Outcome");
-            Console.WriteLine("------------------------------------");
-            Console.WriteLine("Once all players and the dealer have player their turns, the outcome of their matches is decided.");
-            Console.WriteLine(" ");
-            Console.WriteLine("If the player gets a blackjack and the dealer gets anything else,");
-            Console.WriteLine("The player's score goes up by 2 and they win 250% of their bet.");
-            Console.WriteLine(" ");
-            Console.WriteLine("If the player's hand is greater than the dealer's, the player wins,");
-            Console.WriteLine("The player's score goes up by 1 and their win 200% of their bet.");
-            Console.WriteLine(" ");
-            Console.WriteLine("If the player's hand is over 21, the player loses regardless of the dealer's hand,");
-            Console.WriteLine("The player's score goes down by 2 and they lose their bet.");
-            Console.WriteLine(" ");
-            Console.WriteLine("If the player's hand is lower than the dealer's, the player loses,");
-            Console.WriteLine("The player's score goes down by 1 and they lose their bet.");
-            Console.WriteLine(" ");
-            Console.WriteLine("Otherwise, if the player and the dealer's hands are equal,");
-            Console.WriteLine("The player's score is unaffected and their bet is refunded.");
-            Console.WriteLine("Good luck in your games!");
-            Console.ReadKey();
-
-
-
-
         }
        
         
