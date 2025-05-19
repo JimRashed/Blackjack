@@ -85,7 +85,6 @@ namespace Rashed_Blackjack
 
         }
         //Override operators
-        //Returns player info in a string in a formatted manner without affecting coloring
         public override string ToString()
         {
             if (!dealer)
@@ -110,7 +109,6 @@ namespace Rashed_Blackjack
             }
            
         }
-        //Prints the player's info in a formatted manner with appropriate coloring
         public void Print()
         {
             if (!dealer)
@@ -201,7 +199,6 @@ namespace Rashed_Blackjack
               
             }
         }
-        //Returns a bool declaring whether or not a player's hand contains hidden cards
         public bool ContainsHiddenCards()
         {
             bool hasHidden = false;

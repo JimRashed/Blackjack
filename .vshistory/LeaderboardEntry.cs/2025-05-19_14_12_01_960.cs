@@ -121,7 +121,7 @@ namespace Rashed_Blackjack
        * Returns nothing.
        *************************************************
        * @Pseudocode:
-       * Score = Score + integer value of outcome
+       * Score = Score + (integer value of outcome)
        * if outcome is Blackjack or outcome is Win
        * Wins = Wins + 1
        * else if outcome is Loss or outcome is Bust

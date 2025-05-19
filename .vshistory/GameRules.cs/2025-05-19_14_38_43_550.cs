@@ -135,34 +135,6 @@ namespace Rashed_Blackjack
                 return Outcomes.Tie;
             }
         }
-        /* NoOnePlaying(List<Player> players)
-        *************************************************
-        * Purpose: Checks if all players in the game are no longer playing.
-        *************************************************
-        * @Algorithm:
-        * 1. Initialize a boolean 'noOnePlaying' as true.
-        * 2. Iterate through each player in the provided list of players.
-        * 3. For each player, check their Playing boolean
-        * 4. If any player's Playing is true, set noOnePlaying to false.
-        * 5. Return noOnePLaying
-        *************************************************
-        * @Param
-        * players: A list of Players
-        *************************************************
-        * @Exceptions
-        * None
-        *************************************************
-        * @Returns
-        * boolean declaring to no players playing
-        *************************************************
-        * @Pseudocode:
-        * bool noOnePlaying = true
-        * for each currentPlayer from 0 to players.Count - 1
-            * if players[currentPlayer].Playing is true
-                  * noOnePlaying = false
-        * return noOnePlaying
-        *************************************************
-        */
         public static bool NoOnePlaying(List<Player> players)
         {
             bool noOnePlaying = true;

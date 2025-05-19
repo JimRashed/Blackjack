@@ -60,48 +60,6 @@ namespace Rashed_Blackjack
         {
             return (hand.Size == Constants.BLACKJACKCARDAMOUNT && hand.Value == Constants.BLACKJACK);
         }
-        /* Outcome(Player player, Player dealer)
-         *************************************************
-         * Purpose: Determines the outcome of a round for a player
-         *************************************************
-         * @Algorithm:
-         * 1. If the player's hand is bust,set outcome to bust
-         * 2. Else if the dealer's hand is bust:
-             * a. If the player has Blackjack, set outcome to lbackjack
-             * b. Else, the player Wins.
-         * 3. Else if the player has Blackjack, set outocme to blackjack
-         * 4. Else if the player's hand value is greater than the dealer's hand value, set outcome to win
-         * 5. Else if the player's hand value is less than the dealer's hand value, set outcome to lose
-         * 6. Else (player's hand value equals dealer's hand value), set outcome to tie
-         *************************************************
-         * @Param
-         * player: The player being evaluated
-         * dealer: The dealer.
-         *************************************************
-         * @Exceptions
-         * None
-         *************************************************
-         * @Returns
-         * An Outcomes enum value representing the result of the round.
-         *************************************************
-         * @Pseudocode:
-         * if Bust(player.Hand)
-          * return Outcomes.Bust
-         * else if Bust(dealer.Hand)
-             * if Blackjack(player.Hand)
-             * return Outcomes.Blackjack
-             * else
-             * return Outcomes.Win
-         * else if Blackjack(player.Hand)
-           * return Outcomes.Blackjack
-         * else if player.Hand.Value > dealer.Hand.Value
-           * return Outcomes.Win
-         * else if player.Hand.Value < dealer.Hand.Value
-             * return Outcomes.Loss
-         * else
-          * return Outcomes.Tie
-         *************************************************
-         */
         public static Outcomes Outcome(Player player, Player dealer)
         {
             if (Bust(player.Hand)){
@@ -135,34 +93,6 @@ namespace Rashed_Blackjack
                 return Outcomes.Tie;
             }
         }
-        /* NoOnePlaying(List<Player> players)
-        *************************************************
-        * Purpose: Checks if all players in the game are no longer playing.
-        *************************************************
-        * @Algorithm:
-        * 1. Initialize a boolean 'noOnePlaying' as true.
-        * 2. Iterate through each player in the provided list of players.
-        * 3. For each player, check their Playing boolean
-        * 4. If any player's Playing is true, set noOnePlaying to false.
-        * 5. Return noOnePLaying
-        *************************************************
-        * @Param
-        * players: A list of Players
-        *************************************************
-        * @Exceptions
-        * None
-        *************************************************
-        * @Returns
-        * boolean declaring to no players playing
-        *************************************************
-        * @Pseudocode:
-        * bool noOnePlaying = true
-        * for each currentPlayer from 0 to players.Count - 1
-            * if players[currentPlayer].Playing is true
-                  * noOnePlaying = false
-        * return noOnePlaying
-        *************************************************
-        */
         public static bool NoOnePlaying(List<Player> players)
         {
             bool noOnePlaying = true;

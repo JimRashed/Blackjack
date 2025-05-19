@@ -156,7 +156,7 @@ namespace Rashed_Blackjack
         * boolean declaring to no players playing
         *************************************************
         * @Pseudocode:
-        * bool noOnePlaying = true
+        * noOnePlaying = true
         * for each currentPlayer from 0 to players.Count - 1
             * if players[currentPlayer].Playing is true
                   * noOnePlaying = false

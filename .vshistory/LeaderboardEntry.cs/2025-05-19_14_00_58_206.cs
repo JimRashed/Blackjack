@@ -101,35 +101,6 @@ namespace Rashed_Blackjack
             Ties = ties;
             Score = score;
         }
-        /* Modify(Outcomes outcome)
-       *************************************************
-       * Purpose: Updates the score, wins, losses, or ties of a leaderboard entry based on the outcome of a round.
-       *************************************************
-       * @Algorithm:
-       * 1. Increase the Score by the integer value of the outcome.
-       * 2. If the outcome is Blackjack or Win, increment the Wins count.
-       * 3. Else if the outcome is Loss or Bust, increment the Losses count.
-       * 4. Else (outcome is Tie), increment the Ties count.
-       *************************************************
-       * @Param
-       * outcome: The result of the round (Blackjack, Win, Loss, Bust, or Tie).
-       *************************************************
-       * @Exceptions
-       * None
-       *************************************************
-       * @Returns
-       * Returns nothing.
-       *************************************************
-       * @Pseudocode:
-       * Score = Score + integer value of outcome
-       * if outcome is Blackjack or outcome is Win
-       * Wins = Wins + 1
-       * else if outcome is Loss or outcome is Bust
-       * Losses = Losses + 1
-       * else // outcome is Tie
-       * Ties = Ties + 1
-       *************************************************
-       */
         public void Modify(Outcomes outcome)
         {
             Score += (int)outcome;

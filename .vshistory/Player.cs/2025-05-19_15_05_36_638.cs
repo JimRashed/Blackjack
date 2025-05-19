@@ -201,7 +201,7 @@ namespace Rashed_Blackjack
               
             }
         }
-        //Returns a bool declaring whether or not a player's hand contains hidden cards
+        //Returns a bool dictating whether or not a player's hand contains hidden cards
         public bool ContainsHiddenCards()
         {
             bool hasHidden = false;
