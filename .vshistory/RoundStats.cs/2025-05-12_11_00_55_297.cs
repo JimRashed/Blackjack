@@ -21,7 +21,6 @@ namespace Rashed_Blackjack
             this.forfeits = forfeits;
             this.busts = busts;
         }
-        //Returns a string containing the struct data in a formatted manner.
         public override string ToString()
         {
             return $"{hits} hits | {stands} stands | {doubleDowns} double downs | {forfeits} forfeits | {busts} busts";

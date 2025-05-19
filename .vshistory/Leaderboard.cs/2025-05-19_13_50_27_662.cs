@@ -190,37 +190,7 @@ namespace Rashed_Blackjack
                 Console.WriteLine(entry.ToString());
             }
         }
-        /* SaveBoard(string fileName)
-        *************************************************
-        * Purpose: Saves the leaderboard data to a file.
-        *************************************************
-        * @Algorithm:
-        * 1. Iterate through each leaderboard entry 
-        * 2. Output entry data in a formatted manner 
-        *************************************************
-        * @Param
-        * fileName: The name of the file to save to.
-        *************************************************
-        * @Exceptions
-        * None; all exceptions handled locally.
-        *************************************************
-        * @Returns
-        * Returns nothing.
-        *************************************************
-        * @Pseudocode:
-        * filePath = Constants.BOARDFILEPATH + fileName + Constants.FILEEXTENSION
-        * try
-            * sWriter = new StreamWriter(filePath)
-            * for LBIndex from 0 to entries.Count - 1
-            * currentEntry = entries[LBIndex]
-            * sWriter.WriteLine($"{currentEntry.Name},{currentEntry.Losses},{currentEntry.Wins},{currentEntry.Ties},{currentEntry.Score}")
-          catch exception e
-            Output error message
-        * finally
-            * if sWriter != null
-            * sWriter.Close()
-        *************************************************
-        */
+
         public void SaveBoard(string fileName)
         {
             StreamWriter sWriter = null; //Declaring sWriter without assigning it causes an error during closing, so sWriter is simply assigned to null
@@ -249,42 +219,6 @@ namespace Rashed_Blackjack
                 }
             }
         }
-        /* LoadBoard(string fileName)
-       *************************************************
-       * Purpose: Loads leaderboard data from a file.
-       *************************************************
-       * @Algorithm:
-       * 1. Clear the current leaderboard entries.
-       * 2. Read the file line by line, splitting each line into player data.
-       * 3. Create a new LeaderboardEntry for each line and add it to the leaderboard.
-       * 4. Sort the leaderboard 
-       *************************************************
-       * @Param
-       * fileName: The name of the file to load from.
-       *************************************************
-       * @Exceptions
-       * None, all exceptions handled locally
-       *************************************************
-       * @Returns
-       * Returns nothing.
-       *************************************************
-       * @Pseudocode:
-       * filePath = Constants.BOARDFILEPATH + fileName + Constants.FILEEXTENSION
-       * entries.Clear() 
-       * try
-           * sReader = new StreamReader(filePath)
-           * while (line = sReader.ReadLine()) != null
-           * playerInfo = line.Split(',') // Parse player data
-           * tempEntry = new LeaderboardEntry(playerInfo[0], int.Parse(playerInfo[1]), int.Parse(playerInfo[2]), int.Parse(playerInfo[3]), int.Parse(playerInfo[4]))
-           * entries.Add(tempEntry)
-           * Call Sort() 
-       * catch exception e
-       *    Output error message
-       * finally
-           * if sReader != null
-              * sReader.Close()
-       *************************************************
-       */
         public void LoadBoard(string fileName)
         {
 
