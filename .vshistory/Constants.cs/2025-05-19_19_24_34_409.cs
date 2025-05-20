@@ -10,7 +10,7 @@ namespace Rashed_Blackjack
     public static class Constants
     {
         //The minimum allowed number of players in the game.
-        public const int MINPLAYERCOUNT = 2;
+        public const int MINPLAYERCOUNT = 1; //This is off for testing purposes. Change it to 2 later.
         //The maximum allowed number of players in the game.
         public const int MAXPLAYERCOUNT = 4;
         //The minimum legal move of a player in a menu

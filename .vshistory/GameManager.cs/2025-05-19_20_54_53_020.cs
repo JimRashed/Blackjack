@@ -455,7 +455,7 @@ namespace Rashed_Blackjack
                 if (currentPlayer.Playing) //Checks if player is playing before prompting for bet
                 {
                     Utility.AnimateWrite($"Current balance: {currentPlayer.Balance.ToString("C")}");
-                    Utility.AnimateWrite($"{currentPlayer.Name}, please enter your bet for this round (>{Constants.MINBET.ToString("C")} & <{Constants.MAXBET.ToString("C")})");
+                    Utility.AnimateWrite($"{currentPlayer.Name}, please enter your bet for this round");
                     do
                     {
                         bet = Utility.GetDoubleInRange(Constants.MINBET, Constants.MAXBET>currentPlayer.Balance?currentPlayer.Balance : Constants.MAXBET);

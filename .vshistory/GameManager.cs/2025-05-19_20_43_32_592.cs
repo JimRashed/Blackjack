@@ -250,14 +250,13 @@ namespace Rashed_Blackjack
             double balance;
             Utility.AnimateWrite("How many players would you like to include in the game? (2-4)"); 
             int playerCount = Utility.GetIntInRange(Constants.MINPLAYERCOUNT, Constants.MAXPLAYERCOUNT);
-
             for (int currentPlayer = 0; currentPlayer< playerCount; currentPlayer++)
             {
                 Utility.NewPage();
                 
                 Utility.AnimateWrite($"What will be the name of player {currentPlayer + 1}?");
                 name = GetUniqueName();
-                Utility.AnimateWrite($"What will be {name}'s starting balance? (must be greater than minimum bet (50$))"); 
+                Utility.AnimateWrite($"What will be {name}'s starting balance? (must be greater than minimum bet (50)"); //Make this more descriptive
                 balance = Utility.GetDoubleInRange(Constants.MINBET, 100000);
                 tempPlayer = new Player(name, balance);
                 game.players.Add(tempPlayer);
@@ -455,7 +454,7 @@ namespace Rashed_Blackjack
                 if (currentPlayer.Playing) //Checks if player is playing before prompting for bet
                 {
                     Utility.AnimateWrite($"Current balance: {currentPlayer.Balance.ToString("C")}");
-                    Utility.AnimateWrite($"{currentPlayer.Name}, please enter your bet for this round (>{Constants.MINBET.ToString("C")} & <{Constants.MAXBET.ToString("C")})");
+                    Utility.AnimateWrite($"{currentPlayer.Name}, please enter your bet for this round");
                     do
                     {
                         bet = Utility.GetDoubleInRange(Constants.MINBET, Constants.MAXBET>currentPlayer.Balance?currentPlayer.Balance : Constants.MAXBET);
